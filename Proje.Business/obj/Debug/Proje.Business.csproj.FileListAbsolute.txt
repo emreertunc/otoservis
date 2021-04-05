@@ -1,0 +1,12 @@
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\bin\Debug\Proje.Business.dll
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\bin\Debug\Proje.Business.pdb
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\obj\Debug\Proje.Business.csprojAssemblyReference.cache
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\obj\Debug\Proje.Business.csproj.CoreCompileInputs.cache
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\obj\Debug\Proje.Business.dll
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\obj\Debug\Proje.Business.pdb
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\bin\Debug\Proje.Business.dll.config
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\bin\Debug\EntityFramework.dll
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\bin\Debug\EntityFramework.xml
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\obj\Debug\Proje.Business.csproj.CopyComplete
