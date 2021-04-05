@@ -1,0 +1,4 @@
+Projemde oluşan bir sorundan dolayı solution'ı kullanmayı tamamen bırakmak zorunda kaldım.
+Eski bir lokal kopyasına dönüp tekrardan bu aynı isimli github adresine yükledim (https://github.com/emreertunc/otoservis)
+
+Eski projeyi de yüklediğim tarihleri görebilin diye silmedim. (https://github.com/emreertunc/eski-otoservis)
