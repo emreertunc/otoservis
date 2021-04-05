@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="418d484e716b4435a95f4a32329f4f39" Name="Diagram1">
+        <EntityTypeShape EntityType="otoservisdbModel.arac" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="otoservisdbModel.aracmarka" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="otoservisdbModel.aracmodel" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="otoservisdbModel.bolumler" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="otoservisdbModel.kullanici" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="otoservisdbModel.musteri" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="otoservisdbModel.parca" Width="1.5" PointX="7.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="otoservisdbModel.pozisyonlar" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="otoservisdbModel.servi" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="otoservisdbModel.serviskalem" Width="1.5" PointX="9.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="otoservisdbModel.sysdiagram" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="otoservisdbModel.FK_arac_arac" ManuallyRouted="false" />
+        <AssociationConnector Association="otoservisdbModel.FK_arac_musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="otoservisdbModel.FK_servis_arac" ManuallyRouted="false" />
+        <AssociationConnector Association="otoservisdbModel.FK_aracmodel_aracmarka" ManuallyRouted="false" />
+        <AssociationConnector Association="otoservisdbModel.FK_kullanici_bolumler" ManuallyRouted="false" />
+        <AssociationConnector Association="otoservisdbModel.FK_kullanici_pozisyonlar" ManuallyRouted="false" />
+        <AssociationConnector Association="otoservisdbModel.FK_serviskalem_parca" ManuallyRouted="false" />
+        <AssociationConnector Association="otoservisdbModel.FK_serviskalem_servis" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
