@@ -89,7 +89,6 @@
     <Content Include="Tasarim\assets\icon\themify-icons\themify-icons.css" />
     <Content Include="Tasarim\assets\images\auth\logo-dark.png" />
     <Content Include="Tasarim\assets\images\auth\Logo-small-bottom.png" />
-    <Content Include="Tasarim\assets\images\auth\logo.png" />
     <Content Include="Tasarim\assets\images\avatar-1.jpg" />
     <Content Include="Tasarim\assets\images\avatar-2.jpg" />
     <Content Include="Tasarim\assets\images\avatar-3.jpg" />
@@ -116,6 +115,7 @@
     <Content Include="Tasarim\assets\js\classie\classie.js" />
     <Content Include="Tasarim\assets\js\common-pages.js" />
     <Content Include="Tasarim\assets\js\demo-12.js" />
+    <Content Include="Tasarim\assets\js\emrescrollable\ScrollableGridPlugin.js" />
     <Content Include="Tasarim\assets\js\jquery-slimscroll\jquery.slimscroll.js" />
     <Content Include="Tasarim\assets\js\jquery-ui\jquery-ui.min.js" />
     <Content Include="Tasarim\assets\js\jquery.mCustomScrollbar.concat.min.js" />
@@ -172,6 +172,7 @@
     <Content Include="Tasarim\button.aspx" />
     <Content Include="Tasarim\chart.aspx" />
     <Content Include="Tasarim\color.aspx" />
+    <Content Include="Tasarim\copy_icon-themify.aspx" />
     <Content Include="Tasarim\form-elements-component.aspx" />
     <Content Include="Tasarim\icon-themify.aspx" />
     <Content Include="Tasarim\label-badge.aspx" />
@@ -262,6 +263,13 @@
     </Compile>
     <Compile Include="Tasarim\color.aspx.designer.cs">
       <DependentUpon>color.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasarim\copy_icon-themify.aspx.cs">
+      <DependentUpon>copy_icon-themify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\copy_icon-themify.aspx.designer.cs">
+      <DependentUpon>copy_icon-themify.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\form-elements-component.aspx.cs">
       <DependentUpon>form-elements-component.aspx</DependentUpon>

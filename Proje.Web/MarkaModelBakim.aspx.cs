@@ -12,7 +12,6 @@ namespace Proje.Web
 {
     public partial class MarkaModelBakim : System.Web.UI.Page
     {
-
         /// <summary>
         /// Shows a basic MessageBox on the passed in page
         /// </summary>

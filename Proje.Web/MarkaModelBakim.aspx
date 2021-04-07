@@ -5,10 +5,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Araç Marka ve Model Listesi Bakım Ekranı</title>
+    <script type="text/javascript" src="/Tasarim/assets/js/emrescrollable/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="/Tasarim/assets/js/emrescrollable/ScrollableGridPlugin.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#<%=GridView1.ClientID %>').Scrollable();
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#<%=GridView2.ClientID %>').Scrollable();
+        });
+    </script>
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="height:600px; width:1600px">
+        <div style="height:350px; width:1000px">
             <div style="float:left;width:500px;margin-left:50px">
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" ShowFooter="True" OnRowDeleting="GridView1_RowDeleting1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" >
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
