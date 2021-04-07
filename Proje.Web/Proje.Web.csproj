@@ -74,6 +74,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MarkaModelBakim.aspx" />
+    <Content Include="musteribakim.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Tasarim\accordion.aspx" />
     <Content Include="Tasarim\assets\css\animate.css\css\animate.css" />
@@ -183,6 +185,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MarkaModelBakim.aspx.cs">
+      <DependentUpon>MarkaModelBakim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarkaModelBakim.aspx.designer.cs">
+      <DependentUpon>MarkaModelBakim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="musteribakim.aspx.cs">
+      <DependentUpon>musteribakim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="musteribakim.aspx.designer.cs">
+      <DependentUpon>musteribakim.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

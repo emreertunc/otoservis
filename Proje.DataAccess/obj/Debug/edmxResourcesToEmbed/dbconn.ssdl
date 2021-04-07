@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="otoservisdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="arac">
+    <Key>
+      <PropertyRef Name="aracID" />
+    </Key>
+    <Property Name="aracID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="plaka" Type="nvarchar" MaxLength="20" />
+    <Property Name="markaID" Type="int" Nullable="false" />
+    <Property Name="modelID" Type="int" Nullable="false" />
+    <Property Name="musteriID" Type="int" Nullable="false" />
+    <Property Name="modelYil" Type="int" />
+    <Property Name="ruhsatNo" Type="nvarchar" MaxLength="30" />
+    <Property Name="saseNo" Type="nvarchar" MaxLength="30" />
+    <Property Name="motorNo" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="aracmarka">
+    <Key>
+      <PropertyRef Name="markaID" />
+    </Key>
+    <Property Name="markaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="marka" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="aracmodel">
+    <Key>
+      <PropertyRef Name="modelID" />
+      <PropertyRef Name="markaID" />
+    </Key>
+    <Property Name="modelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="markaID" Type="int" Nullable="false" />
+    <Property Name="model" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="bolumler">
+    <Key>
+      <PropertyRef Name="bolumID" />
+    </Key>
+    <Property Name="bolumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bolum" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kullanici">
+    <Key>
+      <PropertyRef Name="kullaniciID" />
+    </Key>
+    <Property Name="kullaniciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kullaniciAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="parola" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="tckn" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="adSoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="iseGirisTarihi" Type="date" Nullable="false" />
+    <Property Name="bolumID" Type="int" Nullable="false" />
+    <Property Name="pozisyonID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="musteri">
+    <Key>
+      <PropertyRef Name="musteriID" />
+    </Key>
+    <Property Name="musteriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tckn" Type="nvarchar" MaxLength="11" />
+    <Property Name="adSoyad" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="parca">
+    <Key>
+      <PropertyRef Name="parcaID" />
+    </Key>
+    <Property Name="parcaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="parcaKodu" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="parcaAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fiyatAlis" Type="numeric" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="fiyatSatis" Type="numeric" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="stok" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pozisyonlar">
+    <Key>
+      <PropertyRef Name="pozisyonID" />
+    </Key>
+    <Property Name="pozisyonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pozisyon" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="servis">
+    <Key>
+      <PropertyRef Name="servisID" />
+    </Key>
+    <Property Name="servisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="aracID" Type="int" Nullable="false" />
+    <Property Name="aciklama" Type="nvarchar" MaxLength="50" />
+    <Property Name="servisGiris" Type="date" Nullable="false" />
+    <Property Name="servisCikis" Type="date" />
+  </EntityType>
+  <EntityType Name="serviskalem">
+    <Key>
+      <PropertyRef Name="serviskalemID" />
+    </Key>
+    <Property Name="serviskalemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="servisID" Type="int" Nullable="false" />
+    <Property Name="parcaID" Type="int" Nullable="false" />
+    <Property Name="adet" Type="int" />
+    <Property Name="aciklama" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_arac_arac">
+    <End Role="aracmodel" Type="Self.aracmodel" Multiplicity="1" />
+    <End Role="arac" Type="Self.arac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aracmodel">
+        <PropertyRef Name="modelID" />
+        <PropertyRef Name="markaID" />
+      </Principal>
+      <Dependent Role="arac">
+        <PropertyRef Name="modelID" />
+        <PropertyRef Name="markaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_arac_musteri">
+    <End Role="musteri" Type="Self.musteri" Multiplicity="1" />
+    <End Role="arac" Type="Self.arac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="musteri">
+        <PropertyRef Name="musteriID" />
+      </Principal>
+      <Dependent Role="arac">
+        <PropertyRef Name="musteriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_aracmodel_aracmarka">
+    <End Role="aracmarka" Type="Self.aracmarka" Multiplicity="1" />
+    <End Role="aracmodel" Type="Self.aracmodel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aracmarka">
+        <PropertyRef Name="markaID" />
+      </Principal>
+      <Dependent Role="aracmodel">
+        <PropertyRef Name="markaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kullanici_bolumler">
+    <End Role="bolumler" Type="Self.bolumler" Multiplicity="1" />
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bolumler">
+        <PropertyRef Name="bolumID" />
+      </Principal>
+      <Dependent Role="kullanici">
+        <PropertyRef Name="bolumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kullanici_pozisyonlar">
+    <End Role="pozisyonlar" Type="Self.pozisyonlar" Multiplicity="1" />
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pozisyonlar">
+        <PropertyRef Name="pozisyonID" />
+      </Principal>
+      <Dependent Role="kullanici">
+        <PropertyRef Name="pozisyonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_servis_arac">
+    <End Role="arac" Type="Self.arac" Multiplicity="1" />
+    <End Role="servis" Type="Self.servis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="arac">
+        <PropertyRef Name="aracID" />
+      </Principal>
+      <Dependent Role="servis">
+        <PropertyRef Name="aracID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_serviskalem_parca">
+    <End Role="parca" Type="Self.parca" Multiplicity="1" />
+    <End Role="serviskalem" Type="Self.serviskalem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="parca">
+        <PropertyRef Name="parcaID" />
+      </Principal>
+      <Dependent Role="serviskalem">
+        <PropertyRef Name="parcaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_serviskalem_servis">
+    <End Role="servis" Type="Self.servis" Multiplicity="1" />
+    <End Role="serviskalem" Type="Self.serviskalem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="servis">
+        <PropertyRef Name="servisID" />
+      </Principal>
+      <Dependent Role="serviskalem">
+        <PropertyRef Name="servisID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="otoservisdbModelStoreContainer">
+    <EntitySet Name="arac" EntityType="Self.arac" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aracmarka" EntityType="Self.aracmarka" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aracmodel" EntityType="Self.aracmodel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bolumler" EntityType="Self.bolumler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kullanici" EntityType="Self.kullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="musteri" EntityType="Self.musteri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="parca" EntityType="Self.parca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pozisyonlar" EntityType="Self.pozisyonlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="servis" EntityType="Self.servis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="serviskalem" EntityType="Self.serviskalem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_arac_arac" Association="Self.FK_arac_arac">
+      <End Role="aracmodel" EntitySet="aracmodel" />
+      <End Role="arac" EntitySet="arac" />
+    </AssociationSet>
+    <AssociationSet Name="FK_arac_musteri" Association="Self.FK_arac_musteri">
+      <End Role="musteri" EntitySet="musteri" />
+      <End Role="arac" EntitySet="arac" />
+    </AssociationSet>
+    <AssociationSet Name="FK_aracmodel_aracmarka" Association="Self.FK_aracmodel_aracmarka">
+      <End Role="aracmarka" EntitySet="aracmarka" />
+      <End Role="aracmodel" EntitySet="aracmodel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kullanici_bolumler" Association="Self.FK_kullanici_bolumler">
+      <End Role="bolumler" EntitySet="bolumler" />
+      <End Role="kullanici" EntitySet="kullanici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kullanici_pozisyonlar" Association="Self.FK_kullanici_pozisyonlar">
+      <End Role="pozisyonlar" EntitySet="pozisyonlar" />
+      <End Role="kullanici" EntitySet="kullanici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_servis_arac" Association="Self.FK_servis_arac">
+      <End Role="arac" EntitySet="arac" />
+      <End Role="servis" EntitySet="servis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_serviskalem_parca" Association="Self.FK_serviskalem_parca">
+      <End Role="parca" EntitySet="parca" />
+      <End Role="serviskalem" EntitySet="serviskalem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_serviskalem_servis" Association="Self.FK_serviskalem_servis">
+      <End Role="servis" EntitySet="servis" />
+      <End Role="serviskalem" EntitySet="serviskalem" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

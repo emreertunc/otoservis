@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,12 +53,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="arac.cs">
+      <DependentUpon>dbconn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aracmarka.cs">
+      <DependentUpon>dbconn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aracmodel.cs">
+      <DependentUpon>dbconn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bolumler.cs">
+      <DependentUpon>dbconn.tt</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="dbarac.cs" />
+    <Compile Include="dbconn.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbconn.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dbconn.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbconn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dbconn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbconn.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="dbmusteri.cs" />
+    <Compile Include="kullanici.cs">
+      <DependentUpon>dbconn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="musteri.cs">
+      <DependentUpon>dbconn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="parca.cs">
+      <DependentUpon>dbconn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pozisyonlar.cs">
+      <DependentUpon>dbconn.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="servi.cs">
+      <DependentUpon>dbconn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="serviskalem.cs">
+      <DependentUpon>dbconn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>dbconn.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="dbconn.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbconn.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="dbconn.edmx.diagram">
+      <DependentUpon>dbconn.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dbconn.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbconn.edmx</DependentUpon>
+      <LastGenOutput>dbconn.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="dbconn.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbconn.edmx</DependentUpon>
+      <LastGenOutput>dbconn.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
