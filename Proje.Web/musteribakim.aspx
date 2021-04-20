@@ -16,7 +16,7 @@
                         <asp:Label ID="Label4" runat="server" Text='<%# Eval("musteriID") %>'></asp:Label>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox3" runat="server" ReadOnly="True" Visible="False"></asp:TextBox>
                     </FooterTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label1" runat="server" Text='<%# Eval("musteriID") %>'></asp:Label>

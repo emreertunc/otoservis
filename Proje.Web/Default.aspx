@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Defaultaspx.cs" Inherits="Proje.Web.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Proje.Web.Default" %>
 
 <!DOCTYPE html>
 
@@ -90,9 +90,7 @@
                             <i class="ti-search"></i>
                         </a>
                         <a href="/default.aspx">
-                            <!-- <img class="img-fluid" src="/Tasarim/assets/images/carrepairlogo.jpg" alt="Theme-Logo" /> -->
-
-                            <asp:Label ID="Label1" runat="server" Text="Label">TEKNİK SERVİS ANA SAYFA</asp:Label>
+                            <img class="img-fluid" src="assets/images/logo.png" alt="Theme-Logo" />
                         </a>
                         <a class="mobile-options">
                             <i class="ti-more"></i>
