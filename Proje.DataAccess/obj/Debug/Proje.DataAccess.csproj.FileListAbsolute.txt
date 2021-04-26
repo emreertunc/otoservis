@@ -9,3 +9,4 @@ C:\Users\ertun\source\repos\OtoServis\Proje.DataAccess\bin\Debug\EntityFramework
 C:\Users\ertun\source\repos\OtoServis\Proje.DataAccess\bin\Debug\EntityFramework.xml
 C:\Users\ertun\source\repos\OtoServis\Proje.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ertun\source\repos\OtoServis\Proje.DataAccess\obj\Debug\Proje.DataAccess.csproj.CopyComplete
+C:\Users\ertun\source\repos\OtoServis\Proje.DataAccess\obj\Debug\Proje.DataAccess.csprojAssemblyReference.cache

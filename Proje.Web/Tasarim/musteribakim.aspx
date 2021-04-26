@@ -1,13 +1,41 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="musteribakim.aspx.cs" Inherits="Proje.Web.aracbakim" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Sablon.Master" AutoEventWireup="true" CodeBehind="musteribakim.aspx.cs" Inherits="Proje.Web.Tasarim.musteribakim" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <!-- Page-header start -->
+                                    <div class="page-header card">
+                                        <div class="row align-items-end">
+                                            <div class="col-lg-8">
+                                                <div class="page-header-title">
+                                                    <i class="icofont icofont-table bg-c-blue"></i>
+                                                    <div class="d-inline">
+                                                        <h4>Müşteri Bakım Ekranı</h4>
+                                                        <span>Bu sayfadan yeni müşteri ekleyebilir, sistemde kayıtlı müşterilerin bilgilerini düzenleyebilir ya da kayıt silebilirsiniz.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="page-header-breadcrumb">
+                                                   <ul class="breadcrumb-title">
+                                                    <li class="breadcrumb-item">
+                                                        <a href="/default.aspx">
+                                                            <i class="icofont icofont-home"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="breadcrumb-item"><a href="#!">Bootstrap Table</a>
+                                                    </li>
+                                                    <li class="breadcrumb-item"><a href="#!">Basic Table</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Page-header end -->
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+    <div style="overflow-y: scroll; float:left; height:600px; width:555px;margin-left:490px">
         <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" ShowFooter="True" AutoGenerateColumns="False" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
@@ -90,6 +118,7 @@
                 <asp:Parameter Name="ad" Type="String" />
             </UpdateParameters>
         </asp:ObjectDataSource>
-    </form>
-</body>
-</html>
+    </div>
+
+    
+</asp:Content>

@@ -74,9 +74,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MarkaModelBakim.aspx" />
-    <Content Include="musteribakim.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="MarkaModelBakim.aspx" />
+    <Content Include="musteribakim1.aspx" />
     <Content Include="Tasarim\accordion.aspx" />
     <Content Include="Tasarim\assets\css\animate.css\css\animate.css" />
     <Content Include="Tasarim\assets\css\bootstrap\css\bootstrap.min.css" />
@@ -173,10 +173,13 @@
     <Content Include="Tasarim\chart.aspx" />
     <Content Include="Tasarim\color.aspx" />
     <Content Include="Tasarim\copy_icon-themify.aspx" />
+    <Content Include="Tasarim\deneme3.aspx" />
     <Content Include="Tasarim\form-elements-component.aspx" />
     <Content Include="Tasarim\icon-themify.aspx" />
+    <Content Include="Tasarim\icon-themify2.aspx" />
     <Content Include="Tasarim\label-badge.aspx" />
     <Content Include="Tasarim\map-google.aspx" />
+    <Content Include="Tasarim\musteribakim.aspx" />
     <Content Include="Tasarim\notification.aspx" />
     <Content Include="Tasarim\progress-bar.aspx" />
     <Content Include="Tasarim\sample-page.aspx" />
@@ -186,20 +189,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MarkaModelBakim.aspx.cs">
-      <DependentUpon>MarkaModelBakim.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MarkaModelBakim.aspx.designer.cs">
-      <DependentUpon>MarkaModelBakim.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="musteribakim.aspx.cs">
-      <DependentUpon>musteribakim.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="musteribakim.aspx.designer.cs">
-      <DependentUpon>musteribakim.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -207,7 +196,28 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MarkaModelBakim.aspx.cs">
+      <DependentUpon>MarkaModelBakim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarkaModelBakim.aspx.designer.cs">
+      <DependentUpon>MarkaModelBakim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="musteribakim1.aspx.cs">
+      <DependentUpon>musteribakim1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="musteribakim1.aspx.designer.cs">
+      <DependentUpon>musteribakim1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sablon.Master.cs">
+      <DependentUpon>Sablon.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sablon.Master.designer.cs">
+      <DependentUpon>Sablon.Master</DependentUpon>
+    </Compile>
     <Compile Include="Tasarim\accordion.aspx.cs">
       <DependentUpon>accordion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -271,6 +281,13 @@
     <Compile Include="Tasarim\copy_icon-themify.aspx.designer.cs">
       <DependentUpon>copy_icon-themify.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tasarim\deneme3.aspx.cs">
+      <DependentUpon>deneme3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\deneme3.aspx.designer.cs">
+      <DependentUpon>deneme3.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tasarim\form-elements-component.aspx.cs">
       <DependentUpon>form-elements-component.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -285,6 +302,13 @@
     <Compile Include="Tasarim\icon-themify.aspx.designer.cs">
       <DependentUpon>icon-themify.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tasarim\icon-themify2.aspx.cs">
+      <DependentUpon>icon-themify2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\icon-themify2.aspx.designer.cs">
+      <DependentUpon>icon-themify2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tasarim\label-badge.aspx.cs">
       <DependentUpon>label-badge.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -298,6 +322,13 @@
     </Compile>
     <Compile Include="Tasarim\map-google.aspx.designer.cs">
       <DependentUpon>map-google.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasarim\musteribakim.aspx.cs">
+      <DependentUpon>musteribakim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\musteribakim.aspx.designer.cs">
+      <DependentUpon>musteribakim.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\notification.aspx.cs">
       <DependentUpon>notification.aspx</DependentUpon>
@@ -350,6 +381,7 @@
     <Content Include="Tasarim\assets\icon\themify-icons\fonts\themify.ttf" />
     <Content Include="Tasarim\assets\icon\themify-icons\fonts\themify.woff" />
     <None Include="packages.config" />
+    <Content Include="Sablon.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
