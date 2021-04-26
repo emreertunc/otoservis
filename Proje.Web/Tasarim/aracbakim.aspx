@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Sablon.Master" AutoEventWireup="true" CodeBehind="icon-themify2.aspx.cs" Inherits="Proje.Web.Tasarim.icon_themify2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Sablon.Master" AutoEventWireup="true" CodeBehind="aracbakim.aspx.cs" Inherits="Proje.Web.Tasarim.icon_themify2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -34,14 +34,15 @@
                                 <!-- Page-header end -->
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div style="height:350px; width:1000px">
-            <div style="overflow-y: scroll; float:left; height:400px; width:397px;margin-left:150px">
+    <div class="clearfix">
+        <div style="height:350px; width:1200px">
+            <div style="overflow-y: scroll; float:left; height:400px; width:500px;margin-left:150px">
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" ShowFooter="True" OnRowDeleting="GridView1_RowDeleting1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" >
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:TemplateField HeaderText="Aracın Markası">
                     <EditItemTemplate>
-                        <asp:TextBox ID="TextBox3" runat="server" Text='<%# Eval("marka") %>' ReadOnly="True"></asp:TextBox>
+                        <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" Text='<%# Eval("marka") %>' ReadOnly="True"></asp:TextBox>
                         <br />
                         <asp:Label ID="Label6" runat="server" Text='<%# Eval("marka") %>' Visible="False"></asp:Label>
                     </EditItemTemplate>
@@ -56,12 +57,12 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Aracın Modeli">
                     <EditItemTemplate>
-                        <asp:TextBox ID="TextBox4" runat="server" Text='<%# Eval("model") %>'></asp:TextBox>
+                        <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" Text='<%# Eval("model") %>'></asp:TextBox>
                         <br />
                         <asp:Label ID="Label7" runat="server" Text='<%# Eval("model") %>' Visible="False"></asp:Label>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" ></asp:TextBox>
                     </FooterTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label2" runat="server" Text='<%# Eval("model") %>'></asp:Label>
@@ -70,17 +71,17 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="İşlemler">
                     <EditItemTemplate>
-                        <asp:LinkButton ID="LinkButton3" runat="server" CommandName="update">Güncelle</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton3" runat="server" CssClass="btn btn-primary" CommandName="update">Güncelle</asp:LinkButton>
                         &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton4" runat="server" CommandName="Cancel">Vazgeç</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton4" runat="server" CssClass="btn btn-info" CommandName="Cancel">Vazgeç</asp:LinkButton>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">Ekle</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton5" runat="server" CssClass="btn btn-success" OnClick="LinkButton5_Click">Ekle</asp:LinkButton>
                     </FooterTemplate>
                     <ItemTemplate>
-                        <asp:LinkButton ID="LinkButton1" runat="server" CommandName="Edit">Düzenle</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-primary" CommandName="Edit">Düzenle</asp:LinkButton>
                         &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton2" runat="server" CommandName="Delete">Sil</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-danger" CommandName="Delete">Sil</asp:LinkButton>
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:TemplateField>
@@ -97,21 +98,21 @@
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
         <asp:Label ID="Label5" runat="server"></asp:Label>
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetMarkaModels" TypeName="Proje.DataAccess.dbarac"></asp:ObjectDataSource>
-                <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="getMarkaListe" TypeName="Proje.DataAccess.dbarac"></asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetMarkaModels" TypeName="Proje.Business.dbarac2"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="getMarkaListe" TypeName="Proje.Business.dbarac2"></asp:ObjectDataSource>
             </div>
-            <div style="overflow-y: scroll; float:right; margin-right:50px;height:400px; width:285px">
+            <div style="overflow-y: scroll; float:right; margin-right:50px;height:400px; width:400px">
                 <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4"  ForeColor="#333333" GridLines="None" OnRowCancelingEdit="GridView2_RowCancelingEdit" OnRowEditing="GridView2_RowEditing" OnRowUpdating="GridView2_RowUpdating" OnRowDeleting="GridView2_RowDeleting" ShowFooter="True">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:TemplateField HeaderText="Aracın Markası">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox5" runat="server" Text='<%# Eval("marka") %>'></asp:TextBox>
+                                <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control" Text='<%# Eval("marka") %>'></asp:TextBox>
                                 <br />
                                 <asp:Label ID="Label10" runat="server" Text='<%# Eval("marka") %>' Visible="False"></asp:Label>
                             </EditItemTemplate>
                             <FooterTemplate>
-                                <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox6" runat="server" CssClass="form-control"></asp:TextBox>
                             </FooterTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label8" runat="server" Text='<%# Eval("marka") %>'></asp:Label>
@@ -120,17 +121,17 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="İşlemler">
                             <EditItemTemplate>
-                                <asp:LinkButton ID="LinkButton8" runat="server" CommandName="update">Güncelle</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton8" runat="server"  CssClass="btn btn-primary" CommandName="update">Güncelle</asp:LinkButton>
                                 &nbsp;&nbsp;
-                                <asp:LinkButton ID="LinkButton9" runat="server" CommandName="Cancel">Vazgeç</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton9" runat="server" CssClass="btn btn-info" CommandName="Cancel">Vazgeç</asp:LinkButton>
                             </EditItemTemplate>
                             <FooterTemplate>
-                                <asp:LinkButton ID="LinkButton10" runat="server" OnClick="LinkButton10_Click">Ekle</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton10" runat="server" CssClass="btn btn-success" OnClick="LinkButton10_Click">Ekle</asp:LinkButton>
                             </FooterTemplate>
                             <ItemTemplate>
-                                <asp:LinkButton ID="LinkButton6" runat="server" CommandName="Edit">Düzenle</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton6" runat="server"  CssClass="btn btn-primary" CommandName="Edit">Düzenle</asp:LinkButton>
                                 &nbsp;&nbsp;
-                                <asp:LinkButton ID="LinkButton7" runat="server" CommandName="Delete" OnClientClick="return confirm('Bu markayı silmek markaya ait modelleri de silecektir. Silme işlemine devam etmek istediğinizden emin misiniz?');">Sil</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton7" runat="server"  CssClass="btn btn-danger" CommandName="Delete" OnClientClick="return confirm('Bu markayı silmek markaya ait modelleri de silecektir. Silme işlemine devam etmek istediğinizden emin misiniz?');">Sil</asp:LinkButton>
                             </ItemTemplate>
                             <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
@@ -147,7 +148,7 @@
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
                 <asp:Label ID="Label9" runat="server"></asp:Label>
-                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetMarkas" TypeName="Proje.DataAccess.dbarac"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetMarkas" TypeName="Proje.Business.dbarac2"></asp:ObjectDataSource>
             </div>
 
         </div>
@@ -173,4 +174,6 @@
             $('#<%=GridView2.ClientID %>').Scrollable();
         });
     </script>--%>
+    </div>    
+    
 </asp:Content>

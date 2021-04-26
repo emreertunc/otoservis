@@ -176,13 +176,15 @@
     <Content Include="Tasarim\deneme3.aspx" />
     <Content Include="Tasarim\form-elements-component.aspx" />
     <Content Include="Tasarim\icon-themify.aspx" />
-    <Content Include="Tasarim\icon-themify2.aspx" />
+    <Content Include="Tasarim\aracbakim.aspx" />
     <Content Include="Tasarim\label-badge.aspx" />
     <Content Include="Tasarim\map-google.aspx" />
     <Content Include="Tasarim\musteribakim.aspx" />
     <Content Include="Tasarim\notification.aspx" />
     <Content Include="Tasarim\progress-bar.aspx" />
     <Content Include="Tasarim\sample-page.aspx" />
+    <Content Include="Tasarim\servisdeneme.aspx" />
+    <Content Include="Tasarim\servisgiris.aspx" />
     <Content Include="Tasarim\tabs.aspx" />
     <Content Include="Tasarim\tooltip.aspx" />
     <Content Include="Tasarim\typography.aspx" />
@@ -302,12 +304,12 @@
     <Compile Include="Tasarim\icon-themify.aspx.designer.cs">
       <DependentUpon>icon-themify.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tasarim\icon-themify2.aspx.cs">
-      <DependentUpon>icon-themify2.aspx</DependentUpon>
+    <Compile Include="Tasarim\aracbakim.aspx.cs">
+      <DependentUpon>aracbakim.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Tasarim\icon-themify2.aspx.designer.cs">
-      <DependentUpon>icon-themify2.aspx</DependentUpon>
+    <Compile Include="Tasarim\aracbakim.aspx.designer.cs">
+      <DependentUpon>aracbakim.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\label-badge.aspx.cs">
       <DependentUpon>label-badge.aspx</DependentUpon>
@@ -350,6 +352,20 @@
     </Compile>
     <Compile Include="Tasarim\sample-page.aspx.designer.cs">
       <DependentUpon>sample-page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasarim\servisdeneme.aspx.cs">
+      <DependentUpon>servisdeneme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\servisdeneme.aspx.designer.cs">
+      <DependentUpon>servisdeneme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasarim\servisgiris.aspx.cs">
+      <DependentUpon>servisgiris.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\servisgiris.aspx.designer.cs">
+      <DependentUpon>servisgiris.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\tabs.aspx.cs">
       <DependentUpon>tabs.aspx</DependentUpon>

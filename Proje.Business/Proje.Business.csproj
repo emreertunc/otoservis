@@ -51,12 +51,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="arackayit.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="dbarac2.cs" />
+    <Compile Include="dbmusteri2.cs" />
+    <Compile Include="musterikayit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="serviskayit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Proje.DataAccess\Proje.DataAccess.csproj">
+      <Project>{72c0fe85-eeae-4e6e-ba1f-265f4d9ad36c}</Project>
+      <Name>Proje.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Proje.DataAccess;
+using Proje.Business;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -74,7 +75,7 @@ namespace Proje.Web.Tasarim
             string m1 = ddl.SelectedValue;
             string m2 = model.Text;
 
-            int donendeger = dbarac.ekleModel(m1, m2);
+            int donendeger = dbarac2.ekleModel(m1, m2);
             if (donendeger == 1)
             {
                 ObjectDataSource1.DataBind();
@@ -148,13 +149,13 @@ namespace Proje.Web.Tasarim
 
                 else
                 {
-                    dbarac.guncelleModel(m5id, m6id, m2);
+                    dbarac2.guncelleModel(m5id, m6id, m2);
                 }
             }
 
             else
             {
-                dbarac.guncelleModel(m5id, m6id, m2);
+                dbarac2.guncelleModel(m5id, m6id, m2);
             }
 
             Label5.Text = "Satır bilgisi başarıyla güncellendi";
@@ -197,7 +198,7 @@ namespace Proje.Web.Tasarim
 
             int m2id = Convert.ToInt32(query2[0]);
 
-            dbarac.silModel(m1id, m2id);
+            dbarac2.silModel(m1id, m2id);
             ObjectDataSource1.DataBind();
             GridView1.DataSource = ObjectDataSource1;
             GridView1.DataBind();
@@ -247,7 +248,7 @@ namespace Proje.Web.Tasarim
 
                 int m2id = Convert.ToInt32(query2[0]);
 
-                dbarac.guncelleMarka(m2id, m1);
+                dbarac2.guncelleMarka(m2id, m1);
 
                 Label9.Text = "Marka Başarıyla eklendi";
             }
@@ -267,7 +268,7 @@ namespace Proje.Web.Tasarim
             TextBox model = GridView2.FooterRow.FindControl("TextBox6") as TextBox;
             string m1 = model.Text;
 
-            int donendeger = dbarac.ekleMarka(m1);
+            int donendeger = dbarac2.ekleMarka(m1);
 
             if (donendeger == 1)
             {
@@ -299,7 +300,7 @@ namespace Proje.Web.Tasarim
 
             int m1id = Convert.ToInt32(query1[0]);
 
-            dbarac.silMarka(m1id);
+            dbarac2.silMarka(m1id);
 
             ObjectDataSource2.DataBind();
             GridView2.DataSource = ObjectDataSource2;

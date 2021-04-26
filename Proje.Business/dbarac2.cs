@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Proje.DataAccess;
 
-namespace Proje.DataAccess
+namespace Proje.Business
 {
-    public class dbarac
+    public class dbarac2
     {
         // ÖNEMLİ NOT!! eğer linq değil aşağıdaki gibi procedure ile direkt sorgu çalıştırıyorsan bunu
         // direkt bir objeye ya da listeye atamıyosun, önce aşağıdaki gibi bir var tipine atıp listeye dönüştürmen lazım.
@@ -101,7 +102,7 @@ namespace Proje.DataAccess
                 db.SaveChanges();
             }
         }
-        
+
         public static int ekleModel(string m1, string m2)
         {
             otoservisdbEntities db = new otoservisdbEntities();

@@ -211,7 +211,14 @@
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="icon-themify2.aspx">
+                                    <a href="servisgiris.aspx">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Servis Giriş</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="aracbakim.aspx">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Araç Bakım</span>
                                         <span class="pcoded-mcaret"></span>
@@ -431,8 +438,10 @@
 
                                     <!-- Page-body start -->
                                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-
+                                        
                                     </asp:ContentPlaceHolder>
+                                    <hr />
+                                    <p>&copy;<%:DateTime.Now.Year%> - Designed By Emre Ertunc</p>
                 <!-- Page-body end -->
             </div>
         </div>

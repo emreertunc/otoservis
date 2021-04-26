@@ -10,3 +10,6 @@ C:\Users\ertun\source\repos\OtoServis\Proje.Business\bin\Debug\EntityFramework.x
 C:\Users\ertun\source\repos\OtoServis\Proje.Business\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ertun\source\repos\OtoServis\Proje.Business\obj\Debug\Proje.Business.csproj.CopyComplete
 C:\Users\ertun\source\repos\OtoServis\Proje.Business\obj\Debug\Proje.Business.csprojAssemblyReference.cache
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\bin\Debug\Proje.DataAccess.dll
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\bin\Debug\Proje.DataAccess.pdb
+C:\Users\ertun\source\repos\OtoServis\Proje.Business\bin\Debug\Proje.DataAccess.dll.config

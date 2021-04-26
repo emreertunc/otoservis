@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Proje.DataAccess;
 
-namespace Proje.DataAccess
+namespace Proje.Business
 {
-    public class dbmusteri
+    public class dbmusteri2
     {
         Proje.DataAccess.otoservisdbEntities db = new Proje.DataAccess.otoservisdbEntities();
         public List<aracmodel> GetAracmodels()
@@ -81,7 +82,7 @@ namespace Proje.DataAccess
                     for (int i = 0; i < count1; i++)
                     {
 
-                        //arackayit.silAracKayit(query1[i]);
+                        arackayit.silAracKayit(query1[i]);
                     }
 
                     var x = db.musteris.Find(id);

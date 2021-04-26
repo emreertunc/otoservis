@@ -34,8 +34,8 @@
                                 <!-- Page-header end -->
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <div style="overflow-y: scroll; float:left; height:600px; width:555px;margin-left:490px">
+    <div class="clearfix">
+        <div style="overflow-y: scroll; float:left; height:600px; width:700px;margin-left:490px">
         <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" ShowFooter="True" AutoGenerateColumns="False" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
@@ -44,7 +44,7 @@
                         <asp:Label ID="Label4" runat="server" Text='<%# Eval("musteriID") %>'></asp:Label>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="TextBox3" runat="server" ReadOnly="True" Visible="False"></asp:TextBox>
+                        <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" ReadOnly="True" Visible="False"></asp:TextBox>
                     </FooterTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label1" runat="server" Text='<%# Eval("musteriID") %>'></asp:Label>
@@ -53,10 +53,10 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="tc">
                     <EditItemTemplate>
-                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Eval("tckn") %>'></asp:TextBox>
+                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text='<%# Eval("tckn") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control"></asp:TextBox>
                     </FooterTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label2" runat="server" Text='<%# Eval("tckn") %>'></asp:Label>
@@ -65,10 +65,10 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="ad soyad">
                     <EditItemTemplate>
-                        <asp:TextBox ID="TextBox2" runat="server" Text='<%# Eval("adSoyad") %>'></asp:TextBox>
+                        <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text='<%# Eval("adSoyad") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control"></asp:TextBox>
                     </FooterTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label3" runat="server" Text='<%# Eval("adSoyad") %>'></asp:Label>
@@ -77,17 +77,17 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="işlemler">
                     <EditItemTemplate>
-                        <asp:LinkButton ID="LinkButton3" runat="server" CommandName="update">update</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton3" runat="server" CssClass="btn btn-primary" CommandName="update">update</asp:LinkButton>
                         &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton4" runat="server" CommandName="cancel">cancel</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton4" runat="server" CssClass="btn btn-info" CommandName="cancel">cancel</asp:LinkButton>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">insert</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton5" runat="server" CssClass="btn btn-success" OnClick="LinkButton5_Click">insert</asp:LinkButton>
                     </FooterTemplate>
                     <ItemTemplate>
-                        <asp:LinkButton ID="LinkButton1" runat="server" CommandName="edit">edit</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-primary" CommandName="edit">edit</asp:LinkButton>
                         &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton2" runat="server" CommandName="delete">delete</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-danger" CommandName="delete">delete</asp:LinkButton>
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:TemplateField>
@@ -104,7 +104,7 @@
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
         <asp:Label ID="Label5" runat="server"></asp:Label>
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" InsertMethod="AddMusteri" SelectMethod="GetMusteris" TypeName="Proje.DataAccess.dbmusteri" DeleteMethod="silMusteri" UpdateMethod="guncelleMusteri">
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" InsertMethod="AddMusteri" SelectMethod="GetMusteris" TypeName="Proje.Business.dbmusteri2" DeleteMethod="silMusteri" UpdateMethod="guncelleMusteri">
             <DeleteParameters>
                 <asp:Parameter Name="id" Type="Int32" />
             </DeleteParameters>
@@ -120,5 +120,5 @@
         </asp:ObjectDataSource>
     </div>
 
-    
+    </div>
 </asp:Content>

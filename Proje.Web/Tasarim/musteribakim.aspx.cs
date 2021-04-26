@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Proje.DataAccess;
+using Proje.Business;
 
 namespace Proje.Web.Tasarim
 {
@@ -29,7 +30,7 @@ namespace Proje.Web.Tasarim
             string deneme2 = Convert.ToString(tckn.Text);
             string deneme3 = Convert.ToString(adSoyad.Text);
 
-            dbmusteri.AddMusteri(deneme2, deneme3);
+            dbmusteri2.AddMusteri(deneme2, deneme3);
             ObjectDataSource1.DataBind();
             GridView1.DataSource = ObjectDataSource1;
             GridView1.DataBind();
@@ -42,7 +43,7 @@ namespace Proje.Web.Tasarim
 
             int deneme1 = Convert.ToInt32(musteriID.Text);
 
-            dbmusteri.silMusteri(deneme1);
+            dbmusteri2.silMusteri(deneme1);
             ObjectDataSource1.DataBind();
             GridView1.DataSource = ObjectDataSource1;
             GridView1.DataBind();
@@ -75,7 +76,7 @@ namespace Proje.Web.Tasarim
             string deneme2 = tckn.Text;
             string deneme3 = adSoyad.Text;
 
-            dbmusteri.guncelleMusteri(deneme1, deneme2, deneme3);
+            dbmusteri2.guncelleMusteri(deneme1, deneme2, deneme3);
             Label5.Text = "Satır bilgisi başarıyla güncellendi";
 
             GridView1.EditIndex = -1;
@@ -89,5 +90,9 @@ namespace Proje.Web.Tasarim
 
         }
 
+        protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+        {
+
+        }
     }
 }
