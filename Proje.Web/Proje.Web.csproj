@@ -115,6 +115,12 @@
     <Content Include="Tasarim\assets\js\classie\classie.js" />
     <Content Include="Tasarim\assets\js\common-pages.js" />
     <Content Include="Tasarim\assets\js\demo-12.js" />
+    <Content Include="Tasarim\assets\js\emredate\scripts\jquery-1.11.3.min.js" />
+    <Content Include="Tasarim\assets\js\emredate\scripts\jquery-ui.js" />
+    <Content Include="Tasarim\assets\js\emredate\scripts\jquery-ui.min.js" />
+    <Content Include="Tasarim\assets\js\emredate\scripts\jquery.js" />
+    <Content Include="Tasarim\assets\js\emredate\styles\jquery-ui.css" />
+    <Content Include="Tasarim\assets\js\emredate\styles\jquery-ui.min.css" />
     <Content Include="Tasarim\assets\js\emrescrollable\ScrollableGridPlugin.js" />
     <Content Include="Tasarim\assets\js\jquery-slimscroll\jquery.slimscroll.js" />
     <Content Include="Tasarim\assets\js\jquery-ui\jquery-ui.min.js" />
@@ -183,8 +189,10 @@
     <Content Include="Tasarim\notification.aspx" />
     <Content Include="Tasarim\progress-bar.aspx" />
     <Content Include="Tasarim\sample-page.aspx" />
+    <Content Include="Tasarim\servis.aspx" />
     <Content Include="Tasarim\servisdeneme.aspx" />
     <Content Include="Tasarim\servisgiris.aspx" />
+    <Content Include="Tasarim\servisislemdeneme.aspx" />
     <Content Include="Tasarim\tabs.aspx" />
     <Content Include="Tasarim\tooltip.aspx" />
     <Content Include="Tasarim\typography.aspx" />
@@ -353,6 +361,13 @@
     <Compile Include="Tasarim\sample-page.aspx.designer.cs">
       <DependentUpon>sample-page.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tasarim\servis.aspx.cs">
+      <DependentUpon>servis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\servis.aspx.designer.cs">
+      <DependentUpon>servis.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tasarim\servisdeneme.aspx.cs">
       <DependentUpon>servisdeneme.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -366,6 +381,13 @@
     </Compile>
     <Compile Include="Tasarim\servisgiris.aspx.designer.cs">
       <DependentUpon>servisgiris.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasarim\servisislemdeneme.aspx.cs">
+      <DependentUpon>servisislemdeneme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\servisislemdeneme.aspx.designer.cs">
+      <DependentUpon>servisislemdeneme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\tabs.aspx.cs">
       <DependentUpon>tabs.aspx</DependentUpon>

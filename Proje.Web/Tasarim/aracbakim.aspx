@@ -71,17 +71,17 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="İşlemler">
                     <EditItemTemplate>
-                        <asp:LinkButton ID="LinkButton3" runat="server" CssClass="btn btn-primary" CommandName="update">Güncelle</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton3" runat="server" CssClass="btn btn-outline-primary" CommandName="update">Güncelle</asp:LinkButton>
                         &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton4" runat="server" CssClass="btn btn-info" CommandName="Cancel">Vazgeç</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton4" runat="server" CssClass="btn btn-outline-info" CommandName="Cancel">Vazgeç</asp:LinkButton>
                     </EditItemTemplate>
                     <FooterTemplate>
                         <asp:LinkButton ID="LinkButton5" runat="server" CssClass="btn btn-success" OnClick="LinkButton5_Click">Ekle</asp:LinkButton>
                     </FooterTemplate>
                     <ItemTemplate>
-                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-primary" CommandName="Edit">Düzenle</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-outline-primary" CommandName="Edit">Düzenle</asp:LinkButton>
                         &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-danger" CommandName="Delete">Sil</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-outline-danger" CommandName="Delete">Sil</asp:LinkButton>
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:TemplateField>
@@ -121,17 +121,17 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="İşlemler">
                             <EditItemTemplate>
-                                <asp:LinkButton ID="LinkButton8" runat="server"  CssClass="btn btn-primary" CommandName="update">Güncelle</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton8" runat="server"  CssClass="btn btn-outline-primary" CommandName="update">Güncelle</asp:LinkButton>
                                 &nbsp;&nbsp;
-                                <asp:LinkButton ID="LinkButton9" runat="server" CssClass="btn btn-info" CommandName="Cancel">Vazgeç</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton9" runat="server" CssClass="btn btn-outline-info" CommandName="Cancel">Vazgeç</asp:LinkButton>
                             </EditItemTemplate>
                             <FooterTemplate>
                                 <asp:LinkButton ID="LinkButton10" runat="server" CssClass="btn btn-success" OnClick="LinkButton10_Click">Ekle</asp:LinkButton>
                             </FooterTemplate>
                             <ItemTemplate>
-                                <asp:LinkButton ID="LinkButton6" runat="server"  CssClass="btn btn-primary" CommandName="Edit">Düzenle</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton6" runat="server"  CssClass="btn btn-outline-primary" CommandName="Edit">Düzenle</asp:LinkButton>
                                 &nbsp;&nbsp;
-                                <asp:LinkButton ID="LinkButton7" runat="server"  CssClass="btn btn-danger" CommandName="Delete" OnClientClick="return confirm('Bu markayı silmek markaya ait modelleri de silecektir. Silme işlemine devam etmek istediğinizden emin misiniz?');">Sil</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButton7" runat="server"  CssClass="btn btn-outline-danger" CommandName="Delete" OnClientClick="return confirm('Bu markayı silmek markaya ait modelleri de silecektir. Silme işlemine devam etmek istediğinizden emin misiniz?');">Sil</asp:LinkButton>
                             </ItemTemplate>
                             <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>

@@ -77,17 +77,17 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="işlemler">
                     <EditItemTemplate>
-                        <asp:LinkButton ID="LinkButton3" runat="server" CssClass="btn btn-primary" CommandName="update">update</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton3" runat="server" CssClass="btn btn-outline-primary" CommandName="update">update</asp:LinkButton>
                         &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton4" runat="server" CssClass="btn btn-info" CommandName="cancel">cancel</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton4" runat="server" CssClass="btn btn-outline-info" CommandName="cancel">cancel</asp:LinkButton>
                     </EditItemTemplate>
                     <FooterTemplate>
                         <asp:LinkButton ID="LinkButton5" runat="server" CssClass="btn btn-success" OnClick="LinkButton5_Click">insert</asp:LinkButton>
                     </FooterTemplate>
                     <ItemTemplate>
-                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-primary" CommandName="edit">edit</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-outline-primary" CommandName="edit">edit</asp:LinkButton>
                         &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-danger" CommandName="delete">delete</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-outline-danger" CommandName="delete">delete</asp:LinkButton>
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:TemplateField>

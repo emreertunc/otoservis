@@ -182,6 +182,9 @@ namespace Proje.Web.Tasarim
                 DropDownList2.DataBind();
                 DropDownList3.DataBind();
                 DropDownList4.DataBind();
+
+
+
             }
         }
 
@@ -246,6 +249,46 @@ namespace Proje.Web.Tasarim
 
                 DropDownList4.DataSource = musterikayit.getMusteri();
                 DropDownList4.DataBind();
+            }
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            string maid1 = TextBox2.Text;
+            string moid1 = TextBox3.Text;
+            string musid1 = TextBox4.Text;
+            string sene = TextBox5.Text;
+
+            string pl = TextBox1.Text;
+            string ruhsat = TextBox6.Text;
+            string sase = TextBox7.Text;
+            string motor = TextBox8.Text;
+
+            if (maid1 == "Marka" || moid1 == "Model" || musid1 == "Müşteri" || sene == "Model Yılı" || pl == "Plaka" || ruhsat == "Ruhsat No" || sase == "Şase No" || motor == "Motor No")
+            {
+                ShowMessageBox(Page, "Alanlardan birini doldurmayı unuttunuz, lütfen işlemi tekrar edin");
+                TextBox1.Text = "Plaka";
+                TextBox2.Text = "Marka";
+                TextBox3.Text = "Model";
+                TextBox4.Text = "Müşteri";
+                TextBox5.Text = "Model Yılı";
+                TextBox6.Text = "Ruhsat No";
+                TextBox7.Text = "Şase No";
+                TextBox8.Text = "Motor No";
+            }
+
+            else
+            {
+                var query1 = db.aracs.ToList()
+                            .Where(x => x.plaka == pl)
+                            .Select(x => x.aracID).Single();
+
+                int aracid = query1;
+
+                int serviskodu = servisislem.ekleServisKayit(aracid);
+                Label1.Text = "Yeni servis kaydı oluşturuldu..";
+
+                Response.Redirect("servisislemdeneme.aspx?serviskod=" + serviskodu.ToString());
             }
         }
     }

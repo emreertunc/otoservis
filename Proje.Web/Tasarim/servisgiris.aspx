@@ -42,7 +42,7 @@
                 <asp:TableRow ID="TableRow12" runat="server">
                 <asp:TableCell>Kayıtlı Araç</asp:TableCell>
                 <asp:TableCell><asp:DropDownList ID="DropDownList1" runat="server">
-                </asp:DropDownList> <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Seçim" />
+                </asp:DropDownList>&nbsp;&nbsp; <asp:Button ID="Button1" runat="server" class="btn btn-outline-primary" OnClick="Button1_Click" Text="Seçim" />
                 </asp:TableCell>
                 </asp:TableRow>
 
@@ -62,47 +62,47 @@
                 </asp:TableRow>
 
                 <asp:TableRow ID="TableRow2" runat="server">
-                <asp:TableCell><asp:TextBox ID="TextBox1" runat="server">Plaka</asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="TextBox1" runat="server" CssClass="form-control">Plaka</asp:TextBox></asp:TableCell>
                 </asp:TableRow>
 
                 <asp:TableRow ID="TableRow4" runat="server">
-                <asp:TableCell><asp:TextBox ID="TextBox2" runat="server" ReadOnly="True">Marka</asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" ReadOnly="True">Marka</asp:TextBox></asp:TableCell>
                 <asp:TableCell><asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" style="height: 25px">
                 </asp:DropDownList></asp:TableCell>
                 </asp:TableRow>
 
                 <asp:TableRow ID="TableRow3" runat="server">
-                <asp:TableCell><asp:TextBox ID="TextBox3" runat="server" ReadOnly="True">Model</asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" ReadOnly="True">Model</asp:TextBox></asp:TableCell>
                 <asp:TableCell><asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged">
                 </asp:DropDownList></asp:TableCell>
                 </asp:TableRow>
 
                 <asp:TableRow ID="TableRow7" runat="server">
-                <asp:TableCell><asp:TextBox ID="TextBox4" runat="server" ReadOnly="True">Müşteri</asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" ReadOnly="True">Müşteri</asp:TextBox></asp:TableCell>
                 <asp:TableCell><asp:DropDownList ID="DropDownList4" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList4_SelectedIndexChanged">
                 </asp:DropDownList></asp:TableCell>
                 </asp:TableRow>
 
                 <asp:TableRow ID="TableRow5" runat="server">
-                <asp:TableCell><asp:TextBox ID="TextBox5" runat="server" ReadOnly="True">Model Yılı</asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="TextBox5" runat="server" CssClass="form-control" ReadOnly="True">Model Yılı</asp:TextBox></asp:TableCell>
                 <asp:TableCell><asp:DropDownList ID="DropDownList5" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList5_SelectedIndexChanged">
                 </asp:DropDownList></asp:TableCell>
                 </asp:TableRow>
 
                 <asp:TableRow ID="TableRow8" runat="server">
-                <asp:TableCell><asp:TextBox ID="TextBox6" runat="server">Ruhsat No</asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="TextBox6" runat="server" CssClass="form-control">Ruhsat No</asp:TextBox></asp:TableCell>
                 </asp:TableRow>
 
                 <asp:TableRow ID="TableRow6" runat="server">
-                <asp:TableCell><asp:TextBox ID="TextBox7" runat="server">Şase No</asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="TextBox7" runat="server" CssClass="form-control">Şase No</asp:TextBox></asp:TableCell>
                 </asp:TableRow>
 
                 <asp:TableRow ID="TableRow9" runat="server">
-                <asp:TableCell><asp:TextBox ID="TextBox8" runat="server">Motor No</asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="TextBox8" runat="server" CssClass="form-control">Motor No</asp:TextBox></asp:TableCell>
                 </asp:TableRow>
 
                 <asp:TableRow ID="TableRow10" runat="server">
-                <asp:TableCell><asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Yeni Kayıt" /></asp:TableCell>
+                <asp:TableCell><asp:Button ID="Button2" runat="server" class="btn btn-outline-primary" OnClick="Button2_Click" Text="Yeni Araç Kaydı" /></asp:TableCell>
                 </asp:TableRow>
 
                 </asp:Table>
@@ -122,16 +122,16 @@
                 </asp:TableRow>
 
                 <asp:TableRow ID="TableRow14" runat="server">
-                <asp:TableCell><asp:TextBox ID="TextBox9" runat="server">TC No</asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="TextBox9" runat="server" CssClass="form-control">TC No</asp:TextBox></asp:TableCell>
                 </asp:TableRow>
 
 
                 <asp:TableRow ID="TableRow15" runat="server">
-                <asp:TableCell><asp:TextBox ID="TextBox10" runat="server">Ad Soyad</asp:TextBox></asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="TextBox10" runat="server" CssClass="form-control">Ad Soyad</asp:TextBox></asp:TableCell>
                 </asp:TableRow>
                 
                 <asp:TableRow ID="TableRow16" runat="server">
-                <asp:TableCell><asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Müşteri Ekle" /></asp:TableCell>
+                <asp:TableCell><asp:Button ID="Button3" runat="server" class="btn btn-outline-primary" OnClick="Button3_Click" Text="Müşteri Ekle" /></asp:TableCell>
                 </asp:TableRow>
                 </asp:Table>
 

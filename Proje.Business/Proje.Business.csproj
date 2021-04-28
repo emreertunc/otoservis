@@ -56,8 +56,9 @@
     <Compile Include="dbarac2.cs" />
     <Compile Include="dbmusteri2.cs" />
     <Compile Include="musterikayit.cs" />
+    <Compile Include="parcaislem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="serviskayit.cs" />
+    <Compile Include="servisislem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

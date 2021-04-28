@@ -169,6 +169,13 @@ namespace Proje.Web.Tasarim
                     TextBox6.Text = "Ruhsat No";
                     TextBox7.Text = "Şase No";
                     TextBox8.Text = "Motor No";
+
+
+
+                    //servisislem.ekleServisKayit()
+
+
+
                 }
 
                 else if (cevap == 2)

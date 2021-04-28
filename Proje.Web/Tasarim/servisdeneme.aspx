@@ -122,7 +122,8 @@
                 runat="server" 
                 BackColor="DarkOrange"
                 >
-                <asp:TableCell><asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Yeni Kayıt" /></asp:TableCell>
+                <asp:TableCell><asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Yeni Araç Kaydı" /></asp:TableCell>
+                <asp:TableCell></asp:TableCell>
             </asp:TableRow>
 
                 <asp:TableFooterRow 
@@ -138,6 +139,8 @@
                 </asp:TableCell>
             </asp:TableFooterRow>
                 </asp:Table>
+
+                <asp:Button ID="Button4" runat="server" Text="Servis Kaydı Aç" OnClick="Button4_Click" />
             </div>
             
 
