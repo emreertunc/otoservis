@@ -74,7 +74,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.aspx" />
+    <Content Include="Default_original.aspx" />
+    <Content Include="defaultkopya.aspx" />
     <Content Include="MarkaModelBakim.aspx" />
     <Content Include="musteribakim1.aspx" />
     <Content Include="Tasarim\accordion.aspx" />
@@ -179,6 +180,7 @@
     <Content Include="Tasarim\chart.aspx" />
     <Content Include="Tasarim\color.aspx" />
     <Content Include="Tasarim\copy_icon-themify.aspx" />
+    <Content Include="Tasarim\default.aspx" />
     <Content Include="Tasarim\deneme3.aspx" />
     <Content Include="Tasarim\form-elements-component.aspx" />
     <Content Include="Tasarim\icon-themify.aspx" />
@@ -199,12 +201,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Default_original.aspx.cs">
+      <DependentUpon>Default_original.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Default_original.aspx.designer.cs">
+      <DependentUpon>Default_original.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="defaultkopya.aspx.cs">
+      <DependentUpon>defaultkopya.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="defaultkopya.aspx.designer.cs">
+      <DependentUpon>defaultkopya.aspx</DependentUpon>
     </Compile>
     <Compile Include="MarkaModelBakim.aspx.cs">
       <DependentUpon>MarkaModelBakim.aspx</DependentUpon>
@@ -290,6 +299,13 @@
     </Compile>
     <Compile Include="Tasarim\copy_icon-themify.aspx.designer.cs">
       <DependentUpon>copy_icon-themify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasarim\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\deneme3.aspx.cs">
       <DependentUpon>deneme3.aspx</DependentUpon>
