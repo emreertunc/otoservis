@@ -88,7 +88,9 @@
     <Content Include="Tasarim\assets\icon\icofont\fonts\icofont.svg" />
     <Content Include="Tasarim\assets\icon\themify-icons\fonts\themify.svg" />
     <Content Include="Tasarim\assets\icon\themify-icons\themify-icons.css" />
-    <Content Include="Tasarim\assets\images\auth\logo-dark.png" />
+    <Content Include="Tasarim\assets\images\26499883324.jpg" />
+    <Content Include="Tasarim\assets\images\admin100.jpg" />
+    <Content Include="Tasarim\assets\images\auth\car-repair-xs-color.png" />
     <Content Include="Tasarim\assets\images\auth\Logo-small-bottom.png" />
     <Content Include="Tasarim\assets\images\avatar-1.jpg" />
     <Content Include="Tasarim\assets\images\avatar-2.jpg" />
@@ -108,8 +110,10 @@
     <Content Include="Tasarim\assets\images\mega-menu\04.jpg" />
     <Content Include="Tasarim\assets\images\mega-menu\05.jpg" />
     <Content Include="Tasarim\assets\images\mega-menu\06.jpg" />
+    <Content Include="Tasarim\assets\images\misafir100_100.jpg" />
     <Content Include="Tasarim\assets\images\pattern2.jpg" />
     <Content Include="Tasarim\assets\images\user.png" />
+    <Content Include="Tasarim\assets\images\usta100.jpg" />
     <Content Include="Tasarim\assets\js\bootstrap-growl.min.js" />
     <Content Include="Tasarim\assets\js\bootstrap\js\bootstrap.min.js" />
     <Content Include="Tasarim\assets\js\classie.js" />
@@ -195,6 +199,8 @@
     <Content Include="Tasarim\servisdeneme.aspx" />
     <Content Include="Tasarim\servisgiris.aspx" />
     <Content Include="Tasarim\servisislemdeneme.aspx" />
+    <Content Include="Tasarim\sign-in.aspx" />
+    <Content Include="Tasarim\signindeneme.aspx" />
     <Content Include="Tasarim\tabs.aspx" />
     <Content Include="Tasarim\tooltip.aspx" />
     <Content Include="Tasarim\typography.aspx" />
@@ -236,6 +242,13 @@
     </Compile>
     <Compile Include="Sablon.Master.designer.cs">
       <DependentUpon>Sablon.Master</DependentUpon>
+    </Compile>
+    <Compile Include="sabloncopy.Master.cs">
+      <DependentUpon>sabloncopy.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sabloncopy.Master.designer.cs">
+      <DependentUpon>sabloncopy.Master</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\accordion.aspx.cs">
       <DependentUpon>accordion.aspx</DependentUpon>
@@ -405,6 +418,20 @@
     <Compile Include="Tasarim\servisislemdeneme.aspx.designer.cs">
       <DependentUpon>servisislemdeneme.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tasarim\sign-in.aspx.cs">
+      <DependentUpon>sign-in.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\sign-in.aspx.designer.cs">
+      <DependentUpon>sign-in.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasarim\signindeneme.aspx.cs">
+      <DependentUpon>signindeneme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\signindeneme.aspx.designer.cs">
+      <DependentUpon>signindeneme.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tasarim\tabs.aspx.cs">
       <DependentUpon>tabs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -426,6 +453,13 @@
     <Compile Include="Tasarim\typography.aspx.designer.cs">
       <DependentUpon>typography.aspx</DependentUpon>
     </Compile>
+    <Compile Include="unauthorized.Master.cs">
+      <DependentUpon>unauthorized.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="unauthorized.Master.designer.cs">
+      <DependentUpon>unauthorized.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tasarim\assets\icon\icofont\fonts\icofont.eot" />
@@ -436,6 +470,8 @@
     <Content Include="Tasarim\assets\icon\themify-icons\fonts\themify.woff" />
     <None Include="packages.config" />
     <Content Include="Sablon.Master" />
+    <Content Include="sabloncopy.Master" />
+    <Content Include="unauthorized.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

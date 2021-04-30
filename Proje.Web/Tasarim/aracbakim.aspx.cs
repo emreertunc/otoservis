@@ -38,6 +38,22 @@ namespace Proje.Web.Tasarim
             //Execute the new script number that we found
             cs.RegisterStartupScript(cstype, "PopupScript" + ScriptNumber, "alert('" + message + "');", true);
         }
+
+
+        protected void Page_PreInit(Object sender, EventArgs e)
+        {
+            this.MasterPageFile = "~/Sablon.Master";
+
+            if (Session["role"] == null)
+            {
+                this.MasterPageFile = "~/unauthorized.Master";
+            }
+
+            else if (Session["role"].Equals(2))
+            {
+                this.MasterPageFile = "~/unauthorized.Master";
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

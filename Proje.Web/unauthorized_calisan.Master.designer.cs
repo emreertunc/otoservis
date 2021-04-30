@@ -11,7 +11,7 @@ namespace Proje.Web
 {
 
 
-    public partial class Sablon
+    public partial class unauthorized_calisan
     {
 
         /// <summary>
@@ -60,15 +60,6 @@ namespace Proje.Web
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divStandartUsername;
 
         /// <summary>
-        /// Image2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image2;
-
-        /// <summary>
         /// labelUname1 control.
         /// </summary>
         /// <remarks>
@@ -76,15 +67,6 @@ namespace Proje.Web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label labelUname1;
-
-        /// <summary>
-        /// BtnLogout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnLogout;
 
         /// <summary>
         /// divNavbar control.
@@ -130,15 +112,6 @@ namespace Proje.Web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divUserSettingsinMenu;
-
-        /// <summary>
-        /// BtnLogout2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnLogout2;
 
         /// <summary>
         /// divMainMenuSearch control.

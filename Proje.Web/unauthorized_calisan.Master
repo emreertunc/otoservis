@@ -1,4 +1,4 @@
-﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Sablon.master.cs" Inherits="Proje.Web.Sablon" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="unauthorized_calisan.master.cs" Inherits="Proje.Web.unauthorized_calisan" %>
 
 <!DOCTYPE html>
 
@@ -141,7 +141,7 @@
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!">
-                                    <asp:Image CssClass="img-radius" src="assets/images/avatar-4.jpg" ID="Image2" runat="server" alt="User-Profile-Image" />
+                                    <img src="assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
                                     <span id="spanUname"><asp:Label ID="labelUname1" runat="server" Text=""></asp:Label></span>
                                     <i id="icon1" class="ti-angle-down"></i>
                                 </a>
@@ -167,9 +167,9 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <i class="ti-layout-sidebar-left"></i>
-                                        <asp:Button ID="BtnLogout" runat="server" Text="Oturumu Kapat" OnClick="BtnLogout_Click" CssClass="btn btn-light"/>
-                                            
+                                        <a href="auth-normal-sign-in.aspx">
+                                            <i class="ti-layout-sidebar-left"></i> Logout
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
@@ -200,7 +200,7 @@
                                         <li class="more-details">
                                             <a href="#"><i class="ti-user"></i>View Profile</a>
                                             <a href="#!"><i class="ti-settings"></i>Settings</a>
-                                            <i class="ti-layout-sidebar-left"></i><asp:Button ID="BtnLogout2" runat="server" Text="Oturumu Kapat" OnClick="BtnLogout_Click" CssClass="btn btn-light"/>
+                                            <a href="auth-normal-sign-in.aspx"><i class="ti-layout-sidebar-left"></i>Logout</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -339,7 +339,7 @@
                                     </a>
                                     <ul class="pcoded-submenu">
                                         <li class=" ">
-                                            <a href="sign-in.aspx">
+                                            <a href="auth-normal-sign-in.aspx">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Oturum Aç</span>
                                                 <span class="pcoded-mcaret"></span>
@@ -508,8 +508,9 @@
                                 <div class="page-wrapper">
                                     <div id="divGuestUyari" class="alert alert-danger text-center" role="alert" runat="server"> <h4 class="alert-heading text-center">MİSAFİR GİRİŞİ YAPILDI</h4>SİSTEME MİSAFİR OLARAK GİRİŞ YAPTINIZ. LÜTFEN <a href="sign-in.aspx" class="alert-link font-italic">OTURUM AÇIN</a>  YA DA <a href="sign-in.aspx" class="alert-link font-italic">KAYDOLUN</a></div>
                                     
-                                    <div id="divUnauthorized" class="alert alert-danger text-center" role="alert" runat="server"><h4 class="alert-heading text-center">YETKİSİZ GİRİŞ YAPILDI</h4>KULLANICINIZIN YETKİ ALANI DIŞINDA BİR SAYFAYA ERİŞMEYE ÇALIŞIYORSUNUZ. LÜTFEN <a href="default.aspx" class="alert-link font-italic">ANA SAYFAYA DÖNÜN</a></div>
+                                    <div id="divUnauthorized" class="alert alert-danger text-center" role="alert" runat="server"><h4 class="alert-heading text-center">YETKİSİZ GİRİŞ YAPILDI</h4>KULLANICINIZIN YETKİ ALANI DIŞINDA BİR SAYFAYA ERİŞMEYE ÇALIŞIYORSUNUZ. <br /> LÜTFEN <a href="default.aspx" class="alert-link font-italic">ANA SAYFAYA</a> DÖNÜN</div>
                                     
+                                    <div id="divContentGoster">
                                     <!-- Page-header start -->
                                     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
 
@@ -521,6 +522,7 @@
                                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                                         
                                     </asp:ContentPlaceHolder>
+                                    </div>
                                     <hr />
                                     <p>&copy;<%:DateTime.Now.Year%> - Designed By Emre Ertunc</p>
                 <!-- Page-body end -->

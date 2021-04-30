@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Proje.Web
 {
-    public partial class Sablon : System.Web.UI.MasterPage
+    public partial class Unauthorized : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -15,12 +15,8 @@ namespace Proje.Web
             divGuestUyari.Visible = false;
             divUnauthorized.Visible = false;
             divMainMenuSearch.Visible = false;
-            /*if (Session["username"].Equals("admin"))
-            {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('selam')", true);
-            }*/
 
-            /*try
+            try
             {
                 if (Session["role"] == null)
                 {
@@ -34,62 +30,28 @@ namespace Proje.Web
                     divMainMenuSearch.Visible = false;
                     this.Image1.Attributes["src"] = "assets/images/misafir100_100.jpg";
                     divGuestUyari.Visible = true;
-                    
+
 
                     divCalisan.Visible = false;
                     divMusteri.Visible = false;
                     divAdmin.Visible = false;
-                }
 
-                else if(Session["role"].Equals(2))
-                {
-                    labelUname2.Text = Session["fullname"].ToString();
-                    labelPozisyon.Text = Session["pozisyon"].ToString();
-                    this.Image1.Attributes["src"] = "assets/images/avatar-4.jpg";
-
-                    divCalisan.Visible = false;
-                    divAdmin.Visible = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('hata')", true);
-            }*/
-
-            try
-            {
-                if (Session["role"] == null)
-                {
-                    this.Image1.Attributes["src"] = "assets/images/misafir100_100.jpg";
-                    labelUname2.Text = "GUEST";
-                    labelPozisyon.Text = "";
-
-                    divCalisan.Visible = false;
-                    divMusteri.Visible = false;
-                    divAdmin.Visible = false;
-                }
-
-                else if (Session["role"].Equals(1))
-                {
-                    labelUname2.Text = Session["fullname"].ToString();
-                    labelPozisyon.Text = Session["pozisyon"].ToString();
-
-                    this.Image1.Attributes["src"] = "assets/images/admin100.jpg";
-                    this.Image2.Attributes["src"] = "assets/images/admin100.jpg";
+                    divContentGoster.Visible = false;
                 }
 
                 else if (Session["role"].Equals(2))
                 {
-
                     labelUname2.Text = Session["fullname"].ToString();
                     labelPozisyon.Text = Session["pozisyon"].ToString();
+
                     this.Image1.Attributes["src"] = "assets/images/" + Session["tckn"].ToString() + ".jpg";
                     this.Image2.Attributes["src"] = "assets/images/" + Session["tckn"].ToString() + ".jpg";
-
 
                     divCalisan.Visible = false;
                     divAdmin.Visible = false;
 
+                    divUnauthorized.Visible = true;
+                    divContentGoster.Visible = false;
                 }
 
                 else if (Session["role"].Equals(3) || Session["role"].Equals(4))
@@ -100,15 +62,17 @@ namespace Proje.Web
                     this.Image2.Attributes["src"] = "assets/images/usta100.jpg";
 
                     divAdmin.Visible = false;
+
+                    divUnauthorized.Visible = false;
+                    divContentGoster.Visible = false;
                 }
             }
 
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('hata')", true);
             }
         }
-
 
         protected void BtnLogout_Click(object sender, EventArgs e)
         {

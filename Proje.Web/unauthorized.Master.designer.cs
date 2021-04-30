@@ -11,7 +11,7 @@ namespace Proje.Web
 {
 
 
-    public partial class Sablon
+    public partial class Unauthorized
     {
 
         /// <summary>
@@ -202,6 +202,15 @@ namespace Proje.Web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divUnauthorized;
+
+        /// <summary>
+        /// divContentGoster control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divContentGoster;
 
         /// <summary>
         /// ContentPlaceHolder2 control.

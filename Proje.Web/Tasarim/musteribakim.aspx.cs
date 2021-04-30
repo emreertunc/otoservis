@@ -11,6 +11,24 @@ namespace Proje.Web.Tasarim
 {
     public partial class musteribakim : System.Web.UI.Page
     {
+        protected void Page_PreInit(Object sender, EventArgs e)
+        {
+            this.MasterPageFile = "~/Sablon.Master";
+
+            if (Session["role"] == null)
+            {
+                this.MasterPageFile = "~/unauthorized.Master";
+            }
+
+            else if (Session["role"].Equals(2))
+            {
+                this.MasterPageFile = "~/unauthorized.Master";
+            }
+            else if (Session["role"].Equals(3) || Session["role"].Equals(4))
+            {
+                this.MasterPageFile = "~/unauthorized.Master";
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

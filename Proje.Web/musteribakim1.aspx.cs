@@ -89,5 +89,15 @@ namespace Proje.Web
         {
 
         }
+
+        protected void LinkBtnLogout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

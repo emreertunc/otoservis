@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="auth-normal-sign-in.aspx.cs" Inherits="Proje.Web.Tasarim.auth_normal_sign_in" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sign-in.aspx.cs" Inherits="Proje.Web.Tasarim.sign_in" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +59,7 @@
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
                     <div class="login-card card-block auth-body mr-auto ml-auto">
-                        <form class="md-float-material">
+                        <form class="md-float-material" runat="server">
                             <div class="text-center">
                                 <img src="assets/images/auth/logo-dark.png" alt="logo.png">
                             </div>
@@ -70,12 +70,12 @@
                                     </div>
                                 </div>
                                 <hr/>
-                                <div class="input-group">
-                                    <input type="email" class="form-control" placeholder="Your Email Address">
+                                <div class="input-group" runat="server">
+                                    <asp:TextBox ID="textboxUserName"  CssClass="form-control"  PlaceHolder="Kullanıcı Adınız" runat="server"></asp:TextBox>
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <asp:TextBox ID="textboxPassword"  CssClass="form-control" TextMode="Password" PlaceHolder="Parolanız" runat="server"></asp:TextBox>
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="row m-t-25 text-left">
@@ -94,17 +94,17 @@
                                 </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Sign in</button>
+                                        <asp:Button ID="btnSignIn" CssClass="btn btn-primary btn-md btn-block waves-effect text-center m-b-20" runat="server" Text="Oturum Aç" OnClick="btnSignIn_Click" />
                                     </div>
                                 </div>
                                 <hr/>
                                 <div class="row">
                                     <div class="col-md-10">
-                                        <p class="text-inverse text-left m-b-0">Thank you and enjoy our website.</p>
-                                        <p class="text-inverse text-left"><b>Your Authentication Team</b></p>
+                                        <p class="text-inverse text-left m-b-0">Ertunç Teknik Servise Hoşgeldiniz</p>
+                                        <p class="text-inverse text-left"><b>Emre Ertunç</b></p>
                                     </div>
                                     <div class="col-md-2">
-                                        <img src="assets/images/auth/Logo-small-bottom.png" alt="small-logo.png">
+                                        <img src="assets/images/auth/car-repair-xs-color.png" alt="small-logo.png">
                                     </div>
                                 </div>
 

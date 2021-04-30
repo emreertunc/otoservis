@@ -55,6 +55,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="dbarac2.cs" />
     <Compile Include="dbmusteri2.cs" />
+    <Compile Include="login.cs" />
     <Compile Include="musterikayit.cs" />
     <Compile Include="parcaislem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
