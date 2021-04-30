@@ -102,10 +102,13 @@
                 </asp:TableRow>
 
                 <asp:TableRow ID="TableRow10" runat="server">
-                <asp:TableCell><asp:Button ID="Button2" runat="server" class="btn btn-outline-primary" OnClick="Button2_Click" Text="Yeni Araç Kaydı" /></asp:TableCell>
+                <asp:TableCell><asp:Button ID="Button2" runat="server" CssClass="btn btn-outline-primary" OnClick="Button2_Click" Text="Yeni Araç Kaydı" /></asp:TableCell>
                 </asp:TableRow>
 
                 </asp:Table>
+                <br />
+                <asp:Button ID="Button4" runat="server" CssClass="btn btn-outline-primary" Text="Yeni Servis Kaydı Oluştur" OnClick="Button4_Click" />
+                <br />
                 <br />
                 <asp:Label ID="Label1" runat="server" CssClass="alert alert-warning" Text="..."></asp:Label>
             </div>

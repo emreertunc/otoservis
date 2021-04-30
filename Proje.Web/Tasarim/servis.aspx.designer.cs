@@ -150,15 +150,6 @@ namespace Proje.Web.Tasarim
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divServisList;
 
         /// <summary>
-        /// Label3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-
-        /// <summary>
         /// GridViewServisList control.
         /// </summary>
         /// <remarks>
@@ -175,6 +166,15 @@ namespace Proje.Web.Tasarim
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divParcaList;
+
+        /// <summary>
+        /// Table3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table Table3;
 
         /// <summary>
         /// txtSearch control.
