@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -189,22 +192,30 @@
     <Content Include="Tasarim\form-elements-component.aspx" />
     <Content Include="Tasarim\icon-themify.aspx" />
     <Content Include="Tasarim\aracbakim.aspx" />
+    <Content Include="Tasarim\kullaniciyonetim.aspx" />
+    <Content Include="Tasarim\kullaniciyonetimdeneme.aspx" />
     <Content Include="Tasarim\label-badge.aspx" />
     <Content Include="Tasarim\map-google.aspx" />
     <Content Include="Tasarim\musteribakim.aspx" />
     <Content Include="Tasarim\notification.aspx" />
+    <Content Include="Tasarim\parcabakim.aspx" />
+    <Content Include="Tasarim\parcabakimdeneme.aspx" />
     <Content Include="Tasarim\progress-bar.aspx" />
     <Content Include="Tasarim\sample-page.aspx" />
     <Content Include="Tasarim\servis.aspx" />
     <Content Include="Tasarim\servisdeneme.aspx" />
     <Content Include="Tasarim\servisgiris.aspx" />
     <Content Include="Tasarim\servisislemdeneme.aspx" />
+    <Content Include="Tasarim\settingsdeneme.aspx" />
     <Content Include="Tasarim\sign-in.aspx" />
+    <Content Include="Tasarim\sign-up.aspx" />
     <Content Include="Tasarim\signindeneme.aspx" />
     <Content Include="Tasarim\tabs.aspx" />
     <Content Include="Tasarim\tooltip.aspx" />
     <Content Include="Tasarim\typography.aspx" />
+    <Content Include="Tasarim\user-settings.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebServiceParca.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default_original.aspx.cs">
@@ -348,6 +359,20 @@
     <Compile Include="Tasarim\aracbakim.aspx.designer.cs">
       <DependentUpon>aracbakim.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tasarim\kullaniciyonetim.aspx.cs">
+      <DependentUpon>kullaniciyonetim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\kullaniciyonetim.aspx.designer.cs">
+      <DependentUpon>kullaniciyonetim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasarim\kullaniciyonetimdeneme.aspx.cs">
+      <DependentUpon>kullaniciyonetimdeneme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\kullaniciyonetimdeneme.aspx.designer.cs">
+      <DependentUpon>kullaniciyonetimdeneme.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tasarim\label-badge.aspx.cs">
       <DependentUpon>label-badge.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -375,6 +400,20 @@
     </Compile>
     <Compile Include="Tasarim\notification.aspx.designer.cs">
       <DependentUpon>notification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasarim\parcabakim.aspx.cs">
+      <DependentUpon>parcabakim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\parcabakim.aspx.designer.cs">
+      <DependentUpon>parcabakim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasarim\parcabakimdeneme.aspx.cs">
+      <DependentUpon>parcabakimdeneme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\parcabakimdeneme.aspx.designer.cs">
+      <DependentUpon>parcabakimdeneme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\progress-bar.aspx.cs">
       <DependentUpon>progress-bar.aspx</DependentUpon>
@@ -418,12 +457,26 @@
     <Compile Include="Tasarim\servisislemdeneme.aspx.designer.cs">
       <DependentUpon>servisislemdeneme.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tasarim\settingsdeneme.aspx.cs">
+      <DependentUpon>settingsdeneme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\settingsdeneme.aspx.designer.cs">
+      <DependentUpon>settingsdeneme.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tasarim\sign-in.aspx.cs">
       <DependentUpon>sign-in.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Tasarim\sign-in.aspx.designer.cs">
       <DependentUpon>sign-in.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasarim\sign-up.aspx.cs">
+      <DependentUpon>sign-up.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\sign-up.aspx.designer.cs">
+      <DependentUpon>sign-up.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\signindeneme.aspx.cs">
       <DependentUpon>signindeneme.aspx</DependentUpon>
@@ -453,12 +506,23 @@
     <Compile Include="Tasarim\typography.aspx.designer.cs">
       <DependentUpon>typography.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Tasarim\user-settings.aspx.cs">
+      <DependentUpon>user-settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\user-settings.aspx.designer.cs">
+      <DependentUpon>user-settings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="unauthorized.Master.cs">
       <DependentUpon>unauthorized.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="unauthorized.Master.designer.cs">
       <DependentUpon>unauthorized.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebServiceParca.asmx.cs">
+      <DependentUpon>WebServiceParca.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

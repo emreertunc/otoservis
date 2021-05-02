@@ -58,6 +58,7 @@
     <Property Name="pozisyonID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="bolumler" Relationship="Self.FK_kullanici_bolumler" FromRole="kullanici" ToRole="bolumler" />
     <NavigationProperty Name="pozisyonlar" Relationship="Self.FK_kullanici_pozisyonlar" FromRole="kullanici" ToRole="pozisyonlar" />
+    <Property Name="telno" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="musteri">
     <Key>

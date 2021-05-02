@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="otoservisdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="otoservisdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="arac">
           <Key>
             <PropertyRef Name="aracID" />
@@ -54,6 +54,7 @@
           <Property Name="iseGirisTarihi" Type="date" Nullable="false" />
           <Property Name="bolumID" Type="int" Nullable="false" />
           <Property Name="pozisyonID" Type="int" Nullable="false" />
+          <Property Name="telno" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="musteri">
           <Key>
@@ -254,8 +255,7 @@
             <End Role="serviskalem" EntitySet="serviskalem" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="otoservisdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -317,6 +317,7 @@
           <Property Name="pozisyonID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="bolumler" Relationship="Self.FK_kullanici_bolumler" FromRole="kullanici" ToRole="bolumler" />
           <NavigationProperty Name="pozisyonlar" Relationship="Self.FK_kullanici_pozisyonlar" FromRole="kullanici" ToRole="pozisyonlar" />
+          <Property Name="telno" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="musteri">
           <Key>
@@ -573,6 +574,7 @@
           <EntitySetMapping Name="kullanicis">
             <EntityTypeMapping TypeName="otoservisdbModel.kullanici">
               <MappingFragment StoreEntitySet="kullanici">
+                <ScalarProperty Name="telno" ColumnName="telno" />
                 <ScalarProperty Name="kullaniciID" ColumnName="kullaniciID" />
                 <ScalarProperty Name="kullaniciAdi" ColumnName="kullaniciAdi" />
                 <ScalarProperty Name="parola" ColumnName="parola" />

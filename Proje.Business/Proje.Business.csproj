@@ -55,11 +55,13 @@
     <Compile Include="Class1.cs" />
     <Compile Include="dbarac2.cs" />
     <Compile Include="dbmusteri2.cs" />
+    <Compile Include="kullanicibilgi.cs" />
     <Compile Include="login.cs" />
     <Compile Include="musterikayit.cs" />
     <Compile Include="parcaislem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="servisislem.cs" />
+    <Compile Include="signup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

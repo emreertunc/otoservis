@@ -49,17 +49,17 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="işlemler">
                     <EditItemTemplate>
-                        <asp:LinkButton ID="LinkButton3" runat="server" CommandName="update">update</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonUpdate" runat="server" CommandName="update">update</asp:LinkButton>
                         &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton4" runat="server" CommandName="cancel">cancel</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonCancel" runat="server" CommandName="cancel">cancel</asp:LinkButton>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">insert</asp:LinkButton>
+                        
                     </FooterTemplate>
                     <ItemTemplate>
-                        <asp:LinkButton ID="LinkButton1" runat="server" CommandName="edit">edit</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonEdit" runat="server" CommandName="edit">edit</asp:LinkButton>
                         &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton2" runat="server" CommandName="delete">delete</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonDelete" runat="server" CommandName="delete">delete</asp:LinkButton>
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:TemplateField>

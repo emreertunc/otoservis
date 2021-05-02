@@ -26,7 +26,7 @@ namespace Proje.Web
                     labelPozisyon.Text = "";
                     divStandartUsername.Visible = false;
                     divGuestName.Visible = true;
-                    divUserSettingsinMenu.Visible = false;
+                    //divUserSettingsinMenu.Visible = false;
                     divMainMenuSearch.Visible = false;
                     this.Image1.Attributes["src"] = "assets/images/misafir100_100.jpg";
                     divGuestUyari.Visible = true;
@@ -63,7 +63,7 @@ namespace Proje.Web
 
                     divAdmin.Visible = false;
 
-                    divUnauthorized.Visible = false;
+                    divUnauthorized.Visible = true;
                     divContentGoster.Visible = false;
                 }
             }

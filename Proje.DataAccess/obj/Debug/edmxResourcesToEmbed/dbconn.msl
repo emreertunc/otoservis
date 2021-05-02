@@ -44,6 +44,7 @@
     <EntitySetMapping Name="kullanicis">
       <EntityTypeMapping TypeName="otoservisdbModel.kullanici">
         <MappingFragment StoreEntitySet="kullanici">
+          <ScalarProperty Name="telno" ColumnName="telno" />
           <ScalarProperty Name="kullaniciID" ColumnName="kullaniciID" />
           <ScalarProperty Name="kullaniciAdi" ColumnName="kullaniciAdi" />
           <ScalarProperty Name="parola" ColumnName="parola" />

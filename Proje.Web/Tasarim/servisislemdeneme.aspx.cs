@@ -234,6 +234,10 @@ namespace Proje.Web.Tasarim
             GridViewParca.DataSource = parcalar;
             GridViewParca.DataBind();
         }
-
+        protected void ButtonTemizle_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            this.SearchParcas();
+        }
     }
 }

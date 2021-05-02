@@ -22,6 +22,7 @@ namespace Proje.DataAccess
         public System.DateTime iseGirisTarihi { get; set; }
         public int bolumID { get; set; }
         public int pozisyonID { get; set; }
+        public string telno { get; set; }
     
         public virtual bolumler bolumler { get; set; }
         public virtual pozisyonlar pozisyonlar { get; set; }

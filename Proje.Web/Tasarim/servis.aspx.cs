@@ -113,14 +113,15 @@ namespace Proje.Web.Tasarim
                     else
                     {
                         divRedirect.Visible = true;
-                        Label2.Visible = true;
-                        Button3.Visible = true;
+                        //Label2.Visible = true;
+                        //Button3.Visible = true;
                         divServisGuncelle.Visible = false;
                         divServisList.Visible = false;
                         divParcaList.Visible = false;
                         divParcaGiris.Visible = false;
                         divServisKalem.Visible = false;
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Servis Giriş Ekranına yönlendirilmek için sayfadaki butona tıklayın...')", true);
+                        //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Servis Giriş Ekranına yönlendirilmek için sayfadaki butona tıklayın...')", true);
+                        redirectToDefault();
                     }
 
 
@@ -130,19 +131,25 @@ namespace Proje.Web.Tasarim
                 else
                 {
                     divRedirect.Visible = true;
-                    Label2.Visible = true;
-                    Button3.Visible = true;
+                    //Label2.Visible = true;
+                    //Button3.Visible = true;
                     divServisGuncelle.Visible = false;
                     divServisList.Visible = false;
                     divParcaList.Visible = false;
                     divParcaGiris.Visible = false;
                     divServisKalem.Visible = false;
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Servis Giriş Ekranına yönlendirilmek için sayfadaki butona tıklayın...')", true);
+                    //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Servis Giriş Ekranına yönlendirilmek için sayfadaki butona tıklayın...')", true);
+                    redirectToDefault();
                 }
             }
         }
 
-
+        public void redirectToDefault()
+        {
+            //System.Threading.Thread.Sleep(5000);
+            //Response.Redirect("servisgiris.aspx");
+            Response.AddHeader("refresh", "10;URL=servisgiris.aspx");
+        }
         protected void Button1_Click(object sender, EventArgs e)
         {
             if (TextBox4.Text == "" || txtDatePicker.Text == "")
@@ -228,9 +235,9 @@ namespace Proje.Web.Tasarim
             this.SearchParcas();
         }
 
-        protected void txtSearch_TextChanged(object sender, EventArgs e)
+        protected void txtSearch_OnTextChanged(object sender, EventArgs e)
         {
-
+            this.SearchParcas();
         }
 
         protected void OnTextChanged(object sender, EventArgs e)
@@ -244,6 +251,11 @@ namespace Proje.Web.Tasarim
 
             GridViewParca.DataSource = parcalar;
             GridViewParca.DataBind();
+        }
+        protected void ButtonTemizle_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            this.SearchParcas();
         }
 
     }

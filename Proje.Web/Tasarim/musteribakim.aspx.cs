@@ -72,7 +72,7 @@ namespace Proje.Web.Tasarim
             GridView1.EditIndex = e.NewEditIndex;
             GridView1.DataSource = ObjectDataSource1;
             GridView1.DataBind();
-            Label5.Text = "";
+            LabelBilgi.Text = "";
             GridView1.EditRowStyle.BackColor = System.Drawing.Color.Orange;
         }
 
@@ -81,7 +81,7 @@ namespace Proje.Web.Tasarim
             GridView1.EditIndex = -1;
             GridView1.DataSource = ObjectDataSource1;
             GridView1.DataBind();
-            Label5.Text = "";
+            LabelBilgi.Text = "";
         }
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -95,7 +95,7 @@ namespace Proje.Web.Tasarim
             string deneme3 = adSoyad.Text;
 
             dbmusteri2.guncelleMusteri(deneme1, deneme2, deneme3);
-            Label5.Text = "Satır bilgisi başarıyla güncellendi";
+            LabelBilgi.Text = "Satır bilgisi başarıyla güncellendi";
 
             GridView1.EditIndex = -1;
             ObjectDataSource1.DataBind();
@@ -111,6 +111,15 @@ namespace Proje.Web.Tasarim
         protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
         {
 
+        }
+
+        protected void OnPaging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+
+            ObjectDataSource1.DataBind();
+            GridView1.DataSource = ObjectDataSource1;
+            GridView1.DataBind();
         }
     }
 }

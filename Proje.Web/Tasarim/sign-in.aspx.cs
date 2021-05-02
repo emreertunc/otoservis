@@ -61,7 +61,7 @@ namespace Proje.Web.Tasarim
                     Session["pozid"] = Credentials[0].pozisyonID;
 
                     Session["pozisyon"] = login.getPozisyonAd(role);
-
+                    //Response.AddHeader("REFRESH", "10;URL=default.aspx");
                     Response.Redirect("default.aspx");
                 }
             }

@@ -70,7 +70,7 @@ namespace Proje.Web.Tasarim
             GridView1.EditIndex = e.NewEditIndex;
             GridView1.DataSource = ObjectDataSource1;
             GridView1.DataBind();
-            Label5.Text = "";
+            LabelBilgi2.Text = "";
             GridView1.EditRowStyle.BackColor = System.Drawing.Color.Orange;
         }
 
@@ -79,7 +79,7 @@ namespace Proje.Web.Tasarim
             GridView1.EditIndex = -1;
             GridView1.DataSource = ObjectDataSource1;
             GridView1.DataBind();
-            Label5.Text = "";
+            LabelBilgi2.Text = "";
         }
 
         protected void LinkButton5_Click(object sender, EventArgs e)
@@ -174,7 +174,7 @@ namespace Proje.Web.Tasarim
                 dbarac2.guncelleModel(m5id, m6id, m2);
             }
 
-            Label5.Text = "Satır bilgisi başarıyla güncellendi";
+            LabelBilgi2.Text = "Satır bilgisi başarıyla güncellendi";
 
             GridView1.EditIndex = -1;
             ObjectDataSource1.DataBind();
@@ -225,7 +225,7 @@ namespace Proje.Web.Tasarim
             GridView2.EditIndex = e.NewEditIndex;
             GridView2.DataSource = ObjectDataSource2;
             GridView2.DataBind();
-            Label9.Text = "";
+            LabelBilgi.Text = "";
             GridView2.EditRowStyle.BackColor = System.Drawing.Color.Orange;
         }
 
@@ -234,7 +234,7 @@ namespace Proje.Web.Tasarim
             GridView2.EditIndex = -1;
             GridView2.DataSource = ObjectDataSource2;
             GridView2.DataBind();
-            Label9.Text = "";
+            LabelBilgi.Text = "";
         }
 
         protected void GridView2_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -253,7 +253,7 @@ namespace Proje.Web.Tasarim
 
             if (query1.Count != 0)
             {
-                Label9.Text = "Marka zaten mevcut, ekleme işlemi gerçekleştirilemedi..";
+                LabelBilgi.Text = "Marka zaten mevcut, ekleme işlemi gerçekleştirilemedi..";
             }
 
             else if (query1.Count == 0)
@@ -266,7 +266,7 @@ namespace Proje.Web.Tasarim
 
                 dbarac2.guncelleMarka(m2id, m1);
 
-                Label9.Text = "Marka Başarıyla eklendi";
+                LabelBilgi.Text = "Marka Başarıyla eklendi";
             }
 
             GridView2.EditIndex = -1;
@@ -325,6 +325,24 @@ namespace Proje.Web.Tasarim
             ObjectDataSource1.DataBind();
             GridView1.DataSource = ObjectDataSource1;
             GridView1.DataBind();
+        }
+
+        protected void OnPaging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+
+            ObjectDataSource1.DataBind();
+            GridView1.DataSource = ObjectDataSource1;
+            GridView1.DataBind();
+        }
+
+        protected void OnPaging2(object sender, GridViewPageEventArgs e)
+        {
+            GridView2.PageIndex = e.NewPageIndex;
+
+            ObjectDataSource2.DataBind();
+            GridView2.DataSource = ObjectDataSource2;
+            GridView2.DataBind();
         }
     }
 }

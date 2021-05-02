@@ -49,6 +49,7 @@
     <Property Name="iseGirisTarihi" Type="date" Nullable="false" />
     <Property Name="bolumID" Type="int" Nullable="false" />
     <Property Name="pozisyonID" Type="int" Nullable="false" />
+    <Property Name="telno" Type="nvarchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="musteri">
     <Key>
