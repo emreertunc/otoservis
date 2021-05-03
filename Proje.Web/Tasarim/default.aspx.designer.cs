@@ -13,5 +13,23 @@ namespace Proje.Web.Tasarim
 
     public partial class _default
     {
+
+        /// <summary>
+        /// divGuestUyari control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divGuestUyari;
+
+        /// <summary>
+        /// ScriptManagerDefaultPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManagerDefaultPage;
     }
 }
