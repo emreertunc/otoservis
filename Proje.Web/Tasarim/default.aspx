@@ -33,7 +33,7 @@
               <div class="carousel-caption">
                 <h1>Aracınıza kendi aracımızmış gibi bakıyoruz.</h1>
                 <p>Yalnızca en kaliteli yedek parçaları kullanıyoruz.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Daha fazla bilgi</a></p>
+                <p><a class="btn btn-lg btn-primary" href="hakkimizda.aspx" role="button">Daha fazla bilgi</a></p>
               </div>
             </div>
           </div>
@@ -81,10 +81,12 @@
           </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
 
-
         <!-- START THE FEATURETTES -->
 
         <hr class="featurette-divider">
+
+        <br />
+        <br />
 
         <div class="row featurette">
           <div class="col-md-7">

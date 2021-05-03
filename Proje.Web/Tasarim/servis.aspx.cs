@@ -62,12 +62,17 @@ namespace Proje.Web.Tasarim
                                     .Where(x => x.servisID == Convert.ToInt32(servisid))
                                     .Select(x => x.servisCikis).Single();
 
+                        var query5 = db.servis.ToList()
+                                    .Where(x => x.servisID == Convert.ToInt32(servisid))
+                                    .Select(x => x.servisAktif).Single();
+
                         string aracid = query1.ToString();
                         string giristarih = query2.ToString();
 
                         TextBox2.Text = servisid;
                         TextBox3.Text = aracid;
                         TextBox5.Text = giristarih;
+                        ddlAktif.SelectedValue = query5.ToString();
 
                         if (query3 != null)
                         {
@@ -159,11 +164,12 @@ namespace Proje.Web.Tasarim
             else
             {
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "popup yazisi", "mesaj");
-                servisislem.guncelleServisKayit(Convert.ToInt32(TextBox2.Text), TextBox4.Text, txtDatePicker.Text);
+                servisislem.guncelleServisKayit(Convert.ToInt32(TextBox2.Text), TextBox4.Text, txtDatePicker.Text, Convert.ToBoolean(ddlAktif.SelectedValue));
 
                 var servislist = servisislem.getServisKayit();
                 GridViewServisList.DataSource = servislist;
                 GridViewServisList.DataBind();
+                LabelBilgi2.Text = "Servis Bilgisi başarıyla güncellendi";
             }
 
         }
@@ -256,6 +262,22 @@ namespace Proje.Web.Tasarim
         {
             txtSearch.Text = "";
             this.SearchParcas();
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            bool aktifdurum = false;
+            servisislem.guncelleServisAktif(Convert.ToInt32(Request.QueryString["serviskod"]), aktifdurum);
+
+            var query5 = db.servis.ToList()
+                                    .Where(x => x.servisID == Convert.ToInt32(Request.QueryString["serviskod"]))
+                                    .Select(x => x.servisAktif).Single();
+
+            ddlAktif.SelectedValue = query5.ToString();
+
+            GridViewServisList.DataSource = servisislem.getServisKayit();
+            GridViewServisList.DataBind();
+            LabelBilgi.Text = "Servis Kaydı Başarıyla Kapatıldı.";
         }
 
     }

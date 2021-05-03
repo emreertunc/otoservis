@@ -100,6 +100,7 @@
     <Property Name="servisCikis" Type="DateTime" Precision="0" />
     <NavigationProperty Name="arac" Relationship="Self.FK_servis_arac" FromRole="servis" ToRole="arac" />
     <NavigationProperty Name="serviskalems" Relationship="Self.FK_serviskalem_servis" FromRole="servis" ToRole="serviskalem" />
+    <Property Name="servisAktif" Type="Boolean" />
   </EntityType>
   <EntityType Name="serviskalem">
     <Key>

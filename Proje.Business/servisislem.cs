@@ -21,6 +21,47 @@ namespace Proje.Business
                 return sorgu.ToList();
             }
         }
+
+        public static object getSpesificServisKayit(int musteriid)
+        {
+            otoservisdbEntities db = new otoservisdbEntities();
+            using (db)
+            {
+                var sorgu = from a1 in db.aracs
+                            join s1 in db.servis
+                            on a1.aracID equals s1.aracID
+                            join m1 in db.aracmodels
+                            on a1.modelID equals m1.modelID
+                            join m2 in db.aracmarkas
+                            on m1.markaID equals m2.markaID
+                            where (a1.musteriID == musteriid)
+
+                            select new { s1.servisID, a1.plaka, m2.marka, m1.model, a1.modelYil, a1.saseNo, a1.motorNo, s1.aciklama, s1.servisGiris, s1.servisCikis, s1.servisAktif};
+
+                return sorgu.ToList();
+            }
+        }
+
+        public static object getAktifServisKayit()
+        {
+            otoservisdbEntities db = new otoservisdbEntities();
+            using (db)
+            {
+                var sorgu = from a1 in db.aracs
+                            join s1 in db.servis
+                            on a1.aracID equals s1.aracID
+                            join m1 in db.aracmodels
+                            on a1.modelID equals m1.modelID
+                            join m2 in db.aracmarkas
+                            on m1.markaID equals m2.markaID
+                            where (s1.servisAktif == true)
+
+                            select new { s1.servisID, a1.plaka, m2.marka, m1.model, a1.modelYil, a1.saseNo, a1.motorNo, s1.aciklama, s1.servisGiris, s1.servisCikis, s1.servisAktif };
+
+                return sorgu.ToList();
+            }
+        }
+
         public static int ekleServisKayit(int aracid)
         {
             otoservisdbEntities db = new otoservisdbEntities();
@@ -37,7 +78,19 @@ namespace Proje.Business
             }
         }
 
-        public static void guncelleServisKayit(int servisid, string aciklama, string cikistarih)
+        //public static void guncelleServisKayit(int servisid, string aciklama, string cikistarih)
+        //{
+        //    otoservisdbEntities db = new otoservisdbEntities();
+        //    using (db)
+        //    {
+        //        var x = db.servis.Find(servisid);
+        //        x.aciklama = aciklama;
+        //        x.servisCikis = Convert.ToDateTime(cikistarih);
+        //        db.SaveChanges();
+        //    }
+        //}
+
+        public static void guncelleServisKayit(int servisid, string aciklama, string cikistarih, bool aktif)
         {
             otoservisdbEntities db = new otoservisdbEntities();
             using (db)
@@ -45,6 +98,17 @@ namespace Proje.Business
                 var x = db.servis.Find(servisid);
                 x.aciklama = aciklama;
                 x.servisCikis = Convert.ToDateTime(cikistarih);
+                x.servisAktif = aktif;
+                db.SaveChanges();
+            }
+        }
+        public static void guncelleServisAktif(int servisid, bool aktif)
+        {
+            otoservisdbEntities db = new otoservisdbEntities();
+            using (db)
+            {
+                var x = db.servis.Find(servisid);
+                x.servisAktif = aktif;
                 db.SaveChanges();
             }
         }

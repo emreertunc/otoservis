@@ -350,9 +350,9 @@
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="sample-page.aspx">
+                                            <a href="hakkimizda.aspx">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Sample Page</span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Hakkımızda</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
@@ -365,7 +365,7 @@
                                     <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Müşteri</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li>
-                                    <a href="form-elements-component.aspx">
+                                    <a href="servisdurum.aspx">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.form-components.main">Servis Bilgi</span>
                                         <span class="pcoded-mcaret"></span>

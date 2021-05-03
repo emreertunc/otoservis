@@ -25,6 +25,7 @@ namespace Proje.DataAccess
         public string aciklama { get; set; }
         public System.DateTime servisGiris { get; set; }
         public Nullable<System.DateTime> servisCikis { get; set; }
+        public Nullable<bool> servisAktif { get; set; }
     
         public virtual arac arac { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
