@@ -37,7 +37,8 @@ namespace Proje.Web.Tasarim
         {
             if (textboxUserName.Text == "" || textboxPassword.Text == "")
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Lütfen tüm alanları doldurun')", true);
+                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Lütfen tüm alanları doldurun')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Lütfen tüm alanları doldurun', 'EKSİK GİRİŞ');", true);
             }
 
             try
@@ -46,7 +47,8 @@ namespace Proje.Web.Tasarim
 
                 if (role == 00404)
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Kullanıcı adı ve/veya parola hatalı')", true);
+                    //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Kullanıcı adı ve/veya parola hatalı')", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Kullanıcı adı ve/veya parola hatalı', 'HATA');", true);
                 }
 
                 else

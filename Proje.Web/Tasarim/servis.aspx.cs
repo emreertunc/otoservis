@@ -159,17 +159,18 @@ namespace Proje.Web.Tasarim
         {
             if (TextBox4.Text == "" || txtDatePicker.Text == "")
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Lütfen tüm alanları doldurun')", true);
+                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Lütfen tüm alanları doldurun')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Lütfen tüm alanları doldurun', 'EKSİK GİRİŞ');", true);
             }
             else
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "popup yazisi", "mesaj");
                 servisislem.guncelleServisKayit(Convert.ToInt32(TextBox2.Text), TextBox4.Text, txtDatePicker.Text, Convert.ToBoolean(ddlAktif.SelectedValue));
 
                 var servislist = servisislem.getServisKayit();
                 GridViewServisList.DataSource = servislist;
                 GridViewServisList.DataBind();
-                LabelBilgi2.Text = "Servis Bilgisi başarıyla güncellendi";
+                //LabelBilgi2.Text = "Servis Bilgisi başarıyla güncellendi";
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Servis Bilgisi başarıyla güncellendi', 'İŞLEM BAŞARILI');", true);
             }
 
         }
@@ -223,14 +224,16 @@ namespace Proje.Web.Tasarim
 
         protected void GridViewServisList_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            string deger = GridViewServisList.Rows[e.RowIndex].Cells[1].Text;
+            string deger = GridViewServisList.Rows[e.RowIndex].Cells[2].Text;
             servisislem.silServisKayit(Convert.ToInt32(deger));
+            GridViewServisList.DataSource= servisislem.getServisKayit();
+            GridViewServisList.DataBind();
         }
 
         protected void GridViewServisList_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = GridViewServisList.SelectedRow;
-            string serviskodu = row.Cells[1].Text;
+            string serviskodu = row.Cells[2].Text;
 
             Response.Redirect("servis.aspx?serviskod=" + serviskodu.ToString());
         }
@@ -277,7 +280,8 @@ namespace Proje.Web.Tasarim
 
             GridViewServisList.DataSource = servisislem.getServisKayit();
             GridViewServisList.DataBind();
-            LabelBilgi.Text = "Servis Kaydı Başarıyla Kapatıldı.";
+            //LabelBilgi.Text = "Servis Kaydı Başarıyla Kapatıldı.";
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSucces('Servis Kaydı Başarıyla Kapatıldı', 'İŞLEM BAŞARILI');", true);
         }
 
     }

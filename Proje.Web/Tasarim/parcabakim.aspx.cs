@@ -48,20 +48,28 @@ namespace Proje.Web.Tasarim
                 TextBox fiyatSatis = GridViewParcaAll.FooterRow.FindControl("TextBox9") as TextBox;
                 TextBox stok = GridViewParcaAll.FooterRow.FindControl("TextBox11") as TextBox;
 
-                string s1 = Convert.ToString(parcaID.Text);
-                string s2 = Convert.ToString(parcaKodu.Text);
-                string s3 = Convert.ToString(parcaAdi.Text);
-                decimal s4 = Convert.ToDecimal(fiyatAlis.Text);
-                decimal s5 = Convert.ToDecimal(fiyatSatis.Text);
-                int s6 = Convert.ToInt32(stok.Text);
-                // kullaniciAdi, parola, tckn, adSoyad, iseGirisTarihi, Convert.ToInt32(bolumID), Convert.ToInt32(pozisyonID), telno
-
-                if (s1 != "" || s2 != "" || s3 != "" || s4 != 0 || s5 != 0)
+                if (parcaKodu.Text == "" || parcaAdi.Text == "" || fiyatAlis.Text == "" || fiyatSatis.Text == "" || stok.Text == "")
                 {
-                    parcaislem.AddParca(s2, s3, s4, s5, s6);
-                    GridViewParcaAll.DataSource = parcaislem.getParcaBilgiAll();
-                    GridViewParcaAll.DataBind();
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Eksik girişler mevcut', 'HATALI GİRİŞ');", true);
                 }
+                else
+                {
+                    string s1 = Convert.ToString(parcaID.Text);
+                    string s2 = Convert.ToString(parcaKodu.Text);
+                    string s3 = Convert.ToString(parcaAdi.Text);
+                    decimal s4 = Convert.ToDecimal(fiyatAlis.Text);
+                    decimal s5 = Convert.ToDecimal(fiyatSatis.Text);
+                    int s6 = Convert.ToInt32(stok.Text);
+                    // kullaniciAdi, parola, tckn, adSoyad, iseGirisTarihi, Convert.ToInt32(bolumID), Convert.ToInt32(pozisyonID), telno
+
+                    if (s1 != "" || s2 != "" || s3 != "" || s4 != 0 || s5 != 0)
+                    {
+                        parcaislem.AddParca(s2, s3, s4, s5, s6);
+                        GridViewParcaAll.DataSource = parcaislem.getParcaBilgiAll();
+                        GridViewParcaAll.DataBind();
+                    }
+                }
+                
             }
             catch (Exception ex)
             {
@@ -128,7 +136,7 @@ namespace Proje.Web.Tasarim
             GridViewParcaAll.EditIndex = e.NewEditIndex;
             GridViewParcaAll.DataSource = parcaislem.getParcaBilgiAll();
             GridViewParcaAll.DataBind();
-            Label11.Text = "";
+            //Label11.Text = "";
             GridViewParcaAll.EditRowStyle.BackColor = System.Drawing.Color.Orange;
         }
         protected void GridViewKullanici_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
@@ -136,7 +144,7 @@ namespace Proje.Web.Tasarim
             GridViewParcaAll.EditIndex = -1;
             GridViewParcaAll.DataSource = parcaislem.getParcaBilgiAll();
             GridViewParcaAll.DataBind();
-            Label11.Text = "";
+            //Label11.Text = "";
         }
         protected void GridViewKullanici_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
@@ -159,14 +167,20 @@ namespace Proje.Web.Tasarim
                 if (s1 != 0 || s2 != "" || s3 != "" || s4 != 0 || s5 != 0)
                 {
                     parcaislem.guncelleParca(s1, s2, s3, s4, s5, s6);
-                    Label11.Text = "Satır bilgisi başarıyla güncellendi";
+                    //Label11.Text = "Satır bilgisi başarıyla güncellendi";
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Satır bilgisi başarıyla güncellendi', 'İşlem Başarılı');", true);
 
                     GridViewParcaAll.EditIndex = -1;
                     GridViewParcaAll.DataSource = parcaislem.getParcaBilgiAll();
                     GridViewParcaAll.DataBind();
                 }
 
-                else ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Eksik girişler mevcut')", true);
+                else
+                {
+                    //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Eksik girişler mevcut')", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Eksik girişler mevcut', 'HATA');", true);
+                }
+                    
             }
 
             catch (Exception ex)

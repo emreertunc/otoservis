@@ -32,6 +32,11 @@ namespace Proje.Web.Tasarim
             {
                 GridViewKullanici.DataSource = kullanicibilgi.GetKullanici();
                 GridViewKullanici.DataBind();
+
+                GridViewBolumID.DataSource = kullanicibilgi.getBolumIDList();
+                GridViewPozisyonID.DataSource = kullanicibilgi.getPozisyonIDList();
+                GridViewPozisyonID.DataBind();
+                GridViewBolumID.DataBind();
             }
 
         }
@@ -62,7 +67,12 @@ namespace Proje.Web.Tasarim
 
                 // kullaniciAdi, parola, tckn, adSoyad, iseGirisTarihi, Convert.ToInt32(bolumID), Convert.ToInt32(pozisyonID), telno
 
-                if (s6 != "")
+                if(s1 == "" || s2 == "" || s3 == "" || s4 == "" || s5 == "" || s6 == "" || s7 == "" || s8 == "")
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Eksik girişler mevcut', 'HATA');", true);
+                }
+
+                else if (s6 != "")
                 {
                     kullanicibilgi.AddKullanici(s2, s3, s4, s5, s6, Convert.ToInt32(s7), Convert.ToInt32(s8), s9);
                     GridViewKullanici.DataSource = kullanicibilgi.GetKullanici();
@@ -129,7 +139,7 @@ namespace Proje.Web.Tasarim
             GridViewKullanici.EditIndex = e.NewEditIndex;
             GridViewKullanici.DataSource = kullanicibilgi.GetKullanici();
             GridViewKullanici.DataBind();
-            Label11.Text = "";
+            //Label11.Text = "";
             GridViewKullanici.EditRowStyle.BackColor = System.Drawing.Color.Orange;
         }
         protected void GridViewKullanici_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
@@ -137,7 +147,7 @@ namespace Proje.Web.Tasarim
             GridViewKullanici.EditIndex = -1;
             GridViewKullanici.DataSource = kullanicibilgi.GetKullanici();
             GridViewKullanici.DataBind();
-            Label11.Text = "";
+            //Label11.Text = "";
         }
         protected void GridViewKullanici_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
@@ -166,19 +176,26 @@ namespace Proje.Web.Tasarim
                 if (s6 != "")
                 {
                     kullanicibilgi.guncelleKullanici(s1, s2, s3, s4, s5, s6, Convert.ToInt32(s7), Convert.ToInt32(s8), s9);
-                    Label11.Text = "Satır bilgisi başarıyla güncellendi";
+                    //Label11.Text = "Satır bilgisi başarıyla güncellendi";
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Satır bilgisi başarıyla güncellendi', 'İŞLEM BAŞARILI');", true);
 
                     GridViewKullanici.EditIndex = -1;
                     GridViewKullanici.DataSource = kullanicibilgi.GetKullanici();
                     GridViewKullanici.DataBind();
                 }
 
-                else ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('hatalı tarih girildi')", true);
+                else
+                {
+                    //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('hatalı tarih girildi')", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Hatalı tarih girildi', 'HATA');", true);
+                }
+                    
             }
 
             catch (Exception ex)
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Güncelleme Başarısız')", true);
+                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Güncelleme Başarısız', 'HATA');", true);
             }
         }
 

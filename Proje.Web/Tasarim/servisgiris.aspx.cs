@@ -59,6 +59,16 @@ namespace Proje.Web.Tasarim
             }
         }
 
+        //protected void Page_PreRender(object sender, EventArgs e)
+        //{
+        //    if (!this.IsPostBack)
+        //    {
+                
+        //    }
+            
+            
+        //}
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -70,11 +80,27 @@ namespace Proje.Web.Tasarim
                 DropDownList2.DataSource = dbarac2.getMarkaListe();
                 DropDownList2.DataBind();
 
+                string findtext = DropDownList2.Items[0].ToString();
+
+                var query1 = db.aracmarkas.ToList()
+                             .Where(x => x.marka == findtext)
+                             .Select(x => x.markaID).Single();
+
+                int maid = query1;
+
+                DropDownList3.DataSource = arackayit.getSpesificModel(maid);
+                DropDownList3.DataBind();
+
+
+
                 //DropDownList3.DataSource = dbarac2.getModel();
                 //DropDownList3.DataBind();
 
-                DropDownList4.DataSource = musterikayit.getMusteri();
-                DropDownList4.DataBind();
+                Select1.DataSource= musterikayit.getMusteri();
+                Select1.DataBind();
+
+                //DropDownList4.DataSource = musterikayit.getMusteri();
+                //DropDownList4.DataBind();
 
 
                 int year = DateTime.Now.Year;
@@ -87,6 +113,15 @@ namespace Proje.Web.Tasarim
             }
 
         }
+
+        //protected override void Render(HtmlTextWriter writer)
+        //{
+        //    Page.ClientScript.RegisterForEventValidation("DropDownList4", "servis");
+        //    base.Render(writer);
+        //}
+
+
+
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -125,99 +160,142 @@ namespace Proje.Web.Tasarim
             TextBox3.Text = DropDownList3.SelectedValue;
             TextBox4.Text = DropDownList4.SelectedValue;
             TextBox5.Text = DropDownList5.SelectedValue;*/
-
-            string maid1 = TextBox2.Text;
-            string moid1 = TextBox3.Text;
-            string musid1 = TextBox4.Text;
-            string sene = TextBox5.Text;
-
-            if (maid1 == "Marka" || moid1 == "Model" || musid1 == "Müşteri" || sene == "Model Yılı")
+            try
             {
-                ShowMessageBox(Page, "Marka, model, müşteri ya da yıl seçimini unuttunuz, lütfen tekrar deneyin");
-                TextBox1.Text = "Plaka";
-                TextBox2.Text = "Marka";
-                TextBox3.Text = "Model";
-                TextBox4.Text = "Müşteri";
-                TextBox5.Text = "Model Yılı";
-                TextBox6.Text = "Ruhsat No";
-                TextBox7.Text = "Şase No";
-                TextBox8.Text = "Motor No";
-            }
+                string maid1 = TextBox2.Text;
+                string moid1 = TextBox3.Text;
+                string musid1 = TextBox4.Text;
+                string sene = TextBox5.Text;
 
-            else
-            {
-                var query1 = db.aracmarkas.ToList()
-                         .Where(x => x.marka == maid1)
-                         .Select(x => x.markaID).Single();
+                string plaka = TextBox1.Text;
+                string ruhsatno = TextBox6.Text;
+                string saseno = TextBox7.Text;
+                string motorno = TextBox8.Text;
 
-                var query2 = db.aracmodels.ToList()
-                             .Where(x => x.model == moid1)
-                             .Select(x => x.modelID).Single();
-
-                var query3 = db.musteris.ToList()
-                             .Where(x => x.adSoyad == musid1)
-                             .Select(x => x.musteriID).Single();
-
-
-                string pl = TextBox1.Text;
-                int maid = query1;
-                int moid = query2;
-                int musid = query3;
-                int yil = Convert.ToInt32(TextBox5.Text);
-                string ruhsat = TextBox6.Text;
-                string sase = TextBox7.Text;
-                string motor = TextBox8.Text;
-
-                int cevap = arackayit.ekleArac(pl, maid, moid, musid, yil, ruhsat, sase, motor);
-
-                if (cevap == 1)
+                if (maid1 == "" || moid1 == "" || musid1 == "" || sene == "")
                 {
-                    ShowMessageBox(Page, "Kayıt Başarıyla Eklendi");
-                    Label1.Text = "Kayıt Başarıyla Eklendi";
-                    TextBox1.Text = "Plaka";
-                    TextBox2.Text = "Marka";
-                    TextBox3.Text = "Model";
-                    TextBox4.Text = "Müşteri";
-                    TextBox5.Text = "Model Yılı";
-                    TextBox6.Text = "Ruhsat No";
-                    TextBox7.Text = "Şase No";
-                    TextBox8.Text = "Motor No";
-
-
-
-                    //servisislem.ekleServisKayit()
-
-
-
+                    //ShowMessageBox(Page, "Marka, model, müşteri ya da yıl seçimini unuttunuz, lütfen tekrar deneyin");
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Marka, model, müşteri ya da yıl seçimini unuttunuz', 'HATALI GİRİŞ');", true);
+                    TextBox1.Text = "";
+                    TextBox2.Text = "";
+                    TextBox3.Text = "";
+                    TextBox4.Text = "";
+                    TextBox5.Text = "";
+                    TextBox6.Text = "";
+                    TextBox7.Text = "";
+                    TextBox8.Text = "";
+                }
+                else if (plaka == "" || ruhsatno == "" || saseno == "" || motorno == "")
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Plaka, Ruhsat No, Şase No ya da Motor No girmeyi unuttunuz', 'HATALI GİRİŞ');", true);
+                    TextBox1.Text = "";
+                    TextBox2.Text = "";
+                    TextBox3.Text = "";
+                    TextBox4.Text = "";
+                    TextBox5.Text = "";
+                    TextBox6.Text = "";
+                    TextBox7.Text = "";
+                    TextBox8.Text = "";
                 }
 
-                else if (cevap == 2)
+                else
                 {
-                    ShowMessageBox(Page, "Girilen plakaya ait kayıt zaten mevcut, lütfen listeden seçip tekrar deneyin");
+                    var query1 = db.aracmarkas.ToList()
+                             .Where(x => x.marka == maid1)
+                             .Select(x => x.markaID).Single();
+
+                    var query2 = db.aracmodels.ToList()
+                                 .Where(x => x.model == moid1)
+                                 .Select(x => x.modelID).Single();
+
+                    var query3 = db.musteris.ToList()
+                                 .Where(x => x.adSoyad == musid1)
+                                 .Select(x => x.musteriID).Single();
+
+
+                    string pl = TextBox1.Text;
+                    int maid = query1;
+                    int moid = query2;
+                    int musid = query3;
+                    int yil = Convert.ToInt32(TextBox5.Text);
+                    string ruhsat = TextBox6.Text;
+                    string sase = TextBox7.Text;
+                    string motor = TextBox8.Text;
+
+                    int cevap = arackayit.ekleArac(pl, maid, moid, musid, yil, ruhsat, sase, motor);
+
+                    if (cevap == 1)
+                    {
+
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Kayıt Başarıyla Eklendi', 'İşlem Başarılı');", true);
+
+                        //ShowMessageBox(Page, "Kayıt Başarıyla Eklendi");
+                        //Label1.Text = "Kayıt Başarıyla Eklendi";
+
+                        //TextBox1.Text = "";
+                        //TextBox2.Text = "";
+                        //TextBox3.Text = "";
+                        //TextBox4.Text = "";
+                        //TextBox5.Text = "";
+                        //TextBox6.Text = "";
+                        //TextBox7.Text = "";
+                        //TextBox8.Text = "";
+
+
+
+                        //servisislem.ekleServisKayit()
+
+
+
+                    }
+
+                    else if (cevap == 2)
+                    {
+                        //ShowMessageBox(Page, "Girilen plakaya ait kayıt zaten mevcut, lütfen listeden seçip tekrar deneyin");
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Girilen plakaya ait kayıt zaten mevcut, lütfen listeden seçip tekrar deneyin', 'HATALI GİRİŞ');", true);
+                    }
+
+                    else
+                    {
+                        //ShowMessageBox(Page, "Kayıt eklenirken bir hata oluştu");
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Kayıt eklenirken beklenmeyen bir hata oluştu', 'HATA');", true);
+                    }
+
+                    DropDownList1.DataBind();
+                    DropDownList2.DataBind();
+                    DropDownList3.DataBind();
+                    //DropDownList4.DataBind();
+                    Select1.DataBind();
                 }
-
-                else ShowMessageBox(Page, "Kayıt eklenirken bir hata oluştu");
-
-                DropDownList1.DataBind();
-                DropDownList2.DataBind();
-                DropDownList3.DataBind();
-                DropDownList4.DataBind();
             }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hata')", true);
+            }
+            
         }
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TextBox2.Text = DropDownList2.SelectedValue;
+            try
+            {
+                TextBox2.Text = DropDownList2.SelectedValue;
 
-            string maid1 = TextBox2.Text;
+                string maid1 = TextBox2.Text;
 
-            var query1 = db.aracmarkas.ToList()
-                         .Where(x => x.marka == maid1)
-                         .Select(x => x.markaID).Single();
+                var query1 = db.aracmarkas.ToList()
+                             .Where(x => x.marka == maid1)
+                             .Select(x => x.markaID).Single();
 
-            int maid = query1;
-            DropDownList3.DataSource = arackayit.getSpesificModel(maid);
-            DropDownList3.DataBind();
+                int maid = query1;
+                DropDownList3.DataSource = arackayit.getSpesificModel(maid);
+                DropDownList3.DataBind();
+            }
+            catch(Exception ex)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Hata')", true);
+            }
+            
         }
 
         protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
@@ -227,7 +305,8 @@ namespace Proje.Web.Tasarim
 
         protected void DropDownList4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TextBox4.Text = DropDownList4.SelectedValue;
+            //TextBox4.Text = DropDownList4.SelectedValue;
+            TextBox4.Text = Select1.Value;
         }
 
         protected void DropDownList5_SelectedIndexChanged(object sender, EventArgs e)
@@ -240,9 +319,14 @@ namespace Proje.Web.Tasarim
             string tc = TextBox9.Text;
             string isim = TextBox10.Text;
 
-            if (tc == "TC No" || isim == "Ad Soyad")
+            if (tc == "" || isim == "")
             {
-                ShowMessageBox(Page, "TCKN veya isim girmeyi unuttunuz, lütfen tekrar deneyin");
+                //ShowMessageBox(Page, "TCKN veya isim girmeyi unuttunuz, lütfen tekrar deneyin");
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('TCKN veya isim girmeyi unuttunuz, lütfen tekrar deneyin', 'HATALI GİRİŞ');", true);
+            }
+            else if(tc.Length != 11)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('TCKN hatalı girildi', 'HATALI GİRİŞ');", true);
             }
 
             else
@@ -251,21 +335,27 @@ namespace Proje.Web.Tasarim
 
                 if (cevap == 1)
                 {
-                    ShowMessageBox(Page, "Kayıt Başarıyla Eklendi");
-                    Label2.Text = "Kayıt Başarıyla Eklendi";
-                    TextBox9.Text = "TC No";
-                    TextBox10.Text = "Ad Soyad";
+                    //ShowMessageBox(Page, "Kayıt Başarıyla Eklendi");
+                    //Label2.Text = "Kayıt Başarıyla Eklendi";
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Kayıt Başarıyla Eklendi', 'İşlem Başarılı');", true);
+                    TextBox9.Text = "";
+                    TextBox10.Text = "";
                 }
 
                 else if (cevap == 2)
                 {
-                    ShowMessageBox(Page, "Girilen TC No'ya ait kayıt zaten mevcut, lütfen listeden seçip tekrar deneyin");
+                    //ShowMessageBox(Page, "Girilen TC No'ya ait kayıt zaten mevcut, lütfen listeden seçip tekrar deneyin");
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Girilen TC No'ya ait kayıt zaten mevcut, lütfen listeden seçip tekrar deneyin', 'HATALI GİRİŞ');", true);
                 }
 
                 else ShowMessageBox(Page, "Kayıt eklenirken bir hata oluştu");
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Kayıt eklenirken beklenmeyen bir sorun oluştu', 'HATA');", true);
 
-                DropDownList4.DataSource = musterikayit.getMusteri();
-                DropDownList4.DataBind();
+                //DropDownList4.DataSource = musterikayit.getMusteri();
+                //DropDownList4.DataBind();
+
+                Select1.DataSource= musterikayit.getMusteri();
+                Select1.DataBind();
             }
         }
 
@@ -281,17 +371,18 @@ namespace Proje.Web.Tasarim
             string sase = TextBox7.Text;
             string motor = TextBox8.Text;
 
-            if (maid1 == "Marka" || moid1 == "Model" || musid1 == "Müşteri" || sene == "Model Yılı" || pl == "Plaka" || ruhsat == "Ruhsat No" || sase == "Şase No" || motor == "Motor No")
+            if (maid1 == "" || moid1 == "" || musid1 == "" || sene == "" || pl == "" || ruhsat == "" || sase == "" || motor == "")
             {
-                ShowMessageBox(Page, "Alanlardan birini doldurmayı unuttunuz, lütfen işlemi tekrar edin");
-                TextBox1.Text = "Plaka";
-                TextBox2.Text = "Marka";
-                TextBox3.Text = "Model";
-                TextBox4.Text = "Müşteri";
-                TextBox5.Text = "Model Yılı";
-                TextBox6.Text = "Ruhsat No";
-                TextBox7.Text = "Şase No";
-                TextBox8.Text = "Motor No";
+                //ShowMessageBox(Page, "Alanlardan birini doldurmayı unuttunuz, lütfen işlemi tekrar edin");
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Alanlardan birini doldurmayı unuttunuz, lütfen işlemi tekrar edin', 'EKSİK GİRİŞ');", true);
+                TextBox1.Text = "";
+                TextBox2.Text = "";
+                TextBox3.Text = "";
+                TextBox4.Text = "";
+                TextBox5.Text = "";
+                TextBox6.Text = "";
+                TextBox7.Text = "";
+                TextBox8.Text = "";
             }
 
             else
@@ -303,7 +394,8 @@ namespace Proje.Web.Tasarim
                 int aracid = query1;
 
                 int serviskodu = servisislem.ekleServisKayit(aracid);
-                Label1.Text = "Yeni servis kaydı oluşturuldu..";
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Servis sayfasına yönlendiriliyorsunuz', 'İŞLEM BAŞARILI');", true);
+                //Label1.Text = "Yeni servis kaydı oluşturuldu..";
 
                 Response.Redirect("servis.aspx?serviskod=" + serviskodu.ToString());
             }

@@ -29,9 +29,41 @@
     <link rel="stylesheet" type="text/css" href="assets/icon/icofont/css/icofont.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    
+    <!-- KIRMIZI ERROR TOASTR -->
+      <script>
+          function showContentError(msg, header) {
+              toastr.options = {
+                  "closeButton": true,
+                  "debug": false,
+                  "progressBar": true,
+                  "preventDuplicates": false,
+                  "positionClass": "toast-top-right",
+                  "showDuration": "400",
+                  "hideDuration": "1000",
+                  "timeOut": "7000",
+                  "extendedTimeOut": "1000",
+                  "showEasing": "swing",
+                  "hideEasing": "linear",
+                  "showMethod": "fadeIn",
+                  "hideMethod": "fadeOut",
+                  "data-type": "primary"
+              }
+              toastr["error"](msg, header);
+
+          }
+      </script>
+
 </head>
 
 <body class="fix-menu">
+
+    
     <!-- Pre-loader start -->
     <div class="theme-loader">
     <div class="ball-scale">
@@ -85,15 +117,23 @@
                                     <asp:TextBox ID="txtUserName"  CssClass="form-control"  PlaceHolder="Kullanıcı Adınız" runat="server"></asp:TextBox>
                                     <span class="md-line"></span>
                                 </div>
-                                <div class="input-group">
+                                <%--<div class="input-group">
                                     <asp:TextBox ID="txtPass"  CssClass="form-control"  PlaceHolder="Parola" TextMode="Password" runat="server"></asp:TextBox>
                                     <span class="md-line"></span>
                                 </div>
                                 <div class="input-group">
                                     <asp:TextBox ID="txtPass2"  CssClass="form-control"  PlaceHolder="Parolayı Onaylayın" TextMode="Password" runat="server"></asp:TextBox>
                                     <span class="md-line"></span>
-                                </div>
+                                </div>--%>
                                 
+                                <div class="input-group">
+                                    <asp:TextBox ID="txtPass"  CssClass="form-control"  PlaceHolder="Parola" TextMode="Password" runat="server"></asp:TextBox>
+
+                                    <asp:TextBox ID="txtPass2"  CssClass="form-control"  PlaceHolder="Parolayı Onaylayın" TextMode="Password" runat="server"></asp:TextBox>
+                                    <span class="md-line"></span>
+                                </div>
+
+
                                 <div class="row m-t-25 text-left" runat="server">
                                     <div class="col-md-12">
                                         <div class="checkbox-fade fade-in-primary">
@@ -313,6 +353,11 @@ Web sayfamızda, uygulamalarımızda ve diğer sair kanallarımızda kişisel ve
     </div>
   </div>
 </div>
+
+    
+
+    
+    
 </body>
 
 </html>

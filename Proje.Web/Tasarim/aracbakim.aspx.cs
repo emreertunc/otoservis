@@ -70,7 +70,7 @@ namespace Proje.Web.Tasarim
             GridView1.EditIndex = e.NewEditIndex;
             GridView1.DataSource = ObjectDataSource1;
             GridView1.DataBind();
-            LabelBilgi2.Text = "";
+            //LabelBilgi2.Text = "";
             GridView1.EditRowStyle.BackColor = System.Drawing.Color.Orange;
         }
 
@@ -79,7 +79,7 @@ namespace Proje.Web.Tasarim
             GridView1.EditIndex = -1;
             GridView1.DataSource = ObjectDataSource1;
             GridView1.DataBind();
-            LabelBilgi2.Text = "";
+            //LabelBilgi2.Text = "";
         }
 
         protected void LinkButton5_Click(object sender, EventArgs e)
@@ -98,9 +98,14 @@ namespace Proje.Web.Tasarim
                 GridView1.DataSource = ObjectDataSource1;
                 GridView1.DataBind();
             }
+            else if(model.Text == "")
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Model girişi yapmadınız', 'HATA');", true);
+            }
             else if (donendeger == 2)
             {
-                ShowMessageBox(Page, "Model listede bulunmakta, lütfen tekrar deneyin");
+                //ShowMessageBox(Page, "Model listede bulunmakta, lütfen tekrar deneyin");
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Model listede bulunmakta, lütfen tekrar deneyin', 'HATA');", true);
             }
 
         }
@@ -174,7 +179,8 @@ namespace Proje.Web.Tasarim
                 dbarac2.guncelleModel(m5id, m6id, m2);
             }
 
-            LabelBilgi2.Text = "Satır bilgisi başarıyla güncellendi";
+            //LabelBilgi2.Text = "Satır bilgisi başarıyla güncellendi";
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Satır bilgisi başarıyla güncellendi', 'İŞLEM BAŞARILI');", true);
 
             GridView1.EditIndex = -1;
             ObjectDataSource1.DataBind();
@@ -225,7 +231,7 @@ namespace Proje.Web.Tasarim
             GridView2.EditIndex = e.NewEditIndex;
             GridView2.DataSource = ObjectDataSource2;
             GridView2.DataBind();
-            LabelBilgi.Text = "";
+            //LabelBilgi.Text = "";
             GridView2.EditRowStyle.BackColor = System.Drawing.Color.Orange;
         }
 
@@ -234,7 +240,7 @@ namespace Proje.Web.Tasarim
             GridView2.EditIndex = -1;
             GridView2.DataSource = ObjectDataSource2;
             GridView2.DataBind();
-            LabelBilgi.Text = "";
+            //LabelBilgi.Text = "";
         }
 
         protected void GridView2_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -253,7 +259,8 @@ namespace Proje.Web.Tasarim
 
             if (query1.Count != 0)
             {
-                LabelBilgi.Text = "Marka zaten mevcut, ekleme işlemi gerçekleştirilemedi..";
+                //LabelBilgi.Text = "Marka zaten mevcut, ekleme işlemi gerçekleştirilemedi..";
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Marka zaten mevcut, ekleme işlemi gerçekleştirilemedi..', 'HATA');", true);
             }
 
             else if (query1.Count == 0)
@@ -266,7 +273,8 @@ namespace Proje.Web.Tasarim
 
                 dbarac2.guncelleMarka(m2id, m1);
 
-                LabelBilgi.Text = "Marka Başarıyla eklendi";
+                //LabelBilgi.Text = "Marka Başarıyla eklendi";
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Marka Başarıyla eklendi', 'İŞLEM BAŞARILI');", true);
             }
 
             GridView2.EditIndex = -1;
@@ -298,7 +306,8 @@ namespace Proje.Web.Tasarim
             }
             else if (donendeger == 2)
             {
-                ShowMessageBox(Page, "Marka listede bulunmakta, lütfen tekrar deneyin");
+                //ShowMessageBox(Page, "Marka listede bulunmakta, lütfen tekrar deneyin");
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Marka listede bulunmakta, lütfen tekrar deneyin', 'HATA');", true);
             }
         }
 

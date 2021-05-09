@@ -18,13 +18,11 @@
                                                 <div class="page-header-breadcrumb">
                                                    <ul class="breadcrumb-title">
                                                     <li class="breadcrumb-item">
-                                                        <a href="/default.aspx">
+                                                        <a href="default.aspx">
                                                             <i class="icofont icofont-home"></i>
                                                         </a>
                                                     </li>
-                                                    <li class="breadcrumb-item"><a href="#!">Bootstrap Table</a>
-                                                    </li>
-                                                    <li class="breadcrumb-item"><a href="#!">Basic Table</a>
+                                                    <li class="breadcrumb-item"><a href="musteribakim.aspx">Müşteri Bakım Ekranı</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -50,7 +48,7 @@
                                             <asp:Label ID="Label4" runat="server" Text='<%# Eval("musteriID") %>'></asp:Label>
                                         </EditItemTemplate>
                                         <FooterTemplate>
-                                            <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" ReadOnly="True" Visible="False"></asp:TextBox>
+                                            <asp:TextBox ID="TextBox3" PlaceHolder="Müşteri ID" runat="server" CssClass="form-control" ReadOnly="True" Visible="False"></asp:TextBox>
                                         </FooterTemplate>
                                         <ItemTemplate>
                                             <asp:Label ID="Label1" runat="server" Text='<%# Eval("musteriID") %>'></asp:Label>
@@ -62,7 +60,7 @@
                                             <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text='<%# Eval("tckn") %>'></asp:TextBox>
                                         </EditItemTemplate>
                                         <FooterTemplate>
-                                            <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <asp:TextBox ID="TextBox4" PlaceHolder="TC Kimlik NO" runat="server" CssClass="form-control"></asp:TextBox>
                                         </FooterTemplate>
                                         <ItemTemplate>
                                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("tckn") %>'></asp:Label>
@@ -74,7 +72,7 @@
                                             <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text='<%# Eval("adSoyad") %>'></asp:TextBox>
                                         </EditItemTemplate>
                                         <FooterTemplate>
-                                            <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <asp:TextBox ID="TextBox5" PlaceHolder="Ad Soyad" runat="server" CssClass="form-control"></asp:TextBox>
                                         </FooterTemplate>
                                         <ItemTemplate>
                                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("adSoyad") %>'></asp:Label>
@@ -99,7 +97,7 @@
                                     </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
-                            <asp:Label ID="LabelBilgi" runat="server" CssClass="alert alert-warning" Text="..."></asp:Label>
+                            <%--<asp:Label ID="LabelBilgi" runat="server" CssClass="alert alert-warning" Text="..."></asp:Label>--%>
                             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" InsertMethod="AddMusteri" SelectMethod="GetMusteris" TypeName="Proje.Business.dbmusteri2" DeleteMethod="silMusteri" UpdateMethod="guncelleMusteri">
                                 <DeleteParameters>
                                     <asp:Parameter Name="id" Type="Int32" />

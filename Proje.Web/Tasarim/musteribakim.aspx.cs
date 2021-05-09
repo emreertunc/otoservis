@@ -40,18 +40,47 @@ namespace Proje.Web.Tasarim
 
         protected void LinkButton5_Click(object sender, EventArgs e)
         {
-            TextBox musteriID = GridView1.FooterRow.FindControl("TextBox3") as TextBox;
-            TextBox tckn = GridView1.FooterRow.FindControl("TextBox4") as TextBox;
-            TextBox adSoyad = GridView1.FooterRow.FindControl("TextBox5") as TextBox;
+            try
+            {
+                otoservisdbEntities db = new otoservisdbEntities();
 
-            //int deneme1 = Convert.ToInt32(musteriID.Text);
-            string deneme2 = Convert.ToString(tckn.Text);
-            string deneme3 = Convert.ToString(adSoyad.Text);
+                TextBox musteriID = GridView1.FooterRow.FindControl("TextBox3") as TextBox;
+                TextBox tckn = GridView1.FooterRow.FindControl("TextBox4") as TextBox;
+                TextBox adSoyad = GridView1.FooterRow.FindControl("TextBox5") as TextBox;
 
-            dbmusteri2.AddMusteri(deneme2, deneme3);
-            ObjectDataSource1.DataBind();
-            GridView1.DataSource = ObjectDataSource1;
-            GridView1.DataBind();
+                //int deneme1 = Convert.ToInt32(musteriID.Text);
+                string tckimlik = Convert.ToString(tckn.Text);
+                string isim = Convert.ToString(adSoyad.Text);
+
+                if (tckimlik != "" && isim != "")
+                {
+                    
+                    List<string> ifmusteriexists = db.musteris.ToList()
+                                .Where(x => x.tckn == tckimlik)
+                                .Select(x => x.tckn).ToList();
+
+                    if (ifmusteriexists.Count == 0)
+                    {
+                        dbmusteri2.AddMusteri(tckimlik, isim);
+                    }
+                    else
+                    {
+                        //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Müşteri mevcut, lütfen kontrol ediniz')", true);
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Müşteri mevcut, lütfen kontrol ediniz', 'HATA');", true);
+                    }
+
+                    ObjectDataSource1.DataBind();
+                    GridView1.DataSource = ObjectDataSource1;
+                    GridView1.DataBind();
+                }
+                else ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Eksik girişler mevcut', 'HATA');", true);
+
+            }
+            catch(Exception ex)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Ekleme başarısız', 'HATA');", true);
+            }
+            
         }
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
@@ -72,7 +101,7 @@ namespace Proje.Web.Tasarim
             GridView1.EditIndex = e.NewEditIndex;
             GridView1.DataSource = ObjectDataSource1;
             GridView1.DataBind();
-            LabelBilgi.Text = "";
+            //LabelBilgi.Text = "";
             GridView1.EditRowStyle.BackColor = System.Drawing.Color.Orange;
         }
 
@@ -81,7 +110,7 @@ namespace Proje.Web.Tasarim
             GridView1.EditIndex = -1;
             GridView1.DataSource = ObjectDataSource1;
             GridView1.DataBind();
-            LabelBilgi.Text = "";
+            //LabelBilgi.Text = "";
         }
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -95,7 +124,8 @@ namespace Proje.Web.Tasarim
             string deneme3 = adSoyad.Text;
 
             dbmusteri2.guncelleMusteri(deneme1, deneme2, deneme3);
-            LabelBilgi.Text = "Satır bilgisi başarıyla güncellendi";
+            //LabelBilgi.Text = "Satır bilgisi başarıyla güncellendi";
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Satır bilgisi başarıyla güncellendi', 'İŞLEM BAŞARILI');", true);
 
             GridView1.EditIndex = -1;
             ObjectDataSource1.DataBind();

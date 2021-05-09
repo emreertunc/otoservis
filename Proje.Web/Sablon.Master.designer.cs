@@ -69,6 +69,15 @@ namespace Proje.Web
         protected global::System.Web.UI.WebControls.Image Image2;
 
         /// <summary>
+        /// spanUname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spanUname;
+
+        /// <summary>
         /// labelUname1 control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,24 @@ namespace Proje.Web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label labelUname1;
+
+        /// <summary>
+        /// icon1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl icon1;
+
+        /// <summary>
+        /// ulHeaderMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ulHeaderMenu;
 
         /// <summary>
         /// BtnLogout control.
@@ -130,6 +157,15 @@ namespace Proje.Web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMainMenuSearch;
+
+        /// <summary>
+        /// divGenel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divGenel;
 
         /// <summary>
         /// divCalisan control.

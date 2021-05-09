@@ -61,6 +61,11 @@ namespace Proje.Web
                 if (Session["role"] == null)
                 {
                     this.Image1.Attributes["src"] = "assets/images/misafir100_100.jpg";
+                    this.Image2.Attributes["src"] = "assets/images/misafir100_100.jpg";
+                    spanUname.Visible = false;
+                    icon1.Visible = false;
+                    ulHeaderMenu.Visible = false;
+
                     labelUname2.Text = "GUEST";
                     labelPozisyon.Text = "";
 
@@ -76,6 +81,8 @@ namespace Proje.Web
 
                     this.Image1.Attributes["src"] = "assets/images/admin100.jpg";
                     this.Image2.Attributes["src"] = "assets/images/admin100.jpg";
+
+                    divGuest.Visible = false;
                 }
 
                 else if (Session["role"].Equals(2))
@@ -83,12 +90,18 @@ namespace Proje.Web
 
                     labelUname2.Text = Session["fullname"].ToString();
                     labelPozisyon.Text = Session["pozisyon"].ToString();
+
+
+                    /* KULLANICILARA ÖZEL FOTOGRAF İCİN BURASI KULLANILACAK
                     this.Image1.Attributes["src"] = "assets/images/" + Session["tckn"].ToString() + ".jpg";
                     this.Image2.Attributes["src"] = "assets/images/" + Session["tckn"].ToString() + ".jpg";
-
+                    */
+                    this.Image1.Attributes["src"] = "assets/images/customer.png";
+                    this.Image2.Attributes["src"] = "assets/images/customer.png";
 
                     divCalisan.Visible = false;
                     divAdmin.Visible = false;
+                    divGuest.Visible = false;
 
                 }
 
@@ -100,6 +113,7 @@ namespace Proje.Web
                     this.Image2.Attributes["src"] = "assets/images/usta100.jpg";
 
                     divAdmin.Visible = false;
+                    divGuest.Visible = false;
                 }
             }
 

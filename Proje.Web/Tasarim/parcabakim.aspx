@@ -20,13 +20,11 @@
                                                 <div class="page-header-breadcrumb">
                                                    <ul class="breadcrumb-title">
                                                     <li class="breadcrumb-item">
-                                                        <a href="index.html">
+                                                        <a href="default.aspx">
                                                             <i class="icofont icofont-home"></i>
                                                         </a>
                                                     </li>
-                                                    <li class="breadcrumb-item"><a href="#!">Icons</a>
-                                                    </li>
-                                                    <li class="breadcrumb-item"><a href="#">Ico- Fonts</a>
+                                                    <li class="breadcrumb-item"><a href="parcabakim.aspx">Parça Bakım Ekranı</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -161,7 +159,7 @@
                 </div>
 
 
-                <asp:Label ID="Label11" runat="server"></asp:Label>
+               <%-- <asp:Label ID="Label11" runat="server"></asp:Label>--%>
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>

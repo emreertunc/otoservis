@@ -33,22 +33,13 @@ namespace Proje.Web.Tasarim
         protected global::System.Web.UI.UpdatePanel UpdatePanelServisKayit;
 
         /// <summary>
-        /// Table1 control.
+        /// LabelKayitliPlaka control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
-
-        /// <summary>
-        /// TableRow12 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableRow TableRow12;
+        protected global::System.Web.UI.WebControls.Label LabelKayitliPlaka;
 
         /// <summary>
         /// DropDownList1 control.
@@ -69,31 +60,22 @@ namespace Proje.Web.Tasarim
         protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// TableRow1 control.
+        /// divTable1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TableRow TableRow1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divTable1;
 
         /// <summary>
-        /// TableRow11 control.
+        /// Table1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TableRow TableRow11;
-
-        /// <summary>
-        /// TableRow13 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableRow TableRow13;
+        protected global::System.Web.UI.WebControls.Table Table1;
 
         /// <summary>
         /// TableRow17 control.
@@ -195,13 +177,13 @@ namespace Proje.Web.Tasarim
         protected global::System.Web.UI.WebControls.TextBox TextBox4;
 
         /// <summary>
-        /// DropDownList4 control.
+        /// Select1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect Select1;
 
         /// <summary>
         /// TableRow5 control.
@@ -303,6 +285,15 @@ namespace Proje.Web.Tasarim
         protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
+        /// TableRow11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow TableRow11;
+
+        /// <summary>
         /// Button4 control.
         /// </summary>
         /// <remarks>
@@ -310,24 +301,6 @@ namespace Proje.Web.Tasarim
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button4;
-
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
-        /// UpdatePanelMusteriKayit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanelMusteriKayit;
 
         /// <summary>
         /// Table2 control.
@@ -400,14 +373,5 @@ namespace Proje.Web.Tasarim
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button3;
-
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
     }
 }

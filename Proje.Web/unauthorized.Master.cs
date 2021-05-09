@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace Proje.Web
@@ -29,6 +30,10 @@ namespace Proje.Web
                     //divUserSettingsinMenu.Visible = false;
                     divMainMenuSearch.Visible = false;
                     this.Image1.Attributes["src"] = "assets/images/misafir100_100.jpg";
+                    this.Image2.Attributes["src"] = "assets/images/misafir100_100.jpg";
+                    spanUname.Visible = false;
+                    icon1.Visible = false;
+                    ulHeaderMenu.Visible = false;
                     divGuestUyari.Visible = true;
 
 
@@ -44,14 +49,21 @@ namespace Proje.Web
                     labelUname2.Text = Session["fullname"].ToString();
                     labelPozisyon.Text = Session["pozisyon"].ToString();
 
+                    /* KULLANICILARA ÖZEL FOTOGRAF İCİN BURASI KULLANILACAK
                     this.Image1.Attributes["src"] = "assets/images/" + Session["tckn"].ToString() + ".jpg";
                     this.Image2.Attributes["src"] = "assets/images/" + Session["tckn"].ToString() + ".jpg";
+                    */
+                    this.Image1.Attributes["src"] = "assets/images/customer.png";
+                    this.Image2.Attributes["src"] = "assets/images/customer.png";
 
                     divCalisan.Visible = false;
                     divAdmin.Visible = false;
+                    divGuest.Visible = false;
 
                     divUnauthorized.Visible = true;
                     divContentGoster.Visible = false;
+
+
                 }
 
                 else if (Session["role"].Equals(3) || Session["role"].Equals(4))
@@ -62,6 +74,7 @@ namespace Proje.Web
                     this.Image2.Attributes["src"] = "assets/images/usta100.jpg";
 
                     divAdmin.Visible = false;
+                    divGuest.Visible = false;
 
                     divUnauthorized.Visible = true;
                     divContentGoster.Visible = false;

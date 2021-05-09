@@ -18,13 +18,11 @@
                                                 <div class="page-header-breadcrumb">
                                                    <ul class="breadcrumb-title">
                                                     <li class="breadcrumb-item">
-                                                        <a href="index.html">
+                                                        <a href="default.aspx">
                                                             <i class="icofont icofont-home"></i>
                                                         </a>
                                                     </li>
-                                                    <li class="breadcrumb-item"><a href="#!">Icons</a>
-                                                    </li>
-                                                    <li class="breadcrumb-item"><a href="#">Ico- Fonts</a>
+                                                    <li class="breadcrumb-item"><a href="servisdurum.aspx">Servis Durum Ekranı</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -50,15 +48,32 @@
                             <asp:Label ID="Label1" CssClass="alert alert-primary" runat="server" Text=""></asp:Label>
                             <br />
                             <br />
-                            <asp:GridView ID="GridViewServisler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridViewServisler_SelectedIndexChanged"></asp:GridView>
+                            <asp:GridView ID="GridViewServisler" Width="100%"
+                                CssClass="table table-bordered table-borderless table-hover"
+                                runat="server" OnSelectedIndexChanged="GridViewServisler_SelectedIndexChanged">
+                                <Columns>
+                    <asp:CommandField ShowSelectButton="True" SelectText="Seç" />
+                </Columns>
+
+                            </asp:GridView>
                             <br />
-                            <asp:Label ID="Label2" CssClass="alert alert-warning" runat="server" Text="Servis Kalemlerini (varsa) görmek için Select tuşuna tıklayınız."></asp:Label>
+                            <asp:Label ID="Label2" CssClass="alert alert-warning" runat="server" Text="Servis Kalemlerini (varsa) görmek için SEÇ tuşuna tıklayınız."></asp:Label>
                             <br />
                             <asp:GridView ID="GridViewServisKalemler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server"></asp:GridView>
                             <br />
-                            <asp:GridView ID="GridViewAktifServisler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridViewAktifServisler_SelectedIndexChanged"></asp:GridView>
+
+
+                            <asp:GridView ID="GridViewAktifServisler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" OnSelectedIndexChanged="GridViewAktifServisler_SelectedIndexChanged" OnRowEditing="GridViewAktifServisler_RowEditing">
+                                <Columns>
+                    <asp:CommandField ShowSelectButton="True" SelectText="Seç" />
+                </Columns>
+                    <Columns>
+                    <asp:CommandField ShowEditButton="True" EditText="Servis Kaydına Git" />
+                </Columns>
+                            </asp:GridView>
                             <br />
-                            <asp:Label ID="Label3" CssClass="alert alert-warning" runat="server" Text="Servis Kalemlerini (varsa) görmek için Select tuşuna tıklayınız."></asp:Label>
+                            <br />
+                            <asp:Label ID="Label3" CssClass="alert alert-warning" runat="server" Text="Servis Kalemlerini (varsa) görmek için SEÇ tuşuna tıklayınız."></asp:Label>
                             <br />
                             <br />
                             <asp:GridView ID="GridViewAktifKalemler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server"></asp:GridView>

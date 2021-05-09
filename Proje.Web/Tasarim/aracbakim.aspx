@@ -18,13 +18,11 @@
                                                 <div class="page-header-breadcrumb">
                                                    <ul class="breadcrumb-title">
                                                     <li class="breadcrumb-item">
-                                                        <a href="index.html">
+                                                        <a href="default.aspx">
                                                             <i class="icofont icofont-home"></i>
                                                         </a>
                                                     </li>
-                                                    <li class="breadcrumb-item"><a href="#!">Icons</a>
-                                                    </li>
-                                                    <li class="breadcrumb-item"><a href="#">Ico- Fonts</a>
+                                                    <li class="breadcrumb-item"><a href="aracbakim.aspx">Marka Model Bakım Ekranı</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -80,7 +78,7 @@
                                         </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
-                                <asp:Label ID="LabelBilgi" runat="server" CssClass="alert alert-warning" Text="..."></asp:Label>
+                                <%--<asp:Label ID="LabelBilgi" runat="server" CssClass="alert alert-warning" Text="..."></asp:Label>--%>
                                 <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetMarkas" TypeName="Proje.Business.dbarac2"></asp:ObjectDataSource>
                             </div>
                         </div>
@@ -145,7 +143,7 @@
                                         </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
-                                <asp:Label ID="LabelBilgi2" runat="server" CssClass="alert alert-warning" Text="..."></asp:Label>
+                                <%--<asp:Label ID="LabelBilgi2" runat="server" CssClass="alert alert-warning" Text="..."></asp:Label>--%>
                                 <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetMarkaModels" TypeName="Proje.Business.dbarac2"></asp:ObjectDataSource>
                                 <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="getMarkaListe" TypeName="Proje.Business.dbarac2"></asp:ObjectDataSource>
                             </div>

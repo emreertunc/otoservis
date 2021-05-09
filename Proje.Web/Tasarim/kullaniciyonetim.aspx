@@ -18,13 +18,11 @@
                                                 <div class="page-header-breadcrumb">
                                                    <ul class="breadcrumb-title">
                                                     <li class="breadcrumb-item">
-                                                        <a href="index.html">
+                                                        <a href="default.aspx">
                                                             <i class="icofont icofont-home"></i>
                                                         </a>
                                                     </li>
-                                                    <li class="breadcrumb-item"><a href="#!">Icons</a>
-                                                    </li>
-                                                    <li class="breadcrumb-item"><a href="#">Ico- Fonts</a>
+                                                    <li class="breadcrumb-item"><a href="kullaniciyonetim.aspx">Kullanıcı Bakım Ekranı</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -40,7 +38,7 @@
         <asp:UpdatePanel ID="UpdatePanelMusteri" runat="server">
                         <ContentTemplate>
 
-                            <div class="row">
+          <div class="row">
             <div class="col-md-12">
                 <div class="table-responsive" style="overflow: visible;">
         <asp:GridView ID="GridViewKullanici" runat="server" Width="100%" CssClass="table table-bordered table-hover table-active" AllowPaging="True" OnPageIndexChanging="OnPaging" ShowFooter="True" AutoGenerateColumns="False" OnRowDeleting="GridViewKullanici_RowDeleting" OnRowCancelingEdit="GridViewKullanici_RowCancelingEdit" OnRowEditing="GridViewKullanici_RowEditing" OnRowUpdating="GridViewKullanici_RowUpdating" >
@@ -63,7 +61,7 @@
                         <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text='<%# Eval("kullaniciAdi") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="TextBox3" PlaceHolder="Kullanıcı Adı" runat="server" CssClass="form-control"></asp:TextBox>
                     </FooterTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label3" runat="server" Text='<%# Eval("kullaniciAdi") %>'></asp:Label>
@@ -76,7 +74,7 @@
                         <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" Text='<%# Eval("parola") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="TextBox5" PlaceHolder="Parola" runat="server" CssClass="form-control"></asp:TextBox>
                     </FooterTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label4" runat="server" Text='<%# Eval("parola") %>'></asp:Label>
@@ -89,7 +87,7 @@
                         <asp:TextBox ID="TextBox6" runat="server" CssClass="form-control" Text='<%# Eval("tckn") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="TextBox7" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="TextBox7" PlaceHolder="TC Kimlik No" runat="server" CssClass="form-control"></asp:TextBox>
                     </FooterTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label5" runat="server" Text='<%# Eval("tckn") %>'></asp:Label>
@@ -102,7 +100,7 @@
                         <asp:TextBox ID="TextBox8" runat="server" CssClass="form-control" Text='<%# Eval("adSoyad") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="TextBox9" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="TextBox9" PlaceHolder="Ad Soyad" runat="server" CssClass="form-control"></asp:TextBox>
                     </FooterTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label6" runat="server" Text='<%# Eval("adSoyad") %>'></asp:Label>
@@ -128,7 +126,7 @@
                         <asp:TextBox ID="TextBox12" runat="server" CssClass="form-control" Text='<%# Eval("bolumID") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="TextBox13" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="TextBox13" PlaceHolder="Bölüm ID" runat="server" CssClass="form-control"></asp:TextBox>
                     </FooterTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label8" runat="server" Text='<%# Eval("bolumID") %>'></asp:Label>
@@ -141,7 +139,7 @@
                         <asp:TextBox ID="TextBox14" runat="server" CssClass="form-control" Text='<%# Eval("pozisyonID") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="TextBox15" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="TextBox15" PlaceHolder="Pozisyon ID" runat="server" CssClass="form-control"></asp:TextBox>
                     </FooterTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label9" runat="server" Text='<%# Eval("pozisyonID") %>'></asp:Label>
@@ -155,7 +153,7 @@
                         <asp:TextBox ID="TextBox16" runat="server" CssClass="form-control" Text='<%# Eval("telno") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="TextBox17" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="TextBox17" PlaceHolder="Telefon Numarası" runat="server" CssClass="form-control"></asp:TextBox>
                     </FooterTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label10" runat="server" Text='<%# Eval("telno") %>'></asp:Label>
@@ -184,11 +182,33 @@
         </asp:GridView>
         <asp:Label ID="Label11" runat="server"></asp:Label>
             </div>
-                </div>
-                                </div>
-                            
+            </div>
+          </div>
+                            <br/>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="table-responsive" style="overflow: visible;">
+                                <asp:Table ID="TableID" runat="server" Width="100%" CssClass="table table-borderless">
+                                    <asp:TableRow ID="TableRow2" runat="server">
+                                        <asp:TableCell><h4>Bölüm / Pozisyon ID</h4></asp:TableCell>
+                                    </asp:TableRow>
+                                    <asp:TableRow ID="TableRow1" runat="server">
+                                        <asp:TableCell><asp:GridView ID="GridViewBolumID" runat="server"></asp:GridView></asp:TableCell>
+                                        <asp:TableCell><asp:GridView ID="GridViewPozisyonID" runat="server"></asp:GridView></asp:TableCell>
+                                    </asp:TableRow>
 
-                            </ContentTemplate>
-            </asp:UpdatePanel>
+                                    </asp:Table>
+
+                                            
+
+                                            
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </ContentTemplate>
+        </asp:UpdatePanel>
     </div>
 </asp:Content>

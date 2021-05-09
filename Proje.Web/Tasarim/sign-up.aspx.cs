@@ -43,33 +43,57 @@ namespace Proje.Web.Tasarim
 						 .Where(x => x.kullaniciAdi == kullaniciadi)
 						 .Select(x => x.kullaniciAdi).ToList();
 
-					if (tckn.Length != 11)
-                    {
-						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('TC Kimlik no hatalı girildi')", true);
+					List<string> ifmusteriexists = db.musteris.ToList()
+						.Where(x => x.tckn == tckn)
+						.Select(x => x.tckn).ToList();
+
+					if (adsoyad == "")
+					{
+						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Ad Soyad boş bırakılamaz', '');", true);
 					}
 
 					else if (telno.Length != 10 || Regex.IsMatch(telno, @"^[a-zA-Z_]+$"))
-                    {
-						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('TC Kimlik no hatalı girildi')", true);
+					{
+						//ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Telefon numarası hatalı girildi')", true);
+						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Telefon numarası hatalı formatta girildi', '');", true);
 					}
+
+					else if (tckn.Length != 11)
+                    {
+						//ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('TC Kimlik no hatalı girildi')", true);
+						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('TC Kimlik NO hatalı formatta girildi', '');", true);
+						//Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showContentError('TC Kimlik no hatalı formatta girildi', '');", true);
+					}
+					
 					else if (parola != parola2)
 					{
-						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Parolalar eşleşmiyor!')", true);
+						//ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Parolalar eşleşmiyor!')", true);
+						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Parolalar eşleşmiyor!', '');", true);
 					}
 					else if (query1.Count != 0)
 					{
-						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bu kullanıcı adı önceden alınmış!')", true);
+						//ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bu kullanıcı adı önceden alınmış!')", true);
+						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Bu kullanıcı adı önceden alınmış!', '');", true);
 					}
 					else if(checkboxKVKK.Checked != true)
                     {
-						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Lütfen Kullanıcı Sözleşmesini onaylayınız.')", true);
-
+						//ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Lütfen Kullanıcı Sözleşmesini onaylayınız.')", true);
+						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Lütfen Kullanıcı Sözleşmesini onaylayınız.', '');", true);
 					}
-					else
+					else if(ifmusteriexists.Count == 0)
                     {
 						kullanicibilgi.AddKullanici(kullaniciadi, parola, tckn, adsoyad, isegiristarihi, bolumid, pozisyonid, telno);
 						dbmusteri2.AddMusteri(tckn, adsoyad);
 						Response.Redirect("sign-in.aspx");
+					}
+					else if(ifmusteriexists.Count != 0)
+                    {
+						kullanicibilgi.AddKullanici(kullaniciadi, parola, tckn, adsoyad, isegiristarihi, bolumid, pozisyonid, telno);
+						Response.Redirect("sign-in.aspx");
+                    }
+                    else
+                    {
+
                     }
 				}
             }

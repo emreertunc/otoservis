@@ -76,6 +76,10 @@
                 <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" AutoPostBack="True" OnTextChanged="OnTextChanged"></asp:TextBox>
                 <asp:Button ID="ButtonTemizle" runat="server" Text="Temizle" OnClick="ButtonTemizle_Click" />
                 <asp:GridView ID="GridViewParca" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowPaging="True" OnPageIndexChanging="OnPaging">
+                <Columns>
+                    <asp:CommandField ShowSelectButton="True" SelectText="Seç" />
+                </Columns>
+                    
                 </asp:GridView>
             </div>
             

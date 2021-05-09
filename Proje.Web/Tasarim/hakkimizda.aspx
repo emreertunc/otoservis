@@ -18,13 +18,11 @@
                                                 <div class="page-header-breadcrumb">
                                                     <ul class="breadcrumb-title">
                                                         <li class="breadcrumb-item">
-                                                            <a href="/default.aspx">
+                                                            <a href="default.aspx">
                                                                 <i class="icofont icofont-home"></i>
                                                             </a>
                                                         </li>
-                                                        <li class="breadcrumb-item"><a href="#!">Pages</a>
-                                                        </li>
-                                                        <li class="breadcrumb-item"><a href="#!">Sample page</a>
+                                                        <li class="breadcrumb-item"><a href="hakkimizda.aspx">Hakkımızda</a>
                                                         </li>
                                                     </ul>
                                                 </div>

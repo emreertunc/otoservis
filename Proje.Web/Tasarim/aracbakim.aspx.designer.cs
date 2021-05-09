@@ -42,15 +42,6 @@ namespace Proje.Web.Tasarim
         protected global::System.Web.UI.WebControls.GridView GridView2;
 
         /// <summary>
-        /// LabelBilgi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelBilgi;
-
-        /// <summary>
         /// ObjectDataSource2 control.
         /// </summary>
         /// <remarks>
@@ -67,15 +58,6 @@ namespace Proje.Web.Tasarim
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-
-        /// <summary>
-        /// LabelBilgi2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelBilgi2;
 
         /// <summary>
         /// ObjectDataSource1 control.

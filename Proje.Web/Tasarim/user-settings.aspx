@@ -18,13 +18,11 @@
                                                 <div class="page-header-breadcrumb">
                                                    <ul class="breadcrumb-title">
                                                     <li class="breadcrumb-item">
-                                                        <a href="index.html">
+                                                        <a href="default.aspx">
                                                             <i class="icofont icofont-home"></i>
                                                         </a>
                                                     </li>
-                                                    <li class="breadcrumb-item"><a href="#!">Icons</a>
-                                                    </li>
-                                                    <li class="breadcrumb-item"><a href="#">Ico- Fonts</a>
+                                                    <li class="breadcrumb-item"><a href="user-settings.aspx">Kullanıcı Ayar Ekranı</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -98,7 +96,7 @@
                                             <asp:Button ID="btnGuncelle" CssClass="btn btn-primary" runat="server" Text="Güncelle" OnClick="btnGuncelle_Click" /></asp:TableCell>
                                     </asp:TableRow>
                                 </asp:Table>
-                                <asp:Label ID="LabelBilgi" runat="server" CssClass="alert alert-warning" Text="..."></asp:Label>
+                                <%--<asp:Label ID="LabelBilgi" runat="server" CssClass="alert alert-warning" Text="..."></asp:Label>--%>
                             </div>
                         </div>
                     </div>

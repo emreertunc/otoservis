@@ -101,6 +101,7 @@
     <Content Include="Tasarim\assets\images\avatar-4.jpg" />
     <Content Include="Tasarim\assets\images\bg.jpg" />
     <Content Include="Tasarim\assets\images\carrepairlogo.jpg" />
+    <Content Include="Tasarim\assets\images\customer.png" />
     <Content Include="Tasarim\assets\images\favicon.ico" />
     <Content Include="Tasarim\assets\images\flags\ENGLISH.jpg" />
     <Content Include="Tasarim\assets\images\flags\FRANCE.jpg" />

@@ -34,6 +34,9 @@
     <%--    <link href="Tasarim/assets/js/emredate/styles/jquery-ui.css" rel="stylesheet" />
     <script src="Tasarim/assets/js/emredate/scripts/jquery-1.11.3.min.js"></script>
     <script src="Tasarim/assets/js/emredate/scripts/jquery-ui.js"></script>--%>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -97,7 +100,7 @@
                             </div>
                         <div id="divStandartUsername" runat="server">
                             <ul class="nav-right">
-                            <li class="header-notification">
+                            <%--<li class="header-notification">
                                 <a href="#!">
                                     <i class="ti-bell"></i>
                                     <span class="badge bg-c-pink"></span>
@@ -138,22 +141,17 @@
                                         </div>
                                     </li>
                                 </ul>
-                            </li>
+                            </li>--%>
                             <li class="user-profile header-notification">
                                 <a href="#!">
                                     <asp:Image CssClass="img-radius" src="assets/images/avatar-4.jpg" ID="Image2" runat="server" alt="User-Profile-Image" />
-                                    <span id="spanUname"><asp:Label ID="labelUname1" runat="server" Text=""></asp:Label></span>
-                                    <i id="icon1" class="ti-angle-down"></i>
+                                    <span id="spanUname" runat="server"><asp:Label ID="labelUname1" runat="server" Text=""></asp:Label></span>
+                                    <i id="icon1" runat="server" class="ti-angle-down"></i>
                                 </a>
-                                <ul class="show-notification profile-notification">
+                                <ul id="ulHeaderMenu" runat="server" class="show-notification profile-notification">
                                     <li>
                                         <a href="user-settings.aspx">
                                             <i class="ti-settings"></i> Kullanıcı Ayarları
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
                                     <li>
@@ -203,6 +201,20 @@
                                 </div>
                             </div>
 
+                            <div id="divGenel" runat="server">
+                                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Genel</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="">
+                                    <a href="hakkimizda.aspx">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Hakkımızda</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                </ul>
+                            </div>
+
+
                             <div id="divCalisan" runat="server">
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Çalışan</div>
                             <ul class="pcoded-item pcoded-left-item">
@@ -223,7 +235,7 @@
                                 <li class="">
                                     <a href="aracbakim.aspx">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Araç Bakım</span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Marka Model Bakım</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
@@ -346,13 +358,6 @@
                                             <a href="sign-up.aspx">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Kayıt Ol</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="hakkimizda.aspx">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Hakkımızda</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
@@ -560,7 +565,7 @@
                 </a>
             </li>
             <li>
-                <a href="https://www.apple.com/safari/">
+                <a href="https://www.apple.com/safari/"><a href="{6F232101-EA82-47B3-A09F-52F8108B3014}|Proje.Business\Proje.Business.csproj|c:\users\ertun\source\repos\otoservis\proje.business\app.config">{6F232101-EA82-47B3-A09F-52F8108B3014}|Proje.Business\Proje.Business.csproj|c:\users\ertun\source\repos\otoservis\proje.busine<a href="{6F232101-EA82-47B3-A09F-52F8108B3014}|Proje.Business\Proje.Business.csproj|c:\users\ertun\source\repos\otoservis\proje.business\app.config">{6F232101-EA82-47B3-A09F-52F8108B3014}|Proje.Business\Proje.Business.csproj|c:\users\ertun\source\repos\otoservis\proje.business\app.config</a>ss\app.config</a>
                     <img src="assets/images/browser/safari.png" alt="Safari">
                     <div>Safari</div>
                 </a>
@@ -642,7 +647,79 @@
 <script src="assets/js/demo-12.js"></script>
 <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 
-        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>   
+
+<!-- YESIL SUCCESS TOASTR -->
+      <script>
+          function showContentSuccess(msg, header) {
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": false,
+                    "progressBar": true,
+                    "preventDuplicates": false,
+                    "positionClass": "toast-top-right",
+                    "showDuration": "400",
+                    "hideDuration": "1000",
+                    "timeOut": "7000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut",
+                    "data-type": "primary"
+                }
+              toastr["success"](msg, header);
+
+            }
+      </script>
+
+<!-- SARI WARNING TOASTR -->
+      <script>
+          function showContentWarning(msg, header) {
+              toastr.options = {
+                  "closeButton": true,
+                  "debug": false,
+                  "progressBar": true,
+                  "preventDuplicates": false,
+                  "positionClass": "toast-top-right",
+                  "showDuration": "400",
+                  "hideDuration": "1000",
+                  "timeOut": "7000",
+                  "extendedTimeOut": "1000",
+                  "showEasing": "swing",
+                  "hideEasing": "linear",
+                  "showMethod": "fadeIn",
+                  "hideMethod": "fadeOut",
+                  "data-type": "primary"
+              }
+              toastr["warning"](msg, header);
+
+          }
+      </script>
+
+<!-- KIRMIZI ERROR TOASTR -->
+      <script>
+          function showContentError(msg, header) {
+              toastr.options = {
+                  "closeButton": true,
+                  "debug": false,
+                  "progressBar": true,
+                  "preventDuplicates": false,
+                  "positionClass": "toast-top-right",
+                  "showDuration": "400",
+                  "hideDuration": "1000",
+                  "timeOut": "7000",
+                  "extendedTimeOut": "1000",
+                  "showEasing": "swing",
+                  "hideEasing": "linear",
+                  "showMethod": "fadeIn",
+                  "hideMethod": "fadeOut",
+                  "data-type": "primary"
+              }
+              toastr["error"](msg, header);
+
+          }
+      </script>
     
     </form>
 </body>

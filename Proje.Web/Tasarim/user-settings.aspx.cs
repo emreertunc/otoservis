@@ -81,12 +81,14 @@ namespace Proje.Web.Tasarim
                 
                 if (txtTCKN.Text.Length != 11 || txtAdSoyad.Text == "" || txtParola.Text == "" || txtTelno.Text.Length != 10)
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Boş ya da hatalı girişler var')", true);
+                    //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Boş ya da hatalı girişler var')", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Boş ya da hatalı girişler var', 'HATA');", true);
                 }
                 else
                 {
                     kullanicibilgi.guncelleKullanici(kullaniciid, kullaniciadi, parola, tc, adsoyad, isegiristarihi, bolumid, pozisyonid, telno);
-                    LabelBilgi.Text = "Satır bilgisi başarıyla güncellendi";
+                    //LabelBilgi.Text = "Satır bilgisi başarıyla güncellendi";
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Bilgiler başarıyla güncellendi', 'İŞLEM BAŞARILI');", true);
                 }
             }
             catch (Exception ex)

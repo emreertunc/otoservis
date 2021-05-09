@@ -75,7 +75,7 @@ namespace Proje.Web.Tasarim
                     {
                         GridViewAktifServisler.Visible = true;
                         GridViewAktifKalemler.Visible = true;
-                        Label3.Visible = false;
+                        Label3.Visible = true;
 
                         GridViewAktifServisler.DataSource = servisislem.getAktifServisKayit();
                         GridViewAktifServisler.DataBind();
@@ -87,7 +87,8 @@ namespace Proje.Web.Tasarim
                 }
                 catch (Exception ex)
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bu kişi adına bir servis kaydı bulunmuyor')", true);
+                    //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Bu kişi adına bir servis kaydı bulunmuyor')", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Bu kişi adına bir servis kaydı bulunmuyor', 'HATA');", true);
                 }
             }
         }
@@ -103,10 +104,22 @@ namespace Proje.Web.Tasarim
         protected void GridViewAktifServisler_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = GridViewAktifServisler.SelectedRow;
-            servisid = Convert.ToInt32(row.Cells[1].Text);
+            servisid = Convert.ToInt32(row.Cells[2].Text);
+            string serviskodu = row.Cells[2].Text;
 
             GridViewAktifKalemler.DataSource = servisislem.getServisKalem(Convert.ToInt32(servisid));
             GridViewAktifKalemler.DataBind();
+        }
+
+        protected void GridViewAktifServisler_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            //GridViewAktifServisler.EditIndex = e.NewEditIndex;
+
+            GridViewRow row = GridViewAktifServisler.Rows[e.NewEditIndex];
+            string serviskodu = row.Cells[2].Text;
+
+            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Servis sayfasına yönlendiriliyorsunuz', 'İŞLEM BAŞARILI');", true);
+            Response.Redirect("servis.aspx?serviskod=" + serviskodu.ToString());
         }
     }
 }

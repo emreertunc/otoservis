@@ -103,5 +103,28 @@ namespace Proje.Business
 
             }
         }
+
+        public static object getBolumIDList()
+        {
+            otoservisdbEntities db = new otoservisdbEntities();
+            using (db)
+            {
+                var sorgu = from b1 in db.bolumlers
+                            select b1;
+
+                return sorgu.ToList();
+            }
+        }
+        public static object getPozisyonIDList()
+        {
+            otoservisdbEntities db = new otoservisdbEntities();
+            using (db)
+            {
+                var sorgu = from d1 in db.pozisyonlars
+                            select d1;
+
+                return sorgu.ToList();
+            }
+        }
     }
 }
