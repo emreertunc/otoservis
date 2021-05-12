@@ -125,6 +125,7 @@ namespace Proje.Web.Tasarim
                         if (aktifdurum == false)
                         {
                             divParca.Visible = false;
+                            divParcaCard.Visible = false;
                             Button4.Visible = false;
                         }
                     }
@@ -138,6 +139,7 @@ namespace Proje.Web.Tasarim
                         divServisList.Visible = false;
                         divParcaList.Visible = false;
                         divParcaGiris.Visible = false;
+                        divParcaCard.Visible = false;
                         divServisKalem.Visible = false;
                         //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Servis Giriş Ekranına yönlendirilmek için sayfadaki butona tıklayın...')", true);
                         redirectToDefault();
@@ -156,6 +158,7 @@ namespace Proje.Web.Tasarim
                     divServisList.Visible = false;
                     divParcaList.Visible = false;
                     divParcaGiris.Visible = false;
+                    divParcaCard.Visible = false;
                     divServisKalem.Visible = false;
                     //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Servis Giriş Ekranına yönlendirilmek için sayfadaki butona tıklayın...')", true);
                     redirectToDefault();
@@ -190,6 +193,7 @@ namespace Proje.Web.Tasarim
               if (aktifdurum == false)
               {
                   divParca.Visible = false;
+                divParcaCard.Visible = false;
                   Button4.Visible = false;
                     
                   if(txtDatePicker.Text == "")
@@ -202,6 +206,7 @@ namespace Proje.Web.Tasarim
               else if(aktifdurum == true)
               {
                   divParca.Visible = true;
+                divParcaCard.Visible = true;
                   Button4.Visible = true;
                   servisislem.guncelleServisCikis(Convert.ToInt32(Request.QueryString["serviskod"]), "");
                 txtDatePicker.Text = null;
@@ -346,6 +351,7 @@ namespace Proje.Web.Tasarim
             GridViewServisList.DataBind();
 
             divParca.Visible = false;
+            divParcaCard.Visible = false;
             Button4.Visible = false;
 
             //LabelBilgi.Text = "Servis Kaydı Başarıyla Kapatıldı.";

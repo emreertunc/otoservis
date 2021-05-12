@@ -63,10 +63,10 @@ namespace Proje.Web.Tasarim
         //{
         //    if (!this.IsPostBack)
         //    {
-                
+
         //    }
-            
-            
+
+
         //}
 
         protected void Page_Load(object sender, EventArgs e)

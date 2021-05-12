@@ -37,50 +37,63 @@
         <asp:UpdatePanel ID="UpdatePanelServis" runat="server">
             <ContentTemplate>
                 <div class="row" runat="server">
-                    <div class="col-md-12">
-                        <div class="table-responsive" style="overflow: visible;">
+                    <div class="col-sm-12">
+                        <div class="card mb-3" style="background-color: lightgray">
+                            <div class="card-header">
+                                <h3>Araç Listesi</h3>
+                                <span></span>
+                                <div class="card-header-right">
+                                    <ul class="list-unstyled card-option" style="width: 35px;">
+                                        <li class=""><i class="icofont icofont-simple-left"></i></li>
+                                        <li><i class="icofont icofont-maximize full-card"></i></li>
+                                        <li><i class="icofont icofont-minus minimize-card"></i></li>
+                                        <li><i class="icofont icofont-refresh reload-card"></i></li>
+                                        <li><i class="icofont icofont-error close-card"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-block">
+                                <div class="card-body">
+                                    <div class="table-responsive" style="overflow: visible;">
+
+                                        <asp:Label ID="Label1" CssClass="alert alert-primary" runat="server" Text=""></asp:Label>
+                                        <br />
+                                        <br />
+                                        <asp:GridView ID="GridViewServisler" Width="100%"
+                                            CssClass="table table-bordered table-borderless table-hover"
+                                            runat="server" OnSelectedIndexChanged="GridViewServisler_SelectedIndexChanged" OnRowDataBound="GridViewServisler_RowDataBound">
+                                            <Columns>
+                                                <asp:CommandField ShowSelectButton="True" SelectText="<i class='btn-success ti-view-list'></i> Seç" />
+                                            </Columns>
+
+                                        </asp:GridView>
+                                        <br />
+                                        <asp:Label ID="Label2" CssClass="alert alert-primary" runat="server" Text=""></asp:Label>
+                                        <br />
+                                        <asp:GridView ID="GridViewServisKalemler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" OnRowDataBound="GridViewServisKalemler_RowDataBound"></asp:GridView>
+                                        <br />
 
 
+                                        <asp:GridView ID="GridViewAktifServisler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" OnSelectedIndexChanged="GridViewAktifServisler_SelectedIndexChanged" OnRowEditing="GridViewAktifServisler_RowEditing" OnRowDataBound="GridViewAktifServisler_RowDataBound">
+                                            <Columns>
+                                                <asp:CommandField ShowSelectButton="True" SelectText="<i class='btn-success ti-view-list'></i> SEÇ" />
+                                            </Columns>
+                                            <Columns>
+                                                <asp:CommandField ShowEditButton="True" EditText="<i class='btn-success ti-shift-right'></i> Servis Kaydına Git" />
+                                            </Columns>
+                                        </asp:GridView>
+                                        <br />
+                                        <br />
+                                        <asp:Label ID="Label3" CssClass="alert alert-primary" runat="server" Text=""></asp:Label>
+                                        <br />
+                                        <br />
+                                        <asp:GridView ID="GridViewAktifKalemler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" OnRowDataBound="GridViewAktifKalemler_RowDataBound"></asp:GridView>
 
-
-
-
-                            <asp:Label ID="Label1" CssClass="alert alert-primary" runat="server" Text=""></asp:Label>
-                            <br />
-                            <br />
-                            <asp:GridView ID="GridViewServisler" Width="100%"
-                                CssClass="table table-bordered table-borderless table-hover"
-                                runat="server" OnSelectedIndexChanged="GridViewServisler_SelectedIndexChanged" OnRowDataBound="GridViewServisler_RowDataBound">
-                                <Columns>
-                    <asp:CommandField ShowSelectButton="True" SelectText="<i class='btn-success ti-view-list'></i> Seç" />
-                </Columns>
-
-                            </asp:GridView>
-                            <br />
-                            <asp:Label ID="Label2" CssClass="alert alert-primary" runat="server" Text=""></asp:Label>
-                            <br />
-                            <asp:GridView ID="GridViewServisKalemler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" OnRowDataBound="GridViewServisKalemler_RowDataBound"></asp:GridView>
-                            <br />
-
-
-                            <asp:GridView ID="GridViewAktifServisler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" OnSelectedIndexChanged="GridViewAktifServisler_SelectedIndexChanged" OnRowEditing="GridViewAktifServisler_RowEditing" OnRowDataBound="GridViewAktifServisler_RowDataBound">
-                                <Columns>
-                    <asp:CommandField ShowSelectButton="True" SelectText="<i class='btn-success ti-view-list'></i> SEÇ" />
-                </Columns>
-                    <Columns>
-                    <asp:CommandField ShowEditButton="True" EditText="<i class='btn-success ti-shift-right'></i> Servis Kaydına Git" />
-                </Columns>
-                            </asp:GridView>
-                            <br />
-                            <br />
-                            <asp:Label ID="Label3" CssClass="alert alert-primary" runat="server" Text=""></asp:Label>
-                            <br />
-                            <br />
-                            <asp:GridView ID="GridViewAktifKalemler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" OnRowDataBound="GridViewAktifKalemler_RowDataBound"></asp:GridView>
-
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>

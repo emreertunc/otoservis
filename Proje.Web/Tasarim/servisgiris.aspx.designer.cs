@@ -33,15 +33,6 @@ namespace Proje.Web.Tasarim
         protected global::System.Web.UI.UpdatePanel UpdatePanelServisKayit;
 
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
         /// LabelKayitliPlaka control.
         /// </summary>
         /// <remarks>
@@ -85,15 +76,6 @@ namespace Proje.Web.Tasarim
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table Table1;
-
-        /// <summary>
-        /// TableRow17 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableRow TableRow17;
 
         /// <summary>
         /// TableRow2 control.
@@ -337,15 +319,6 @@ namespace Proje.Web.Tasarim
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table Table2;
-
-        /// <summary>
-        /// TableRow18 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableRow TableRow18;
 
         /// <summary>
         /// TableRow14 control.
