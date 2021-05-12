@@ -134,6 +134,11 @@ namespace Proje.Web.Tasarim
             TextBox7.ReadOnly = true;
             TextBox8.ReadOnly = true;
 
+            DropDownList2.Visible = false;
+            DropDownList3.Visible = false;
+            Select1.Visible = false;
+            DropDownList5.Visible = false;
+
             string plakasecim = DropDownList1.SelectedValue;
             int aracid = arackayit.getAracID(plakasecim);
 
@@ -152,8 +157,37 @@ namespace Proje.Web.Tasarim
             TextBox6.Text = aracbilgi[0].ruhsatNo;
             TextBox7.Text = aracbilgi[0].saseNo;
             TextBox8.Text = aracbilgi[0].motorNo;
+
+            Button2.Visible = false;
         }
 
+        protected void ButtonDelete_Click(object sender, EventArgs e)
+        {
+            TextBox1.ReadOnly = false;
+            TextBox2.ReadOnly = true;
+            TextBox3.ReadOnly = true;
+            TextBox4.ReadOnly = true;
+            TextBox5.ReadOnly = true;
+            TextBox6.ReadOnly = false;
+            TextBox7.ReadOnly = false;
+            TextBox8.ReadOnly = false;
+
+            DropDownList2.Visible = true;
+            DropDownList3.Visible = true;
+            Select1.Visible = true;
+            DropDownList5.Visible = true;
+
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
+            TextBox4.Text = "";
+            TextBox5.Text = "";
+            TextBox6.Text = "";
+            TextBox7.Text = "";
+            TextBox8.Text = "";
+
+            Button2.Visible = true;
+        }
         protected void Button2_Click(object sender, EventArgs e)
         {
             /*TextBox2.Text = DropDownList2.SelectedValue;
@@ -176,26 +210,26 @@ namespace Proje.Web.Tasarim
                 {
                     //ShowMessageBox(Page, "Marka, model, müşteri ya da yıl seçimini unuttunuz, lütfen tekrar deneyin");
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Marka, model, müşteri ya da yıl seçimini unuttunuz', 'HATALI GİRİŞ');", true);
-                    TextBox1.Text = "";
-                    TextBox2.Text = "";
-                    TextBox3.Text = "";
-                    TextBox4.Text = "";
-                    TextBox5.Text = "";
-                    TextBox6.Text = "";
-                    TextBox7.Text = "";
-                    TextBox8.Text = "";
+                    //TextBox1.Text = "";
+                    //TextBox2.Text = "";
+                    //TextBox3.Text = "";
+                    //TextBox4.Text = "";
+                    //TextBox5.Text = "";
+                    //TextBox6.Text = "";
+                    //TextBox7.Text = "";
+                    //TextBox8.Text = "";
                 }
                 else if (plaka == "" || ruhsatno == "" || saseno == "" || motorno == "")
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Plaka, Ruhsat No, Şase No ya da Motor No girmeyi unuttunuz', 'HATALI GİRİŞ');", true);
-                    TextBox1.Text = "";
-                    TextBox2.Text = "";
-                    TextBox3.Text = "";
-                    TextBox4.Text = "";
-                    TextBox5.Text = "";
-                    TextBox6.Text = "";
-                    TextBox7.Text = "";
-                    TextBox8.Text = "";
+                    //TextBox1.Text = "";
+                    //TextBox2.Text = "";
+                    //TextBox3.Text = "";
+                    //TextBox4.Text = "";
+                    //TextBox5.Text = "";
+                    //TextBox6.Text = "";
+                    //TextBox7.Text = "";
+                    //TextBox8.Text = "";
                 }
 
                 else
@@ -319,12 +353,25 @@ namespace Proje.Web.Tasarim
             string tc = TextBox9.Text;
             string isim = TextBox10.Text;
 
+            //List<string> ifmusteriexists = db.musteris.ToList()
+            //                    .Where(x => x.tckn == tc)
+            //                    .Select(x => x.tckn).ToList();
+
+            //if (ifmusteriexists.Count == 0)
+            //{
+                
+            //}
+            //else
+            //{
+            //    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Bu TC Kimlik NO'ya sahip müşteri mevcut', 'HATA');", true);
+            //}
+
             if (tc == "" || isim == "")
             {
                 //ShowMessageBox(Page, "TCKN veya isim girmeyi unuttunuz, lütfen tekrar deneyin");
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('TCKN veya isim girmeyi unuttunuz, lütfen tekrar deneyin', 'HATALI GİRİŞ');", true);
             }
-            else if(tc.Length != 11)
+            else if (tc.Length != 11)
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('TCKN hatalı girildi', 'HATALI GİRİŞ');", true);
             }
@@ -345,16 +392,20 @@ namespace Proje.Web.Tasarim
                 else if (cevap == 2)
                 {
                     //ShowMessageBox(Page, "Girilen TC No'ya ait kayıt zaten mevcut, lütfen listeden seçip tekrar deneyin");
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Girilen TC No'ya ait kayıt zaten mevcut, lütfen listeden seçip tekrar deneyin', 'HATALI GİRİŞ');", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Girilen TC Noya ait kayıt zaten mevcut, lütfen listeden seçip tekrar deneyin', '');", true);
                 }
 
-                else ShowMessageBox(Page, "Kayıt eklenirken bir hata oluştu");
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Kayıt eklenirken beklenmeyen bir sorun oluştu', 'HATA');", true);
+                else
+                {
+                    //ShowMessageBox(Page, "Kayıt eklenirken bir hata oluştu");
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Kayıt eklenirken beklenmeyen bir sorun oluştu', 'HATA');", true);
+                }
+
 
                 //DropDownList4.DataSource = musterikayit.getMusteri();
                 //DropDownList4.DataBind();
 
-                Select1.DataSource= musterikayit.getMusteri();
+                Select1.DataSource = musterikayit.getMusteri();
                 Select1.DataBind();
             }
         }
@@ -375,14 +426,14 @@ namespace Proje.Web.Tasarim
             {
                 //ShowMessageBox(Page, "Alanlardan birini doldurmayı unuttunuz, lütfen işlemi tekrar edin");
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Alanlardan birini doldurmayı unuttunuz, lütfen işlemi tekrar edin', 'EKSİK GİRİŞ');", true);
-                TextBox1.Text = "";
-                TextBox2.Text = "";
-                TextBox3.Text = "";
-                TextBox4.Text = "";
-                TextBox5.Text = "";
-                TextBox6.Text = "";
-                TextBox7.Text = "";
-                TextBox8.Text = "";
+                //TextBox1.Text = "";
+                //TextBox2.Text = "";
+                //TextBox3.Text = "";
+                //TextBox4.Text = "";
+                //TextBox5.Text = "";
+                //TextBox6.Text = "";
+                //TextBox7.Text = "";
+                //TextBox8.Text = "";
             }
 
             else

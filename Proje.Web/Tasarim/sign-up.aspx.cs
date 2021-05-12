@@ -47,6 +47,23 @@ namespace Proje.Web.Tasarim
 						.Where(x => x.tckn == tckn)
 						.Select(x => x.tckn).ToList();
 
+
+
+					List<string> ifkullaniciexists = db.kullanicis.ToList()
+								.Where(x => x.tckn == tckn)
+								.Select(x => x.tckn).ToList();
+
+					List<string> ifkullaniciadexists = db.kullanicis.ToList()
+									.Where(x => x.kullaniciAdi == kullaniciadi)
+									.Select(x => x.kullaniciAdi).ToList();
+
+					List<string> iftelexists = db.kullanicis.ToList()
+							.Where(x => x.telno == telno)
+							.Select(x => x.telno).ToList();
+
+
+
+
 					if (adsoyad == "")
 					{
 						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Ad Soyad boş bırakılamaz', '');", true);
@@ -80,6 +97,22 @@ namespace Proje.Web.Tasarim
 						//ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Lütfen Kullanıcı Sözleşmesini onaylayınız.')", true);
 						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Lütfen Kullanıcı Sözleşmesini onaylayınız.', '');", true);
 					}
+
+					else if (ifkullaniciexists.Count != 0)
+					{
+						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Bu TC Noya sahip bir müşteri mevcut', 'HATA');", true);
+					}
+
+					else if (ifkullaniciadexists.Count != 0)
+					{
+						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Bu kullanıcı adı alınmış', 'HATA');", true);
+					}
+
+					else if (iftelexists.Count != 0)
+					{
+						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Bu Telefon numarası sistemde mevcut', 'HATA');", true);
+					}
+
 					else if(ifmusteriexists.Count == 0)
                     {
 						kullanicibilgi.AddKullanici(kullaniciadi, parola, tckn, adsoyad, isegiristarihi, bolumid, pozisyonid, telno);
@@ -93,8 +126,8 @@ namespace Proje.Web.Tasarim
                     }
                     else
                     {
-
-                    }
+						ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Beklenmedik bir hata oluştu', 'HATA');", true);
+					}
 				}
             }
 			catch(Exception ex)

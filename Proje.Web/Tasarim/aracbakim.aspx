@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Sablon.Master" AutoEventWireup="true" CodeBehind="aracbakim.aspx.cs" Inherits="Proje.Web.Tasarim.icon_themify2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Sablon.Master" AutoEventWireup="true" CodeBehind="aracbakim.aspx.cs" Inherits="Proje.Web.Tasarim.aracbakim" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -9,8 +9,8 @@
                                                 <div class="page-header-title">
                                                     <i class="icofont icofont-font bg-c-orenge"></i>
                                                     <div class="d-inline">
-                                                        <h4>Araç Marka ve Model Bakım Ekranı</h4>
-                                                        <span>Bu ekranda araçların marka ve modellerini düzenleyebilir, yenilerini ekleyebilir ve silebilirsiniz.</span>
+                                                        <h4>Araç Bakım Ekranı</h4>
+                                                        <span>Bu ekranda araç kayıtlarını düzenleyebilir, yenilerini ekleyebilir ve silebilirsiniz.</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -22,7 +22,7 @@
                                                             <i class="icofont icofont-home"></i>
                                                         </a>
                                                     </li>
-                                                    <li class="breadcrumb-item"><a href="aracbakim.aspx">Marka Model Bakım Ekranı</a>
+                                                    <li class="breadcrumb-item"><a href="aracbakim.aspx">Araç Bakım Ekranı</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -32,145 +32,242 @@
                                 <!-- Page-header end -->
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
     <div class="clearfix">
-        <asp:UpdatePanel ID="UpdatePanelArac" runat="server">
+        <asp:UpdatePanel ID="UpdatePanelMusteri" runat="server">
             <ContentTemplate>
-                <div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="table-responsive" style="overflow: visible;">
-                                <h3>Araç Marka Bakımı</h3>
 
-                                <br />
+                <div class="row">
 
-                                <asp:GridView ID="GridView2" runat="server" Width="100%" CssClass="table table-bordered table-hover table-active" AllowPaging="True" OnPageIndexChanging="OnPaging2" AutoGenerateColumns="False" OnRowCancelingEdit="GridView2_RowCancelingEdit" OnRowEditing="GridView2_RowEditing" OnRowUpdating="GridView2_RowUpdating" OnRowDeleting="GridView2_RowDeleting" ShowFooter="True">
-                                    <Columns>
-                                        <asp:TemplateField HeaderText="Aracın Markası">
-                                            <EditItemTemplate>
-                                                <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control" Text='<%# Eval("marka") %>'></asp:TextBox>
-                                                <br />
-                                                <asp:Label ID="Label10" runat="server" Text='<%# Eval("marka") %>' Visible="False"></asp:Label>
-                                            </EditItemTemplate>
-                                            <FooterTemplate>
-                                                <asp:TextBox ID="TextBox6" runat="server" CssClass="form-control"></asp:TextBox>
-                                            </FooterTemplate>
-                                            <ItemTemplate>
-                                                <asp:Label ID="Label8" runat="server" Text='<%# Eval("marka") %>'></asp:Label>
-                                            </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Center" />
-                                        </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="İşlemler">
-                                            <EditItemTemplate>
-                                                <asp:LinkButton ID="LinkButton8" runat="server" CssClass="btn btn-outline-primary" CommandName="update">Güncelle</asp:LinkButton>
-                                                &nbsp;&nbsp;
-                                <asp:LinkButton ID="LinkButton9" runat="server" CssClass="btn btn-outline-info" CommandName="Cancel">Vazgeç</asp:LinkButton>
-                                            </EditItemTemplate>
-                                            <FooterTemplate>
-                                                <asp:LinkButton ID="LinkButton10" runat="server" CssClass="btn btn-success" OnClick="LinkButton10_Click">Ekle</asp:LinkButton>
-                                            </FooterTemplate>
-                                            <ItemTemplate>
-                                                <asp:LinkButton ID="LinkButton6" runat="server" CssClass="btn btn-outline-primary" CommandName="Edit">Düzenle</asp:LinkButton>
-                                                &nbsp;&nbsp;
-                                <asp:LinkButton ID="LinkButton7" runat="server" CssClass="btn btn-outline-danger" CommandName="Delete" OnClientClick="return confirm('Bu markayı silmek markaya ait modelleri de silecektir. Silme işlemine devam etmek istediğinizden emin misiniz?');">Sil</asp:LinkButton>
-                                            </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Center" />
-                                        </asp:TemplateField>
-                                    </Columns>
-                                </asp:GridView>
-                                <%--<asp:Label ID="LabelBilgi" runat="server" CssClass="alert alert-warning" Text="..."></asp:Label>--%>
-                                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetMarkas" TypeName="Proje.Business.dbarac2"></asp:ObjectDataSource>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="col-md-12">
+                        <div class="table-responsive" style="overflow: visible;">
 
-                    <br />
-                    <br />
+                            <asp:GridView ID="GridViewAracBilgi" runat="server" Width="100%" CssClass="table table-bordered table-hover table-active" AllowPaging="True" OnPageIndexChanging="OnPaging" ShowFooter="True" AutoGenerateColumns="False" OnRowDeleting="GridViewKullanici_RowDeleting" OnRowCancelingEdit="GridViewKullanici_RowCancelingEdit" OnRowEditing="GridViewKullanici_RowEditing" OnRowUpdating="GridViewKullanici_RowUpdating">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Araç ID">
+                                        <EditItemTemplate>
+                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("aracID") %>'></asp:Label>
+                                        </EditItemTemplate>
+                                        <FooterTemplate>
+                                            <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" ReadOnly="True" Visible="False"></asp:TextBox>
+                                        </FooterTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("aracID") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:TemplateField>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="table-responsive" style="overflow: visible;">
-                                <h3>Araç Model Bakımı</h3>
+                                    <asp:TemplateField HeaderText="Plaka">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text='<%# Eval("plaka") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <FooterTemplate>
+                                            <asp:TextBox ID="TextBox3" PlaceHolder="Plaka" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </FooterTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("plaka") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:TemplateField>
 
-                                <br />
+                                    <asp:TemplateField HeaderText="Marka ID">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" Text='<%# Eval("markaID") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <FooterTemplate>
+                                            <asp:TextBox ID="TextBox5" PlaceHolder="Marka ID" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </FooterTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label4" runat="server" Text='<%# Eval("markaID") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:TemplateField>
 
-                                <asp:GridView ID="GridView1" runat="server" Width="100%" CssClass="table table-bordered table-hover table-active" AllowPaging="True" OnPageIndexChanging="OnPaging" AutoGenerateColumns="False" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" ShowFooter="True" OnRowDeleting="GridView1_RowDeleting1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
-                                    <Columns>
-                                        <asp:TemplateField HeaderText="Aracın Markası">
-                                            <EditItemTemplate>
-                                                <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" Text='<%# Eval("marka") %>' ReadOnly="True"></asp:TextBox>
-                                                <br />
-                                                <asp:Label ID="Label6" runat="server" Text='<%# Eval("marka") %>' Visible="False"></asp:Label>
-                                            </EditItemTemplate>
-                                            <FooterTemplate>
-                                                <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource3">
-                                                </asp:DropDownList>
-                                            </FooterTemplate>
-                                            <ItemTemplate>
-                                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("marka") %>'></asp:Label>
-                                            </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Center" />
-                                        </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Aracın Modeli">
-                                            <EditItemTemplate>
-                                                <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" Text='<%# Eval("model") %>'></asp:TextBox>
-                                                <br />
-                                                <asp:Label ID="Label7" runat="server" Text='<%# Eval("model") %>' Visible="False"></asp:Label>
-                                            </EditItemTemplate>
-                                            <FooterTemplate>
-                                                <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
-                                            </FooterTemplate>
-                                            <ItemTemplate>
-                                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("model") %>'></asp:Label>
-                                            </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Center" />
-                                        </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="İşlemler">
-                                            <EditItemTemplate>
-                                                <asp:LinkButton ID="LinkButton3" runat="server" CssClass="btn btn-outline-primary" CommandName="update">Güncelle</asp:LinkButton>
-                                                &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton4" runat="server" CssClass="btn btn-outline-info" CommandName="Cancel">Vazgeç</asp:LinkButton>
-                                            </EditItemTemplate>
-                                            <FooterTemplate>
-                                                <asp:LinkButton ID="LinkButton5" runat="server" CssClass="btn btn-success" OnClick="LinkButton5_Click">Ekle</asp:LinkButton>
-                                            </FooterTemplate>
-                                            <ItemTemplate>
-                                                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-outline-primary" CommandName="Edit">Düzenle</asp:LinkButton>
-                                                &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-outline-danger" CommandName="Delete">Sil</asp:LinkButton>
-                                            </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Center" />
-                                        </asp:TemplateField>
-                                    </Columns>
-                                </asp:GridView>
-                                <%--<asp:Label ID="LabelBilgi2" runat="server" CssClass="alert alert-warning" Text="..."></asp:Label>--%>
-                                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetMarkaModels" TypeName="Proje.Business.dbarac2"></asp:ObjectDataSource>
-                                <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" SelectMethod="getMarkaListe" TypeName="Proje.Business.dbarac2"></asp:ObjectDataSource>
-                            </div>
+                                    <asp:TemplateField HeaderText="Marka Adı">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="TextBoxMarkaAd" ReadOnly="true" runat="server" CssClass="form-control" Text='<%# Eval("marka") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <FooterTemplate>
+                                            <asp:TextBox ID="TextBoxMarkaAd2" ReadOnly="true" PlaceHolder="Boş Bırak" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </FooterTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="LabelMarkaAd" runat="server" Text='<%# Eval("marka") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Model ID">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="TextBox6" runat="server" CssClass="form-control" Text='<%# Eval("modelID") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <FooterTemplate>
+                                            <asp:TextBox ID="TextBox7" PlaceHolder="Model ID" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </FooterTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label5" runat="server" Text='<%# Eval("modelID") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Model Adı">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="TextBoxModelAd" ReadOnly="true" runat="server" CssClass="form-control" Text='<%# Eval("model") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <FooterTemplate>
+                                            <asp:TextBox ID="TextBoxModelAd2" ReadOnly="true" PlaceHolder="Boş Bırak" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </FooterTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="LabelModelAd" runat="server" Text='<%# Eval("model") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Musteri ID">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="TextBox8" runat="server" CssClass="form-control" Text='<%# Eval("musteriID") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <FooterTemplate>
+                                            <asp:TextBox ID="TextBox9" PlaceHolder="Musteri ID" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </FooterTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label6" runat="server" Text='<%# Eval("musteriID") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Müşteri Adı">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="TextBoxMusteriAd" ReadOnly="true" runat="server" CssClass="form-control" Text='<%# Eval("adSoyad") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <FooterTemplate>
+                                            <asp:TextBox ID="TextBoxMusteriAd2" ReadOnly="true" PlaceHolder="Boş Bırak" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </FooterTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="LabelMusteriAd" runat="server" Text='<%# Eval("adSoyad") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Model Yılı">
+                                        <EditItemTemplate>
+                                            <%--<asp:DropDownList ID="DropDownListYil2" CssClass="form-control" Text='<%# Eval("modelYil") %>' runat="server"></asp:DropDownList>--%>
+                                            <asp:TextBox ID="TextBox10" runat="server" CssClass="form-control" Text='<%# Eval("modelYil") %>' TextMode="Number"></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <FooterTemplate>
+                                            <%--<asp:DropDownList ID="DropDownListYil" CssClass="form-control" runat="server"></asp:DropDownList>--%>
+                                            <asp:TextBox ID="TextBox11" runat="server" PlaceHolder="Model Yılı" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                                        </FooterTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label7" runat="server" Text='<%# Eval("modelYil") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Ruhsat No">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="TextBox12" runat="server" CssClass="form-control" Text='<%# Eval("ruhsatNo") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <FooterTemplate>
+                                            <asp:TextBox ID="TextBox13" PlaceHolder="Ruhsat No" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </FooterTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label8" runat="server" Text='<%# Eval("ruhsatNo") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Şase No">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="TextBox14" runat="server" CssClass="form-control" Text='<%# Eval("saseNo") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <FooterTemplate>
+                                            <asp:TextBox ID="TextBox15" PlaceHolder="Şase No" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </FooterTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label9" runat="server" Text='<%# Eval("saseNo") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:TemplateField>
+
+
+                                    <asp:TemplateField HeaderText="Motor No">
+                                        <EditItemTemplate>
+                                            <asp:TextBox ID="TextBox16" runat="server" CssClass="form-control" Text='<%# Eval("motorNo") %>'></asp:TextBox>
+                                        </EditItemTemplate>
+                                        <FooterTemplate>
+                                            <asp:TextBox ID="TextBox17" PlaceHolder="Motor No" runat="server" CssClass="form-control"></asp:TextBox>
+                                        </FooterTemplate>
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label10" runat="server" Text='<%# Eval("motorNo") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:TemplateField>
+
+
+                                    <asp:TemplateField HeaderText="İşlemler">
+                                        <EditItemTemplate>
+                                            <asp:LinkButton ID="LinkButtonGuncelle" style="padding: 2px 5px" runat="server" CssClass="btn btn-outline-primary" CommandName="update" OnClick="LinkButtonGuncelle_Click">Güncelle</asp:LinkButton>
+                                            &nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButtonVazgec" runat="server" style="padding: 2px 5px" CssClass="btn btn-outline-info" CommandName="cancel" OnClick="LinkButtonVazgec_Click">Vazgeç</asp:LinkButton>
+                                        </EditItemTemplate>
+                                        <FooterTemplate>
+                                            <asp:LinkButton ID="LinkButtonEkle" Style="padding: 3px 15px" runat="server" CssClass="btn btn-success" OnClick="LinkButtonEkle_Click">Ekle</asp:LinkButton>
+                                        </FooterTemplate>
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="LinkButtonDuzenle" Style="padding: 2px 5px" runat="server" CssClass="btn btn-outline-primary" CommandName="edit" OnClick="LinkButtonDuzenle_Click">Düzenle</asp:LinkButton>
+                                            &nbsp;&nbsp;
+                        <asp:LinkButton ID="LinkButtonSil" Style="padding: 2px 5px" runat="server" CssClass="btn btn-outline-danger" CommandName="delete" OnClientClick="return confirm('Silmek istediğinizden emin misiniz?');"  OnClick="LinkButtonVazgec_Click1">Sil</asp:LinkButton>
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:TemplateField>
+                                </Columns>
+                            </asp:GridView>
+
+
                         </div>
                     </div>
                 </div>
+
+                <br />
+                <br />
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive" style="overflow: visible;">
+                            <asp:Table runat="server">
+                                <asp:TableHeaderRow>
+                                    <asp:TableCell>
+                                        <h4>Marka ve Model ID Tablosu</h4>
+                                    </asp:TableCell>
+                                    <asp:TableCell></asp:TableCell>
+                                    <asp:TableCell></asp:TableCell>
+                                    <asp:TableCell>
+                                        <h4>Müşteri ID Tablosu</h4>
+                                    </asp:TableCell>
+                                </asp:TableHeaderRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:GridView ID="GridViewIDList" runat="server" Width="100%" CssClass="table table-hover table-active" AllowPaging="True" OnPageIndexChanging="GridViewIDList_PageIndexChanging"></asp:GridView>
+                                    </asp:TableCell>
+                                    <asp:TableCell></asp:TableCell>
+                                    <asp:TableCell></asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:GridView ID="GridViewMusteriID" runat="server" Width="100%" CssClass="table table-hover table-active" AllowPaging="True" OnPageIndexChanging="GridViewMusteriID_PageIndexChanging"></asp:GridView>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                            </asp:Table>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
             </ContentTemplate>
         </asp:UpdatePanel>
-
     </div>
 
-    <%-- <style type="text/css">
-        .auto-style1 {
-            text-align: center;
-        }
-    </style>
-
-
-    <script type="text/javascript" src="assets/js/emrescrollable/ScrollableGridPlugin.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#<%=GridView1.ClientID %>').Scrollable();
-        });
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#<%=GridView2.ClientID %>').Scrollable();
-        });
-    </script>--%>
 </asp:Content>

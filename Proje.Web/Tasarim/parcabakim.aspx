@@ -11,8 +11,8 @@
                                                 <div class="page-header-title">
                                                     <i class="icofont icofont-font bg-c-orenge"></i>
                                                     <div class="d-inline">
-                                                        <h4>Araç Marka ve Model Bakım Ekranı</h4>
-                                                        <span>Bu ekranda araçların marka ve modellerini düzenleyebilir, yenilerini ekleyebilir ve silebilirsiniz.</span>
+                                                        <h4>Parça Bakım Ekranı</h4>
+                                                        <span>Bu ekranda depodaki parçaların bilgilerini düzenleyebilir, yenilerini ekleyebilir ve kayıtları silebilirsiniz.</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -39,7 +39,7 @@
         <asp:UpdatePanel ID="UpdatePanelParcaBakim" runat="server">
             <ContentTemplate>
                 <div class="col-2 d-inline-block">
-                    <asp:Label ID="LabelBaslik" runat="server" CssClass="label label-inverse-primary" Text="Parça ismiyle arama:"></asp:Label>
+                    <asp:Label ID="LabelBaslik" runat="server" style="font-size:20px;" Text="Parça ismiyle arama:"></asp:Label>
                 </div>
                 <div class="col-4 d-inline-block">
                     <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server" AutoPostBack="True" OnTextChanged="txtSearch_OnTextChanged"></asp:TextBox>
@@ -128,7 +128,7 @@
                                             <asp:TextBox ID="TextBox10" runat="server" CssClass="form-control" Text='<%# Eval("stok") %>' TextMode="Number"></asp:TextBox>
                                         </EditItemTemplate>
                                         <FooterTemplate>
-                                            <asp:TextBox ID="TextBox11" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox ID="TextBox11" runat="server" PlaceHolder="Stok Adedi" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                         </FooterTemplate>
                                         <ItemTemplate>
                                             <asp:Label ID="Label7" runat="server" Text='<%# Eval("stok") %>'></asp:Label>
@@ -138,17 +138,17 @@
 
                                     <asp:TemplateField HeaderText="İşlemler">
                                         <EditItemTemplate>
-                                            <asp:LinkButton ID="LinkButtonGuncelle" runat="server" CssClass="btn btn-outline-primary" CommandName="update" OnClick="LinkButtonGuncelle_Click">Güncelle</asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButtonGuncelle" style="padding: 2px 5px" runat="server" CssClass="btn btn-outline-primary" CommandName="update" OnClick="LinkButtonGuncelle_Click">Güncelle</asp:LinkButton>
                                             &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButtonVazgec" runat="server" CssClass="btn btn-outline-info" CommandName="cancel" OnClick="LinkButtonVazgec_Click">Vazgeç</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonVazgec" runat="server" style="padding: 2px 5px" CssClass="btn btn-outline-info" CommandName="cancel" OnClick="LinkButtonVazgec_Click">Vazgeç</asp:LinkButton>
                                         </EditItemTemplate>
                                         <FooterTemplate>
-                                            <asp:LinkButton ID="LinkButtonEkle" runat="server" CssClass="btn btn-success" OnClick="LinkButtonEkle_Click">Ekle</asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButtonEkle" style="padding: 3px 15px" runat="server" CssClass="btn btn-success" OnClick="LinkButtonEkle_Click">Ekle</asp:LinkButton>
                                         </FooterTemplate>
                                         <ItemTemplate>
-                                            <asp:LinkButton ID="LinkButtonDuzenle" runat="server" CssClass="btn btn-outline-primary" CommandName="edit" OnClick="LinkButtonDuzenle_Click">Düzenle</asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButtonDuzenle" style="padding: 2px 5px" runat="server" CssClass="btn btn-outline-primary" CommandName="edit" OnClick="LinkButtonDuzenle_Click">Düzenle</asp:LinkButton>
                                             &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButtonSil" runat="server" CssClass="btn btn-outline-danger" CommandName="delete" OnClick="LinkButtonVazgec_Click1">Sil</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonSil" style="padding: 2px 5px" runat="server" CssClass="btn btn-outline-danger" CommandName="delete" OnClientClick="return confirm('Silmek istediğinizden emin misiniz?');" OnClick="LinkButtonVazgec_Click1">Sil</asp:LinkButton>
                                         </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Center" />
                                     </asp:TemplateField>

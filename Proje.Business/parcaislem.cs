@@ -60,6 +60,19 @@ namespace Proje.Business
             }
         }
 
+        //public static string getSpesificParca3(int parcaid)
+        //{
+        //    otoservisdbEntities db = new otoservisdbEntities();
+        //    using (db)
+        //    {
+        //        string sorgu = (from d1 in db.parcas
+        //                              where d1.parcaID.Equals(parcaid)
+        //                              select d1.parcaAdi).Single();
+
+        //        return sorgu;
+        //    }
+        //}
+
         public static object getSpesificParcaAll(string anahtardeger)
         {
             otoservisdbEntities db = new otoservisdbEntities();

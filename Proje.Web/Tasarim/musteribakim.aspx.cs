@@ -54,24 +54,32 @@ namespace Proje.Web.Tasarim
 
                 if (tckimlik != "" && isim != "")
                 {
-                    
-                    List<string> ifmusteriexists = db.musteris.ToList()
-                                .Where(x => x.tckn == tckimlik)
-                                .Select(x => x.tckn).ToList();
-
-                    if (ifmusteriexists.Count == 0)
+                    if(tckimlik.Length != 11)
                     {
-                        dbmusteri2.AddMusteri(tckimlik, isim);
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('TC Kimlik No 11 haneli olmalı', '');", true);
                     }
                     else
                     {
-                        //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Müşteri mevcut, lütfen kontrol ediniz')", true);
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Müşteri mevcut, lütfen kontrol ediniz', 'HATA');", true);
-                    }
+                        List<string> ifmusteriexists = db.musteris.ToList()
+                                .Where(x => x.tckn == tckimlik)
+                                .Select(x => x.tckn).ToList();
 
-                    ObjectDataSource1.DataBind();
-                    GridView1.DataSource = ObjectDataSource1;
-                    GridView1.DataBind();
+                        if (ifmusteriexists.Count == 0)
+                        {
+                            dbmusteri2.AddMusteri(tckimlik, isim);
+                            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Müşteri eklendi', '');", true);
+                        }
+                        else
+                        {
+                            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Müşteri mevcut, lütfen kontrol ediniz')", true);
+                            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Müşteri mevcut, lütfen kontrol ediniz', 'HATA');", true);
+                        }
+
+                        ObjectDataSource1.DataBind();
+                        GridView1.DataSource = ObjectDataSource1;
+                        GridView1.DataBind();
+                    }
+                    
                 }
                 else ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Eksik girişler mevcut', 'HATA');", true);
 

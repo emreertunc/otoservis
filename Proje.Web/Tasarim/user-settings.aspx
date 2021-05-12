@@ -45,9 +45,8 @@
             <asp:UpdatePanel ID="UpdatePanelMusteri" runat="server">
                 <ContentTemplate>
                     <div class="row">
-                        <div class="col-md-9">
+                        <div class="col-md-5">
                             <div class="table-responsive" style="overflow: visible;">
-                                <h3>KULLANICI AYAR MENÜSÜ</h3>
                                 <asp:Table ID="TableUser" CssClass="table table-borderless table-dark" runat="server">
                                     <asp:TableRow>
                                         <asp:TableCell>
@@ -56,35 +55,35 @@
 
                                     <asp:TableRow>
                                         <asp:TableCell>
-                                            <asp:Label ID="Label1" runat="server" CssClass="label label-primary" Text="Kullanıcı Adı:"></asp:Label></asp:TableCell>
+                                            <asp:Label ID="Label1" runat="server" style="font-size:20px;" Text="Kullanıcı Adı:"></asp:Label></asp:TableCell>
                                         <asp:TableCell>
                                             <asp:TextBox ID="txtUserName" CssClass="form-control" runat="server"></asp:TextBox></asp:TableCell>
                                     </asp:TableRow>
 
                                     <asp:TableRow>
                                         <asp:TableCell>
-                                            <asp:Label ID="Label2" runat="server" CssClass="label label-primary" Text="Parola:"></asp:Label></asp:TableCell>
+                                            <asp:Label ID="Label2" runat="server" style="font-size:20px;" Text="Parola:"></asp:Label></asp:TableCell>
                                         <asp:TableCell>
                                             <asp:TextBox ID="txtParola" CssClass="form-control" runat="server"></asp:TextBox></asp:TableCell>
                                     </asp:TableRow>
 
                                     <asp:TableRow>
                                         <asp:TableCell>
-                                            <asp:Label ID="Label3" runat="server" CssClass="label label-primary" Text="TC Kimlik No:"></asp:Label></asp:TableCell>
+                                            <asp:Label ID="Label3" runat="server" style="font-size:20px;" Text="TC Kimlik No:"></asp:Label></asp:TableCell>
                                         <asp:TableCell>
                                             <asp:TextBox ID="txtTCKN" CssClass="form-control" runat="server"></asp:TextBox></asp:TableCell>
                                     </asp:TableRow>
 
                                     <asp:TableRow>
                                         <asp:TableCell>
-                                            <asp:Label ID="Label4" runat="server" CssClass="label label-primary" Text="Ad Soyad:"></asp:Label></asp:TableCell>
+                                            <asp:Label ID="Label4" runat="server" style="font-size:20px;" Text="Ad Soyad:"></asp:Label></asp:TableCell>
                                         <asp:TableCell>
                                             <asp:TextBox ID="txtAdSoyad" CssClass="form-control" runat="server"></asp:TextBox></asp:TableCell>
                                     </asp:TableRow>
 
                                     <asp:TableRow>
                                         <asp:TableCell>
-                                            <asp:Label ID="Label5" runat="server" CssClass="label label-primary" Text="Telefon Numarası:"></asp:Label></asp:TableCell>
+                                            <asp:Label ID="Label5" runat="server" style="font-size:20px;" Text="Telefon Numarası:"></asp:Label></asp:TableCell>
                                         <asp:TableCell>
                                             <asp:TextBox ID="txtTelno" CssClass="form-control" runat="server"></asp:TextBox></asp:TableCell>
                                     </asp:TableRow>

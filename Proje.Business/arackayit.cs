@@ -161,5 +161,88 @@ namespace Proje.Business
                 db.SaveChanges();
             }
         }
+
+        public static object getAracKayitAll()
+        {
+            otoservisdbEntities db = new otoservisdbEntities();
+            using (db)
+            {
+                var query = from a in db.aracs
+                            select a;
+                return query.ToList();
+            }
+        }
+
+        public static object getAracVeBolumler()
+        {
+            otoservisdbEntities db = new otoservisdbEntities();
+            using (db)
+            {
+                var query = from a in db.aracs
+                            join m1 in db.aracmarkas
+                            on a.markaID equals m1.markaID
+                            join m2 in db.aracmodels
+                            on a.modelID equals m2.modelID
+                            join m3 in db.musteris
+                            on a.musteriID equals m3.musteriID
+
+                            select new
+                            {
+                                a.aracID,
+                                a.plaka,
+                                a.markaID,
+                                m1.marka,
+                                a.modelID,
+                                m2.model,
+                                a.musteriID,
+                                m3.adSoyad,
+                                a.modelYil,
+                                a.ruhsatNo,
+                                a.saseNo,
+                                a.motorNo
+                            };
+
+                return query.ToList();
+            }
+        }
+
+        public static void guncelleArac(int aracID, string plaka, int markaID, int modelID, int musteriID, int modelYil, string ruhsatNo, string saseNo, string motorNo)
+        {
+            try
+            {
+                otoservisdbEntities db = new otoservisdbEntities();
+                using (db)
+                {
+                    var k = db.aracs.Find(aracID);
+
+                    k.plaka = plaka;
+                    k.markaID = markaID;
+                    k.modelID = modelID;
+                    k.musteriID = musteriID;
+                    k.modelYil = modelYil;
+                    k.ruhsatNo = ruhsatNo;
+                    k.saseNo = saseNo;
+                    k.motorNo = motorNo;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        public static object getMarkaModelID()
+        {
+            otoservisdbEntities db = new otoservisdbEntities();
+            using (db)
+            {
+                var query = from mo in db.aracmodels
+                            join ma in db.aracmarkas
+                            on mo.markaID equals ma.markaID
+                            select new {ma.markaID, ma.marka, mo.modelID, mo.model };
+                return query.ToList();
+            }
+        }
     }
 }

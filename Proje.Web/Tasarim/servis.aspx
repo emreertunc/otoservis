@@ -25,6 +25,7 @@
                                                 <div class="page-header-title">
                                                     <i class="icofont icofont-font bg-c-orenge"></i>
                                                     <div class="d-inline">
+                                                        <br />
                                                         <h4>Servis Ekranı</h4>
                                                         <span>Bu ekranda servisle ilgili tüm işlemleri gerçekleştirebilirsiniz.</span>
                                                     </div>
@@ -75,12 +76,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="table-responsive" style="overflow: visible;">
-                                <h3>Servis Bilgi Güncelleme Menüsü</h3>
+                                <br />
+                                <h4>&nbsp;Servis Bilgi Güncelleme Menüsü</h4>
 
                                 <asp:Table ID="Table1" runat="server" Width="100%" CssClass="table table-borderless">
-                                    <asp:TableHeaderRow>
-                                        <asp:TableHeaderCell>Servis Güncelleme</asp:TableHeaderCell>
-                                    </asp:TableHeaderRow>
                                     <asp:TableRow ID="TableRow1" runat="server">
                                         <asp:TableCell>Servis ID</asp:TableCell>
                                         <asp:TableCell>Araç ID</asp:TableCell>
@@ -99,8 +98,8 @@
                                         <asp:TableCell>
                                             <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control" ReadOnly="True"></asp:TextBox></asp:TableCell>
                                         <asp:TableCell>
-                                            <asp:TextBox ID="txtDatePicker" runat="server" CssClass="form-control"></asp:TextBox></asp:TableCell>
-                                        <asp:TableCell><asp:DropDownList ID="ddlAktif" runat="server">
+                                            <asp:TextBox ID="txtDatePicker" runat="server" CssClass="form-control" ></asp:TextBox></asp:TableCell>
+                                        <asp:TableCell><asp:DropDownList ID="ddlAktif" CssClass="form-control" runat="server">
    <asp:ListItem Text="Aktif" Value="True"></asp:ListItem>
    <asp:ListItem Text="Pasif" Value="False"></asp:ListItem>
  </asp:DropDownList></asp:TableCell>
@@ -127,14 +126,15 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="table-responsive" style="overflow: visible;">
-                                <h3>Servis Kayıtları Listesi</h3>
+                                <br />
+                                <h4>&nbsp;Servis Kayıtları Listesi</h4>
 
                                 <br />
 
-                                <asp:GridView ID="GridViewServisList" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server"  OnRowDeleting="GridViewServisList_RowDeleting" OnSelectedIndexChanged="GridViewServisList_SelectedIndexChanged">
+                                <asp:GridView ID="GridViewServisList" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server"  OnRowDeleting="GridViewServisList_RowDeleting" OnSelectedIndexChanged="GridViewServisList_SelectedIndexChanged" OnRowDataBound="GridViewServisList_RowDataBound">
                                 <Columns>
-                    <asp:CommandField ShowSelectButton="True" SelectText="Seç" />
-                    <asp:CommandField ShowDeleteButton="True" DeleteText="Sil" />
+                    <asp:CommandField ShowSelectButton="True" SelectText="<i class='btn-success ti-view-list'></i> Seç" />
+                    <asp:CommandField ShowDeleteButton="True" DeleteText="<i class='btn-danger ti-trash'></i> Sil" />
                 </Columns>
                                 </asp:GridView>
                                 <br />
@@ -146,12 +146,13 @@
                 <br />
                 <br />
 
-                <div style="background-color:lightgray">
+                <div id="divParca" style="background-color:lightgray" runat="server">
                     <div id="divParcaGiris" runat="server">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="table-responsive" style="overflow: visible;">
-                                    <h3>Parça Arama & Ekleme</h3>
+                                    <br />
+                                    <h4>&nbsp;Parça Arama & Servis Kalemi Ekleme</h4>
 
                                     <br />
 
@@ -166,9 +167,9 @@
                                             <asp:TableCell>
                                                 <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox></asp:TableCell>
                                             <asp:TableCell>
-                                                <asp:TextBox ID="TextBox12" runat="server" CssClass="form-control"></asp:TextBox></asp:TableCell>
+                                                <asp:TextBox ID="TextBox12" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox></asp:TableCell>
                                             <asp:TableCell>
-                                                <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList></asp:TableCell>
+                                                <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server"></asp:DropDownList></asp:TableCell>
                                             <asp:TableCell>
                                                 <asp:TextBox ID="TextBox13" runat="server" CssClass="form-control"></asp:TextBox></asp:TableCell>
                                             <asp:TableCell>
@@ -179,8 +180,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <br />
                     <br />
 
                     <div id="divParcaList" runat="server">
@@ -190,7 +189,7 @@
 
 
                                     <div class="col-2 d-inline-block">
-                                        <asp:Label ID="LabelBaslik" runat="server" CssClass="label label-inverse-primary" Text="Parça ismiyle arama:"></asp:Label>
+                                        <asp:Label ID="LabelBaslik" runat="server" style="font-size:20px;" Text="Parça ismiyle arama:"></asp:Label>
                                     </div>
                                     <div class="col-4 d-inline-block">
                                         <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server" AutoPostBack="True" OnTextChanged="txtSearch_OnTextChanged"></asp:TextBox>
@@ -205,7 +204,10 @@
 
                                     <br />
 
-                                    <asp:GridView ID="GridViewParca" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowPaging="True" OnPageIndexChanging="OnPaging">
+                                    <asp:GridView ID="GridViewParca" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowPaging="True" OnPageIndexChanging="OnPaging" OnRowDataBound="GridViewParca_RowDataBound">
+                                    <Columns>
+                    <asp:CommandField ShowSelectButton="True" SelectText="<i class='btn-success ti-view-list'></i> Seç" />
+                </Columns>
                                     </asp:GridView>
                                     <br />
                                 </div>
@@ -224,11 +226,15 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="table-responsive" style="overflow: visible;">
-                                <h3>Servis Kalemleri</h3>
+                                <br />
+                                <h4>&nbsp;Servis Kalemleri</h4>
 
                                 <br />
 
-                                <asp:GridView ID="GridViewSrKalem" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" AutoGenerateDeleteButton="True" OnRowDeleted="GridViewSrKalem_RowDeleted" OnRowDeleting="GridViewSrKalem_RowDeleting" OnSelectedIndexChanged="GridViewSrKalem_SelectedIndexChanged">
+                                <asp:GridView ID="GridViewSrKalem" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" OnRowDeleted="GridViewSrKalem_RowDeleted" OnRowDeleting="GridViewSrKalem_RowDeleting" OnSelectedIndexChanged="GridViewSrKalem_SelectedIndexChanged" OnRowDataBound="GridViewSrKalem_RowDataBound">
+                                <Columns>
+                    <asp:CommandField ShowDeleteButton="True" DeleteText="<i class='btn-danger ti-trash'></i> Sil" />
+                </Columns>
                                 </asp:GridView>
 
                                 <br />

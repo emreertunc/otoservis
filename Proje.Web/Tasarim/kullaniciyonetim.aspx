@@ -123,10 +123,10 @@
 
                 <asp:TemplateField HeaderText="Bölüm ID">
                     <EditItemTemplate>
-                        <asp:TextBox ID="TextBox12" runat="server" CssClass="form-control" Text='<%# Eval("bolumID") %>'></asp:TextBox>
+                        <asp:TextBox ID="TextBox12" runat="server" CssClass="form-control" TextMode="Number" Text='<%# Eval("bolumID") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="TextBox13" PlaceHolder="Bölüm ID" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="TextBox13" PlaceHolder="Bölüm ID" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
                     </FooterTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label8" runat="server" Text='<%# Eval("bolumID") %>'></asp:Label>
@@ -134,12 +134,26 @@
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:TemplateField>
 
-                <asp:TemplateField HeaderText="Pozisyon ID">
+                <asp:TemplateField HeaderText="Bölüm Adı">
                     <EditItemTemplate>
-                        <asp:TextBox ID="TextBox14" runat="server" CssClass="form-control" Text='<%# Eval("pozisyonID") %>'></asp:TextBox>
+                        <asp:TextBox ID="TextBoxBolum" ReadOnly="true" runat="server" CssClass="form-control" Text='<%# Eval("bolum") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:TextBox ID="TextBox15" PlaceHolder="Pozisyon ID" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxBolum2" ReadOnly="true" PlaceHolder="Boş bırak" runat="server" CssClass="form-control"></asp:TextBox>
+                    </FooterTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="LabelBolum" runat="server" Text='<%# Eval("bolum") %>'></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center" />
+                </asp:TemplateField>    
+                    
+
+                <asp:TemplateField HeaderText="Pozisyon ID">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox14" runat="server" CssClass="form-control" TextMode="Number" Text='<%# Eval("pozisyonID") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <FooterTemplate>
+                        <asp:TextBox ID="TextBox15" PlaceHolder="Pozisyon ID" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
                     </FooterTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label9" runat="server" Text='<%# Eval("pozisyonID") %>'></asp:Label>
@@ -147,6 +161,18 @@
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:TemplateField>
 
+                <asp:TemplateField HeaderText="Pozisyon Adı">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBoxPoz" ReadOnly="true" runat="server" CssClass="form-control" Text='<%# Eval("pozisyon") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <FooterTemplate>
+                        <asp:TextBox ID="TextBoxPoz" ReadOnly="true" PlaceHolder="Boş bırak" runat="server" CssClass="form-control"></asp:TextBox>
+                    </FooterTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="LabelPoz" runat="server" Text='<%# Eval("pozisyon") %>'></asp:Label>
+                    </ItemTemplate>
+                    <ItemStyle HorizontalAlign="Center" />
+                </asp:TemplateField>  
 
                 <asp:TemplateField HeaderText="Telefon Numarası">
                     <EditItemTemplate>
@@ -164,17 +190,17 @@
 
                 <asp:TemplateField HeaderText="işlemler">
                     <EditItemTemplate>
-                        <asp:LinkButton ID="LinkButtonGuncelle" runat="server" CssClass="btn btn-outline-primary" CommandName="update" OnClick="LinkButtonGuncelle_Click">Güncelle</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonGuncelle" style="padding: 2px 5px" runat="server" CssClass="btn btn-outline-primary" CommandName="update" OnClick="LinkButtonGuncelle_Click">Güncelle</asp:LinkButton>
                                 &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButtonVazgec" runat="server" CssClass="btn btn-outline-info" CommandName="cancel" OnClick="LinkButtonVazgec_Click">Vazgeç</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonVazgec" style="padding: 2px 5px" runat="server" CssClass="btn btn-outline-info" CommandName="cancel" OnClick="LinkButtonVazgec_Click">Vazgeç</asp:LinkButton>
                             </EditItemTemplate>
                             <FooterTemplate>
-                                <asp:LinkButton ID="LinkButtonEkle" runat="server" CssClass="btn btn-success" OnClick="LinkButtonEkle_Click">Ekle</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButtonEkle" style="padding: 3px 15px" runat="server" CssClass="btn btn-success" OnClick="LinkButtonEkle_Click">Ekle</asp:LinkButton>
                             </FooterTemplate>
                             <ItemTemplate>
-                                <asp:LinkButton ID="LinkButtonDuzenle" runat="server" CssClass="btn btn-outline-primary" CommandName="edit" OnClick="LinkButtonDuzenle_Click">Düzenle</asp:LinkButton>
+                                <asp:LinkButton ID="LinkButtonDuzenle" style="padding: 2px 5px" runat="server" CssClass="btn btn-outline-primary" CommandName="edit" OnClick="LinkButtonDuzenle_Click">Düzenle</asp:LinkButton>
                                 &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButtonSil" runat="server" CssClass="btn btn-outline-danger" CommandName="delete" OnClick="LinkButtonVazgec_Click1">Sil</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonSil" runat="server" style="padding: 2px 5px" CssClass="btn btn-outline-danger" CommandName="delete" OnClientClick="return confirm('Silmek istediğinizden emin misiniz?');" OnClick="LinkButtonVazgec_Click1">Sil</asp:LinkButton>
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:TemplateField>
@@ -191,7 +217,8 @@
                                     <div class="table-responsive" style="overflow: visible;">
                                 <asp:Table ID="TableID" runat="server" Width="100%" CssClass="table table-borderless">
                                     <asp:TableRow ID="TableRow2" runat="server">
-                                        <asp:TableCell><h4>Bölüm / Pozisyon ID</h4></asp:TableCell>
+                                        <asp:TableCell><h4>Bölüm ID Tablosu</h4></asp:TableCell>
+                                        <asp:TableCell><h4>Pozisyon ID Tablosu</h4></asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow ID="TableRow1" runat="server">
                                         <asp:TableCell><asp:GridView ID="GridViewBolumID" runat="server"></asp:GridView></asp:TableCell>

@@ -50,33 +50,33 @@
                             <br />
                             <asp:GridView ID="GridViewServisler" Width="100%"
                                 CssClass="table table-bordered table-borderless table-hover"
-                                runat="server" OnSelectedIndexChanged="GridViewServisler_SelectedIndexChanged">
+                                runat="server" OnSelectedIndexChanged="GridViewServisler_SelectedIndexChanged" OnRowDataBound="GridViewServisler_RowDataBound">
                                 <Columns>
-                    <asp:CommandField ShowSelectButton="True" SelectText="Seç" />
+                    <asp:CommandField ShowSelectButton="True" SelectText="<i class='btn-success ti-view-list'></i> Seç" />
                 </Columns>
 
                             </asp:GridView>
                             <br />
-                            <asp:Label ID="Label2" CssClass="alert alert-warning" runat="server" Text="Servis Kalemlerini (varsa) görmek için SEÇ tuşuna tıklayınız."></asp:Label>
+                            <asp:Label ID="Label2" CssClass="alert alert-primary" runat="server" Text=""></asp:Label>
                             <br />
-                            <asp:GridView ID="GridViewServisKalemler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server"></asp:GridView>
+                            <asp:GridView ID="GridViewServisKalemler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" OnRowDataBound="GridViewServisKalemler_RowDataBound"></asp:GridView>
                             <br />
 
 
-                            <asp:GridView ID="GridViewAktifServisler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" OnSelectedIndexChanged="GridViewAktifServisler_SelectedIndexChanged" OnRowEditing="GridViewAktifServisler_RowEditing">
+                            <asp:GridView ID="GridViewAktifServisler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" OnSelectedIndexChanged="GridViewAktifServisler_SelectedIndexChanged" OnRowEditing="GridViewAktifServisler_RowEditing" OnRowDataBound="GridViewAktifServisler_RowDataBound">
                                 <Columns>
-                    <asp:CommandField ShowSelectButton="True" SelectText="Seç" />
+                    <asp:CommandField ShowSelectButton="True" SelectText="<i class='btn-success ti-view-list'></i> SEÇ" />
                 </Columns>
                     <Columns>
-                    <asp:CommandField ShowEditButton="True" EditText="Servis Kaydına Git" />
+                    <asp:CommandField ShowEditButton="True" EditText="<i class='btn-success ti-shift-right'></i> Servis Kaydına Git" />
                 </Columns>
                             </asp:GridView>
                             <br />
                             <br />
-                            <asp:Label ID="Label3" CssClass="alert alert-warning" runat="server" Text="Servis Kalemlerini (varsa) görmek için SEÇ tuşuna tıklayınız."></asp:Label>
+                            <asp:Label ID="Label3" CssClass="alert alert-primary" runat="server" Text=""></asp:Label>
                             <br />
                             <br />
-                            <asp:GridView ID="GridViewAktifKalemler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server"></asp:GridView>
+                            <asp:GridView ID="GridViewAktifKalemler" Width="100%" CssClass="table table-bordered table-borderless table-hover" runat="server" OnRowDataBound="GridViewAktifKalemler_RowDataBound"></asp:GridView>
 
                         </div>
                     </div>

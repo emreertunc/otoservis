@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-   <div id="divGuestUyari" class="alert alert-danger text-center" role="alert" runat="server"> <h4 class="alert-heading text-center">MİSAFİR GİRİŞİ YAPILDI</h4>SİSTEME MİSAFİR OLARAK GİRİŞ YAPTINIZ. LÜTFEN <a href="sign-in.aspx" class="alert-link font-italic">OTURUM AÇIN</a>  YA DA <a href="sign-up.aspx" class="alert-link font-italic">KAYDOLUN</a></div>
+   <div id="divGuestUyari" class="alert alert-danger text-center" role="alert" runat="server"> <h4 class="alert-heading text-center">SAYFAYI ZİYARETÇİ OLARAK GÖRÜNTÜLEMEKTESİNİZ</h4>SİSTEME GİRİŞ YAPMADINIZ. SİTENİN TÜM ÖZELLİKLERİNDEN FAYDALANABİLMEK İÇİN <a href="sign-in.aspx" class="text-success alert-link font-italic">BURAYA TIKLAYARAK OTURUM AÇIN</a>  YA DA <a href="sign-up.aspx" class="text-success alert-link font-italic">BURAYA TIKLAYARAK KAYDOLUN</a></div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManagerDefaultPage" runat="server"></asp:ScriptManager>

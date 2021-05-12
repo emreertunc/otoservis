@@ -40,7 +40,7 @@ namespace Proje.Web.Tasarim
                     {
                         GridViewServisler.Visible = true;
                         GridViewServisKalemler.Visible = true;
-                        Label2.Visible = true;
+                        ///Label2.Visible = true;
 
                         string tc = Session["tckn"].ToString();
                         //tc = "85998623066";
@@ -75,7 +75,7 @@ namespace Proje.Web.Tasarim
                     {
                         GridViewAktifServisler.Visible = true;
                         GridViewAktifKalemler.Visible = true;
-                        Label3.Visible = true;
+                        //Label3.Visible = true;
 
                         GridViewAktifServisler.DataSource = servisislem.getAktifServisKayit();
                         GridViewAktifServisler.DataBind();
@@ -94,21 +94,47 @@ namespace Proje.Web.Tasarim
         }
         protected void GridViewServisler_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Label2.Text = "";
+            Label2.Visible = false;
             GridViewRow row = GridViewServisler.SelectedRow;
             servisid = Convert.ToInt32(row.Cells[1].Text);
 
             GridViewServisKalemler.DataSource = servisislem.getServisKalem(Convert.ToInt32(servisid));
             GridViewServisKalemler.DataBind();
+            
+            if (GridViewServisKalemler.Rows.Count == 0)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Servise ait servis kalemi mevcut değil', '');", true);
+            }
+
+            else
+            {
+                Label2.Visible = true;
+                Label2.Text = "Servise ait servis kalemleri:";
+            }
         }
 
         protected void GridViewAktifServisler_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Label3.Text = "";
+            Label3.Visible = false;
             GridViewRow row = GridViewAktifServisler.SelectedRow;
             servisid = Convert.ToInt32(row.Cells[2].Text);
             string serviskodu = row.Cells[2].Text;
 
             GridViewAktifKalemler.DataSource = servisislem.getServisKalem(Convert.ToInt32(servisid));
             GridViewAktifKalemler.DataBind();
+
+            if (GridViewAktifKalemler.Rows.Count == 0)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Servise ait servis kalemi mevcut değil', '');", true);
+            }
+
+            else
+            {
+                Label3.Visible = true;
+                Label3.Text = "Servise ait servis kalemleri:";
+            }
         }
 
         protected void GridViewAktifServisler_RowEditing(object sender, GridViewEditEventArgs e)
@@ -120,6 +146,64 @@ namespace Proje.Web.Tasarim
 
             //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Servis sayfasına yönlendiriliyorsunuz', 'İŞLEM BAŞARILI');", true);
             Response.Redirect("servis.aspx?serviskod=" + serviskodu.ToString());
+        }
+
+        protected void GridViewAktifServisler_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[2].Text = "Servis ID";
+                e.Row.Cells[3].Text = "Plaka";
+                e.Row.Cells[4].Text = "Marka";
+                e.Row.Cells[5].Text = "Model";
+                e.Row.Cells[6].Text = "Model Yılı";
+                e.Row.Cells[7].Text = "Şase No";
+                e.Row.Cells[8].Text = "Motor No";
+                e.Row.Cells[9].Text = "Açıklama";
+                e.Row.Cells[10].Text = "Servis Girişi";
+                e.Row.Cells[11].Text = "Servis Çıkışı";
+                e.Row.Cells[12].Text = "İşlemde";
+            }
+        }
+
+        protected void GridViewServisler_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[1].Text = "Servis ID";
+                e.Row.Cells[2].Text = "Plaka";
+                e.Row.Cells[3].Text = "Marka";
+                e.Row.Cells[4].Text = "Model";
+                e.Row.Cells[5].Text = "Model Yılı";
+                e.Row.Cells[6].Text = "Şase No";
+                e.Row.Cells[7].Text = "Motor No";
+                e.Row.Cells[8].Text = "Açıklama";
+                e.Row.Cells[9].Text = "Servis Girişi";
+                e.Row.Cells[10].Text = "Servis Çıkışı";
+                e.Row.Cells[11].Text = "İşlemde";
+            }
+        }
+
+        protected void GridViewAktifKalemler_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = "Servis Kalem ID";
+                e.Row.Cells[1].Text = "Parça Adı";
+                e.Row.Cells[2].Text = "Adet";
+                e.Row.Cells[3].Text = "Açıklama";
+            }
+        }
+
+        protected void GridViewServisKalemler_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = "Servis Kalem ID";
+                e.Row.Cells[1].Text = "Parça Adı";
+                e.Row.Cells[2].Text = "Adet";
+                e.Row.Cells[3].Text = "Açıklama";
+            }
         }
     }
 }

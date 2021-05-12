@@ -77,7 +77,7 @@
                 <asp:Button ID="ButtonTemizle" runat="server" Text="Temizle" OnClick="ButtonTemizle_Click" />
                 <asp:GridView ID="GridViewParca" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowPaging="True" OnPageIndexChanging="OnPaging">
                 <Columns>
-                    <asp:CommandField ShowSelectButton="True" SelectText="Seç" />
+                    <asp:CommandField ShowSelectButton="True" SelectText="<i class='btn-success ti-view-list'></i> Seç" />
                 </Columns>
                     
                 </asp:GridView>

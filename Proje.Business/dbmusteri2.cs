@@ -104,5 +104,16 @@ namespace Proje.Business
                 db.SaveChanges();
             }
         }
+
+        public static object getMusteriID()
+        {
+            otoservisdbEntities db = new otoservisdbEntities();
+            using (db)
+            {
+                var query = from musteri in db.musteris
+                            select new { musteri.musteriID, musteri.adSoyad };
+                return query.ToList();
+            }
+        }
     }
 }

@@ -9,43 +9,35 @@ using Proje.Business;
 
 namespace Proje.Web.Tasarim
 {
-    public partial class aracbakim : System.Web.UI.Page
+    public partial class aracbakimdeneme : System.Web.UI.Page
     {
-        protected void Page_PreInit(Object sender, EventArgs e)
-        {
-            this.MasterPageFile = "~/Sablon.Master";
+        //protected void Page_PreInit(Object sender, EventArgs e)
+        //{
+        //    this.MasterPageFile = "~/Sablon.Master";
 
-            if (Session["role"] == null)
-            {
-                this.MasterPageFile = "~/unauthorized.Master";
-            }
+        //    if (Session["role"] == null)
+        //    {
+        //        this.MasterPageFile = "~/unauthorized.Master";
+        //    }
 
-            else if (Session["role"].Equals(2) || Session["role"].Equals(3) || Session["role"].Equals(4))
-            {
-                this.MasterPageFile = "~/unauthorized.Master";
-            }
-        }
+        //    else if (Session["role"].Equals(2) || Session["role"].Equals(3) || Session["role"].Equals(4))
+        //    {
+        //        this.MasterPageFile = "~/unauthorized.Master";
+        //    }
+        //}
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                //GridViewAracBilgi.DataSource = arackayit.getAracKayitAll();
                 GridViewAracBilgi.DataSource = arackayit.getAracVeBolumler();
                 GridViewAracBilgi.DataBind();
-
+                
                 //DropDownList modelYilddl = GridViewAracBilgi.FooterRow.FindControl("DropDownListYil") as DropDownList;
                 //for (int i = 0; i < 150; i++)
                 //{
                 //    modelYilddl.Items.Insert(i, new ListItem((i + 1980).ToString(), (i + 1).ToString()));
                 //}
-
-                GridViewIDList.DataSource = arackayit.getMarkaModelID();
-                GridViewIDList.DataBind();
-
-                GridViewMusteriID.DataSource = dbmusteri2.getMusteriID();
-                GridViewMusteriID.DataBind();
-
             }
 
         }
@@ -62,9 +54,9 @@ namespace Proje.Web.Tasarim
                 TextBox modelID = GridViewAracBilgi.FooterRow.FindControl("TextBox7") as TextBox;
                 TextBox musteriID = GridViewAracBilgi.FooterRow.FindControl("TextBox9") as TextBox;
                 TextBox modelYil = GridViewAracBilgi.FooterRow.FindControl("TextBox11") as TextBox;
-
+                
                 //DropDownList modelYilddl = GridViewAracBilgi.FooterRow.FindControl("DropDownListYil") as DropDownList;
-
+                
                 TextBox ruhsatNo = GridViewAracBilgi.FooterRow.FindControl("TextBox13") as TextBox;
                 TextBox saseNo = GridViewAracBilgi.FooterRow.FindControl("TextBox15") as TextBox;
                 TextBox motorNo = GridViewAracBilgi.FooterRow.FindControl("TextBox17") as TextBox;
@@ -82,115 +74,42 @@ namespace Proje.Web.Tasarim
                 string saseno = saseNo.Text.ToString();
                 string motorno = motorNo.Text.ToString();
 
-                if (maid1 == "" || musid1 == "" || moid1 == "" || sene == "" || aracplaka == "" || ruhsatno == "" || saseno == "" || motorno == "")
+                if (maid1 == "" || moid1 == "" || musid1 == "" || sene == "")
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Eksik girişler mevcut', 'HATA');", true);
+                    //ShowMessageBox(Page, "Marka, model, müşteri ya da yıl seçimini unuttunuz, lütfen tekrar deneyin");
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Marka, model, müşteri ya da yıl seçimini unuttunuz', 'HATALI GİRİŞ');", true);
                 }
+                else if (aracplaka == "" || ruhsatno == "" || saseno == "" || motorno == "")
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Plaka, Ruhsat No, Şase No ya da Motor No girmeyi unuttunuz', 'HATALI GİRİŞ');", true);
+                }
+
                 else
                 {
-                    List<string> ifplakaexists = db.aracs.ToList()
-                                .Where(x => x.plaka == aracplaka)
-                                .Select(x => x.plaka).ToList();
+                    int cevap = arackayit.ekleArac(aracplaka, Convert.ToInt32(maid1), Convert.ToInt32(moid1), Convert.ToInt32(musid1), Convert.ToInt32(sene), ruhsatno, saseno, motorno);
 
-                    List<int> ifmarkaexists = db.aracmarkas.ToList()
-                                    .Where(x => x.markaID == Convert.ToInt32(maid1))
-                                    .Select(x => x.markaID).ToList();
-
-                    List<int> ifmodelexists = db.aracmodels.ToList()
-                                    .Where(x => x.modelID == Convert.ToInt32(moid1))
-                                    .Select(x => x.modelID).ToList();
-
-                    List<int> ifmusteriexists = db.musteris.ToList()
-                                    .Where(x => x.musteriID == Convert.ToInt32(musid1))
-                                    .Select(x => x.musteriID).ToList();
-
-                    List<string> ifruhsatnoexists = db.aracs.ToList()
-                                    .Where(x => x.ruhsatNo == ruhsatno)
-                                    .Select(x => x.ruhsatNo).ToList();
-
-                    List<string> ifsasenoexists = db.aracs.ToList()
-                                    .Where(x => x.saseNo == saseno)
-                                    .Select(x => x.saseNo).ToList();
-
-                    List<string> ifmotornoexists = db.aracs.ToList()
-                                    .Where(x => x.motorNo == motorno)
-                                    .Select(x => x.motorNo).ToList();
-
-                    if (ifplakaexists.Count != 0)
+                    if (cevap == 1)
                     {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Bu plaka zaten mevcut', '');", true);
+
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Kayıt Başarıyla Eklendi', 'İşlem Başarılı');", true);
+
                     }
 
-                    else if (ifmarkaexists.Count == 0)
+                    else if (cevap == 2)
                     {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Bu IDye ait marka bulunamadı', '');", true);
-                    }
-
-                    else if (ifmodelexists.Count == 0)
-                    {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Bu IDye ait model bulunamadı', '');", true);
-                    }
-
-                    else if (ifmusteriexists.Count == 0)
-                    {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Bu IDye ait müşteri bulunamadı', '');", true);
-                    }
-
-                    else if (ifruhsatnoexists.Count != 0)
-                    {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Bu ruhsat no zaten mevcut', '');", true);
-                    }
-
-                    else if (ifsasenoexists.Count != 0)
-                    {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Bu şase no zaten mevcut', '');", true);
-                    }
-
-                    else if (ifmotornoexists.Count != 0)
-                    {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Bu motor no zaten mevcut', '');", true);
+                        //ShowMessageBox(Page, "Girilen plakaya ait kayıt zaten mevcut, lütfen listeden seçip tekrar deneyin");
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Girilen plakaya ait kayıt zaten mevcut, lütfen listeden seçip tekrar deneyin', 'HATALI GİRİŞ');", true);
                     }
 
                     else
                     {
-                        var markamodeldogrulama = db.aracmodels.ToList()
-                                                  .Where(x => x.modelID == Convert.ToInt32(modelID.Text))
-                                                  .Select(x => x.markaID).Single();
-
-                        if (markamodeldogrulama != Convert.ToInt32(markaID.Text))
-                        {
-                            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Model ile marka bilgisi uyuşmuyor', 'HATA');", true);
-                        }
-
-                        else
-                        {
-                            int cevap = arackayit.ekleArac(aracplaka, Convert.ToInt32(maid1), Convert.ToInt32(moid1), Convert.ToInt32(musid1), Convert.ToInt32(sene), ruhsatno, saseno, motorno);
-
-                            if (cevap == 1)
-                            {
-
-                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentSuccess('Kayıt Başarıyla Eklendi', 'İşlem Başarılı');", true);
-
-                            }
-
-                            else if (cevap == 2)
-                            {
-                                //ShowMessageBox(Page, "Girilen plakaya ait kayıt zaten mevcut, lütfen listeden seçip tekrar deneyin");
-                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentWarning('Girilen plakaya ait kayıt zaten mevcut, lütfen listeden seçip tekrar deneyin', 'HATALI GİRİŞ');", true);
-                            }
-
-                            else
-                            {
-                                //ShowMessageBox(Page, "Kayıt eklenirken bir hata oluştu");
-                                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Kayıt eklenirken beklenmeyen bir hata oluştu', 'HATA');", true);
-                            }
-
-                            GridViewAracBilgi.DataSource = arackayit.getAracVeBolumler();
-                            GridViewAracBilgi.DataBind();
-                        }
+                        //ShowMessageBox(Page, "Kayıt eklenirken bir hata oluştu");
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Kayıt eklenirken beklenmeyen bir hata oluştu', 'HATA');", true);
                     }
-                }
 
+                    GridViewAracBilgi.DataSource= arackayit.getAracKayitAll();
+                    GridViewAracBilgi.DataBind();
+                }
             }
             catch (Exception ex)
             {
@@ -279,16 +198,16 @@ namespace Proje.Web.Tasarim
                 TextBox modelID = GridViewAracBilgi.Rows[e.RowIndex].FindControl("TextBox6") as TextBox;
                 TextBox musteriID = GridViewAracBilgi.Rows[e.RowIndex].FindControl("TextBox8") as TextBox;
                 TextBox modelYil = GridViewAracBilgi.Rows[e.RowIndex].FindControl("TextBox10") as TextBox;
-
+                
                 //DropDownList modelYilddl = GridViewAracBilgi.Rows[e.RowIndex].FindControl("DropDownListYil2") as DropDownList;
-
+                
                 TextBox ruhsatNo = GridViewAracBilgi.Rows[e.RowIndex].FindControl("TextBox12") as TextBox;
                 TextBox saseNo = GridViewAracBilgi.Rows[e.RowIndex].FindControl("TextBox14") as TextBox;
                 TextBox motorNo = GridViewAracBilgi.Rows[e.RowIndex].FindControl("TextBox16") as TextBox;
 
+                
 
-
-
+                
                 if (aracID.Text == "")
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "CallMyFunction", "showContentError('Araç ID alınırken bir hata meydana geldi', 'HATA');", true);
@@ -355,22 +274,6 @@ namespace Proje.Web.Tasarim
             //{
             //    modelYilddl.Items.Insert(i, new ListItem((i + 1980).ToString(), (i + 1).ToString()));
             //}
-        }
-
-        protected void GridViewIDList_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            GridViewIDList.PageIndex = e.NewPageIndex;
-
-            GridViewIDList.DataSource = arackayit.getMarkaModelID();
-            GridViewIDList.DataBind();
-        }
-
-        protected void GridViewMusteriID_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            GridViewMusteriID.PageIndex = e.NewPageIndex;
-
-            GridViewMusteriID.DataSource = dbmusteri2.getMusteriID();
-            GridViewMusteriID.DataBind();
         }
     }
 }

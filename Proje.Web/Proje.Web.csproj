@@ -79,9 +79,11 @@
   <ItemGroup>
     <Content Include="Default_original.aspx" />
     <Content Include="defaultkopya.aspx" />
-    <Content Include="MarkaModelBakim.aspx" />
+    <Content Include="MarkaModelBakimDeneme.aspx" />
     <Content Include="musteribakim1.aspx" />
     <Content Include="Tasarim\accordion.aspx" />
+    <Content Include="Tasarim\aracbakim.aspx" />
+    <Content Include="Tasarim\aracbakimdeneme.aspx" />
     <Content Include="Tasarim\assets\css\animate.css\css\animate.css" />
     <Content Include="Tasarim\assets\css\bootstrap\css\bootstrap.min.css" />
     <Content Include="Tasarim\assets\css\jquery.mCustomScrollbar.css" />
@@ -213,7 +215,7 @@
     <Content Include="Tasarim\form-elements-component.aspx" />
     <Content Include="Tasarim\hakkimizda.aspx" />
     <Content Include="Tasarim\icon-themify.aspx" />
-    <Content Include="Tasarim\aracbakim.aspx" />
+    <Content Include="Tasarim\markamodelbakim.aspx" />
     <Content Include="Tasarim\kullaniciyonetim.aspx" />
     <Content Include="Tasarim\kullaniciyonetimdeneme.aspx" />
     <Content Include="Tasarim\label-badge.aspx" />
@@ -257,12 +259,12 @@
     <Compile Include="defaultkopya.aspx.designer.cs">
       <DependentUpon>defaultkopya.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MarkaModelBakim.aspx.cs">
-      <DependentUpon>MarkaModelBakim.aspx</DependentUpon>
+    <Compile Include="MarkaModelBakimDeneme.aspx.cs">
+      <DependentUpon>MarkaModelBakimDeneme.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MarkaModelBakim.aspx.designer.cs">
-      <DependentUpon>MarkaModelBakim.aspx</DependentUpon>
+    <Compile Include="MarkaModelBakimDeneme.aspx.designer.cs">
+      <DependentUpon>MarkaModelBakimDeneme.aspx</DependentUpon>
     </Compile>
     <Compile Include="musteribakim1.aspx.cs">
       <DependentUpon>musteribakim1.aspx</DependentUpon>
@@ -292,6 +294,20 @@
     </Compile>
     <Compile Include="Tasarim\accordion.aspx.designer.cs">
       <DependentUpon>accordion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasarim\aracbakim.aspx.cs">
+      <DependentUpon>aracbakim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\aracbakim.aspx.designer.cs">
+      <DependentUpon>aracbakim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tasarim\aracbakimdeneme.aspx.cs">
+      <DependentUpon>aracbakimdeneme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tasarim\aracbakimdeneme.aspx.designer.cs">
+      <DependentUpon>aracbakimdeneme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\auth-normal-sign-in.aspx.cs">
       <DependentUpon>auth-normal-sign-in.aspx</DependentUpon>
@@ -384,12 +400,12 @@
     <Compile Include="Tasarim\icon-themify.aspx.designer.cs">
       <DependentUpon>icon-themify.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tasarim\aracbakim.aspx.cs">
-      <DependentUpon>aracbakim.aspx</DependentUpon>
+    <Compile Include="Tasarim\markamodelbakim.aspx.cs">
+      <DependentUpon>markamodelbakim.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Tasarim\aracbakim.aspx.designer.cs">
-      <DependentUpon>aracbakim.aspx</DependentUpon>
+    <Compile Include="Tasarim\markamodelbakim.aspx.designer.cs">
+      <DependentUpon>markamodelbakim.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\kullaniciyonetim.aspx.cs">
       <DependentUpon>kullaniciyonetim.aspx</DependentUpon>

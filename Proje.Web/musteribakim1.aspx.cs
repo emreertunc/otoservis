@@ -9,7 +9,7 @@ using Proje.Business;
 
 namespace Proje.Web
 {
-    public partial class aracbakim : System.Web.UI.Page
+    public partial class markamodelbakim : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

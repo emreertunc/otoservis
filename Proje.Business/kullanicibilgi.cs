@@ -20,6 +20,23 @@ namespace Proje.Business
             }
         }
 
+        public static object GetKullaniciVeBolumler()
+        {
+            otoservisdbEntities db = new otoservisdbEntities();
+            using (db)
+            {
+                var query = from c in db.kullanicis
+                            join b in db.bolumlers
+                            on c.bolumID equals b.bolumID
+                            join p in db.pozisyonlars
+                            on c.pozisyonID equals p.pozisyonID
+
+                            select new { c.kullaniciID, c.kullaniciAdi, c.parola, c.tckn, c.adSoyad, c.iseGirisTarihi, c.bolumID, b.bolum, c.pozisyonID, p.pozisyon, c.telno };
+
+                return query.ToList();
+            }
+        }
+
         public static kullanici getKullaniciAsClass(string tc)
         {
             otoservisdbEntities db = new otoservisdbEntities();

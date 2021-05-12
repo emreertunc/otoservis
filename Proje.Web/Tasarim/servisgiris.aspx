@@ -54,7 +54,7 @@
 
                 <div class="row">
                     <div class="col-md-4" style="background-color:lightgray" runat="server">
-                            <h4>Kayıtlı Araç Seçimi</h4>
+                        <asp:Label ID="Label1" runat="server" Text="Kayıtlı Araç Seçimi"></asp:Label>
                         <br />
                             <div class="d-inline-block">
                                 <asp:Label ID="LabelKayitliPlaka" style="font-size:20px;" runat="server" Text="Plaka:"></asp:Label>
@@ -63,16 +63,14 @@
                                 &nbsp;
                             </div>
                             <div class="d-inline-block">
-                                <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server">
+                                <asp:DropDownList ID="DropDownList1" style="margin-bottom: 10px; margin-top: 20px" CssClass="form-control" runat="server">
                                 </asp:DropDownList>
                             </div>
                             <div class="d-inline-block">
-                                <asp:Button ID="Button1" runat="server" class="btn btn-outline-primary" OnClick="Button1_Click" Text="SEÇ" />
+                                <asp:Button ID="Button1" style="padding: 5px 15px; margin-bottom: 5px;" runat="server" class="btn btn-outline-primary" OnClick="Button1_Click" Text="SEÇ" />
                             </div>
                         </div>
                     </div>
-                <br />
-                <br />
                 <br />
                 <br />
 
@@ -164,12 +162,12 @@
                                     <asp:TableCell>
                                       <asp:Button ID="Button4" runat="server" CssClass="btn btn-outline-primary" Text="Yeni Servis Kaydı Oluştur" OnClick="Button4_Click" />  </asp:TableCell>
                                 </asp:TableRow>
+                                <asp:TableRow ID="TableRowDeleteButton" runat="server">
+                                    <asp:TableCell>
+                                      <asp:Button ID="ButtonDelete" runat="server" CssClass="btn btn-outline-danger" Text="Alanları Temizle" OnClick="ButtonDelete_Click" />  </asp:TableCell>
+                                </asp:TableRow>
 
                             </asp:Table>
-                            <br />
-                            
-                            <br />
-                            <br />
                             <%--<asp:Label ID="Label1" runat="server" CssClass="alert alert-warning" Text="..."></asp:Label>--%>
                         </div>
                     </div>

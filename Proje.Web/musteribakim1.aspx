@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="musteribakim1.aspx.cs" Inherits="Proje.Web.aracbakim" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="musteribakim1.aspx.cs" Inherits="Proje.Web.markamodelbakim" %>
 
 <!DOCTYPE html>
 

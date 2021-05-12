@@ -11,7 +11,7 @@ namespace Proje.Web
 {
 
 
-    public partial class aracbakim
+    public partial class markamodelbakim
     {
 
         /// <summary>

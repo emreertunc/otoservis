@@ -29,5 +29,11 @@ namespace Proje.Web
         {
             return parcaislem.getSpesificParca2(prefixText);
         }
+
+        //[WebMethod]
+        //public object getParcaAd2(string prefixText)
+        //{
+        //    return parcaislem.getSpesificParca3(Convert.ToInt32(prefixText));
+        //}
     }
 }

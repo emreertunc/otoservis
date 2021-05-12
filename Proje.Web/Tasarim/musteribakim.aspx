@@ -37,13 +37,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="table-responsive" style="overflow: visible;">
-
+                    
 
                     <asp:UpdatePanel ID="UpdatePanelMusteri" runat="server">
                         <ContentTemplate>
                             <asp:GridView ID="GridView1" runat="server" Width="100%" CssClass="table table-bordered table-hover table-active" AllowPaging="True" OnPageIndexChanging="OnPaging" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" ShowFooter="True" AutoGenerateColumns="False" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">
                                 <Columns>
-                                    <asp:TemplateField HeaderText="musteri ID">
+                                    <asp:TemplateField HeaderText="Müşteri ID">
                                         <EditItemTemplate>
                                             <asp:Label ID="Label4" runat="server" Text='<%# Eval("musteriID") %>'></asp:Label>
                                         </EditItemTemplate>
@@ -55,7 +55,7 @@
                                         </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Center" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="tc">
+                                    <asp:TemplateField HeaderText="TC Kimlik No">
                                         <EditItemTemplate>
                                             <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Text='<%# Eval("tckn") %>'></asp:TextBox>
                                         </EditItemTemplate>
@@ -67,7 +67,7 @@
                                         </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Center" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="ad soyad">
+                                    <asp:TemplateField HeaderText="Ad Soyad">
                                         <EditItemTemplate>
                                             <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Text='<%# Eval("adSoyad") %>'></asp:TextBox>
                                         </EditItemTemplate>
@@ -79,19 +79,19 @@
                                         </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Center" />
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="işlemler">
+                                    <asp:TemplateField HeaderText="İşlemler">
                                         <EditItemTemplate>
-                                            <asp:LinkButton ID="LinkButton3" runat="server" CssClass="btn btn-outline-primary" CommandName="update">Güncelle</asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton3" style="padding: 2px 5px" runat="server" CssClass="btn btn-outline-primary" CommandName="update">Güncelle</asp:LinkButton>
                                             &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton4" runat="server" CssClass="btn btn-outline-info" CommandName="cancel">Vazgeç</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton4" style="padding: 2px 5px" runat="server" CssClass="btn btn-outline-info" CommandName="cancel">Vazgeç</asp:LinkButton>
                                         </EditItemTemplate>
                                         <FooterTemplate>
-                                            <asp:LinkButton ID="LinkButton5" runat="server" CssClass="btn btn-success" OnClick="LinkButton5_Click">Ekle</asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton5" style="padding: 3px 15px" runat="server" CssClass="btn btn-success" OnClick="LinkButton5_Click">Ekle</asp:LinkButton>
                                         </FooterTemplate>
                                         <ItemTemplate>
-                                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-outline-primary" CommandName="edit">Düzenle</asp:LinkButton>
+                                            <asp:LinkButton ID="LinkButton1" style="padding: 2px 5px" runat="server" CssClass="btn btn-outline-primary" CommandName="edit">Düzenle</asp:LinkButton>
                                             &nbsp;&nbsp;
-                        <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn btn-outline-danger" CommandName="delete">Sil</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton2" runat="server" style="padding: 2px 5px" CssClass="btn btn-outline-danger" OnClientClick="return confirm('Silmek istediğinizden emin misiniz?');" CommandName="delete">Sil</asp:LinkButton>
                                         </ItemTemplate>
                                         <ItemStyle HorizontalAlign="Center" />
                                     </asp:TemplateField>

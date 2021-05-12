@@ -205,8 +205,15 @@
                                     <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Genel</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="">
-                                    <a href="hakkimizda.aspx">
+                                    <a href="default.aspx">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Anasayfa</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="hakkimizda.aspx">
+                                        <span class="pcoded-micon"><i class="ti-info"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Hakkımızda</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
@@ -219,36 +226,22 @@
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Çalışan</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="">
-                                    <a href="default.aspx">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Anasayfa</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                <li class="">
                                     <a href="servisgiris.aspx">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-micon"><i class="ti-shift-right"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Servis Giriş</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="aracbakim.aspx">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                    <a href="markamodelbakim.aspx">
+                                        <span class="pcoded-micon"><i class="ti-layout-list-thumb-alt"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Marka Model Bakım</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="musteribakim.aspx">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Müşteri Bakım</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                <li class="">
                                     <a href="parcabakim.aspx">
-                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-micon"><i class="ti-paint-roller"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Parça Bakım</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
@@ -349,14 +342,14 @@
                                     <ul class="pcoded-submenu">
                                         <li class=" ">
                                             <a href="sign-in.aspx">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-micon"><i class="ti-lock"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Oturum Aç</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
                                         <li class=" ">
                                             <a href="sign-up.aspx">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-micon"><i class="ti-email"></i></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Kayıt Ol</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
@@ -371,7 +364,7 @@
                             <ul class="pcoded-item pcoded-left-item">
                                 <li>
                                     <a href="servisdurum.aspx">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                        <span class="pcoded-micon"><i class="ti-info-alt"></i><b>FC</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.form-components.main">Servis Bilgi</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
@@ -384,8 +377,22 @@
                             <ul class="pcoded-item pcoded-left-item">
                                 <li>
                                     <a href="kullaniciyonetim.aspx">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Kullanıcı Bakımı</span>
+                                        <span class="pcoded-micon"><i class="ti-settings"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Kullanıcı Bakım</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="aracbakim.aspx">
+                                        <span class="pcoded-micon"><i class="ti-car"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Araç Bakım</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="musteribakim.aspx">
+                                        <span class="pcoded-micon"><i class="ti-user"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Müşteri Bakım</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
@@ -508,7 +515,7 @@
                         <div class="pcoded-inner-content">
                             <div class="main-body">
                                 <div class="page-wrapper">
-                                    <div id="divGuestUyari" class="alert alert-danger text-center" role="alert" runat="server"> <h4 class="alert-heading text-center">MİSAFİR GİRİŞİ YAPILDI</h4>SİSTEME MİSAFİR OLARAK GİRİŞ YAPTINIZ. LÜTFEN <a href="sign-in.aspx" class="alert-link font-italic">OTURUM AÇIN</a>  YA DA <a href="sign-up.aspx" class="alert-link font-italic">KAYDOLUN</a></div>
+                                    <div id="divGuestUyari" class="alert alert-danger text-center" role="alert" runat="server"> <h4 class="alert-heading text-center">SAYFAYI ZİYARETÇİ OLARAK GÖRÜNTÜLEMEKTESİNİZ</h4>SİSTEME GİRİŞ YAPMADINIZ. SİTENİN TÜM ÖZELLİKLERİNDEN FAYDALANABİLMEK İÇİN <a href="sign-in.aspx" class="text-success alert-link font-italic">BURAYA TIKLAYARAK OTURUM AÇIN</a>  YA DA <a href="sign-up.aspx" class="text-success alert-link font-italic">BURAYA TIKLAYARAK KAYDOLUN</a></div>
                                     
                                     <div id="divUnauthorized" class="alert alert-danger text-center" role="alert" runat="server"><h4 class="alert-heading text-center">YETKİSİZ GİRİŞ YAPILDI</h4>KULLANICINIZIN YETKİ ALANI DIŞINDA BİR SAYFAYA ERİŞMEYE ÇALIŞIYORSUNUZ. LÜTFEN <a href="default.aspx" class="alert-link font-italic">ANA SAYFAYA DÖNÜN</a></div>
                                     
@@ -720,6 +727,45 @@
 
           }
       </script>
+
+<!-- SİLME ONAY KIRMIZI ERROR TOASTR -->
+      <script>
+          function showContentSil(msg, header) {
+              toastr.options = {
+                  "closeButton": false,
+                  "debug": false,
+                  "newestOnTop": false,
+                  "progressBar": true,
+                  "positionClass": "toast-top-right",
+                  "preventDuplicates": false,
+                  "onclick": null,
+                  "showDuration": "300",
+                  "hideDuration": "1000",
+                  "timeOut": 0,
+                  "extendedTimeOut": 0,
+                  "showEasing": "swing",
+                  "hideEasing": "linear",
+                  "showMethod": "fadeIn",
+                  "hideMethod": "fadeOut",
+                  "tapToDismiss": false
+              }
+              toastr["error"](msg + '<br /><br /><button id="silmeonaybutton" runat="server" type="button" class="btn clear">Evet</button>', header);
+
+          }
+      </script>
+
+<%--<!-- SİLME ONAY ALERT -->
+<script type="text/javascript">
+    function GetConfirmation() {
+        var reply = confirm("Silmek istediğinizden emin misiniz?");
+        if (reply) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+</script>--%>
     
     </form>
 </body>
