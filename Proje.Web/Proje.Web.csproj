@@ -77,11 +77,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default_original.aspx" />
-    <Content Include="defaultkopya.aspx" />
     <Content Include="MarkaModelBakimDeneme.aspx" />
     <Content Include="musteribakim1.aspx" />
-    <Content Include="Tasarim\accordion.aspx" />
     <Content Include="Tasarim\aracbakim.aspx" />
     <Content Include="Tasarim\aracbakimdeneme.aspx" />
     <Content Include="Tasarim\assets\css\animate.css\css\animate.css" />
@@ -202,30 +199,14 @@
     <Content Include="Tasarim\assets\pages\widget\amchart\serial.min.js" />
     <Content Include="Tasarim\assets\pages\widget\amchart\worldLow.js" />
     <Content Include="Tasarim\assets\pages\widget\amchart\worldLow.min.js" />
-    <Content Include="Tasarim\auth-normal-sign-in.aspx" />
-    <Content Include="Tasarim\auth-sign-up.aspx" />
-    <Content Include="Tasarim\breadcrumb.aspx" />
-    <Content Include="Tasarim\bs-basic-table.aspx" />
-    <Content Include="Tasarim\button.aspx" />
-    <Content Include="Tasarim\chart.aspx" />
-    <Content Include="Tasarim\color.aspx" />
-    <Content Include="Tasarim\copy_icon-themify.aspx" />
     <Content Include="Tasarim\default.aspx" />
-    <Content Include="Tasarim\deneme3.aspx" />
-    <Content Include="Tasarim\form-elements-component.aspx" />
     <Content Include="Tasarim\hakkimizda.aspx" />
-    <Content Include="Tasarim\icon-themify.aspx" />
     <Content Include="Tasarim\markamodelbakim.aspx" />
     <Content Include="Tasarim\kullaniciyonetim.aspx" />
     <Content Include="Tasarim\kullaniciyonetimdeneme.aspx" />
-    <Content Include="Tasarim\label-badge.aspx" />
-    <Content Include="Tasarim\map-google.aspx" />
     <Content Include="Tasarim\musteribakim.aspx" />
-    <Content Include="Tasarim\notification.aspx" />
     <Content Include="Tasarim\parcabakim.aspx" />
     <Content Include="Tasarim\parcabakimdeneme.aspx" />
-    <Content Include="Tasarim\progress-bar.aspx" />
-    <Content Include="Tasarim\sample-page.aspx" />
     <Content Include="Tasarim\servis.aspx" />
     <Content Include="Tasarim\servisdeneme.aspx" />
     <Content Include="Tasarim\servisdurum.aspx" />
@@ -237,28 +218,11 @@
     <Content Include="Tasarim\sign-up.aspx" />
     <Content Include="Tasarim\signindeneme.aspx" />
     <Content Include="Tasarim\slider.xml" />
-    <Content Include="Tasarim\tabs.aspx" />
-    <Content Include="Tasarim\tooltip.aspx" />
-    <Content Include="Tasarim\typography.aspx" />
     <Content Include="Tasarim\user-settings.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebServiceParca.asmx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default_original.aspx.cs">
-      <DependentUpon>Default_original.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default_original.aspx.designer.cs">
-      <DependentUpon>Default_original.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="defaultkopya.aspx.cs">
-      <DependentUpon>defaultkopya.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="defaultkopya.aspx.designer.cs">
-      <DependentUpon>defaultkopya.aspx</DependentUpon>
-    </Compile>
     <Compile Include="MarkaModelBakimDeneme.aspx.cs">
       <DependentUpon>MarkaModelBakimDeneme.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -281,20 +245,6 @@
     <Compile Include="Sablon.Master.designer.cs">
       <DependentUpon>Sablon.Master</DependentUpon>
     </Compile>
-    <Compile Include="sabloncopy.Master.cs">
-      <DependentUpon>sabloncopy.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sabloncopy.Master.designer.cs">
-      <DependentUpon>sabloncopy.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\accordion.aspx.cs">
-      <DependentUpon>accordion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\accordion.aspx.designer.cs">
-      <DependentUpon>accordion.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Tasarim\aracbakim.aspx.cs">
       <DependentUpon>aracbakim.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -309,62 +259,6 @@
     <Compile Include="Tasarim\aracbakimdeneme.aspx.designer.cs">
       <DependentUpon>aracbakimdeneme.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tasarim\auth-normal-sign-in.aspx.cs">
-      <DependentUpon>auth-normal-sign-in.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\auth-normal-sign-in.aspx.designer.cs">
-      <DependentUpon>auth-normal-sign-in.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\auth-sign-up.aspx.cs">
-      <DependentUpon>auth-sign-up.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\auth-sign-up.aspx.designer.cs">
-      <DependentUpon>auth-sign-up.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\breadcrumb.aspx.cs">
-      <DependentUpon>breadcrumb.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\breadcrumb.aspx.designer.cs">
-      <DependentUpon>breadcrumb.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\bs-basic-table.aspx.cs">
-      <DependentUpon>bs-basic-table.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\bs-basic-table.aspx.designer.cs">
-      <DependentUpon>bs-basic-table.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\button.aspx.cs">
-      <DependentUpon>button.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\button.aspx.designer.cs">
-      <DependentUpon>button.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\chart.aspx.cs">
-      <DependentUpon>chart.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\chart.aspx.designer.cs">
-      <DependentUpon>chart.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\color.aspx.cs">
-      <DependentUpon>color.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\color.aspx.designer.cs">
-      <DependentUpon>color.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\copy_icon-themify.aspx.cs">
-      <DependentUpon>copy_icon-themify.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\copy_icon-themify.aspx.designer.cs">
-      <DependentUpon>copy_icon-themify.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Tasarim\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -372,33 +266,12 @@
     <Compile Include="Tasarim\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tasarim\deneme3.aspx.cs">
-      <DependentUpon>deneme3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\deneme3.aspx.designer.cs">
-      <DependentUpon>deneme3.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\form-elements-component.aspx.cs">
-      <DependentUpon>form-elements-component.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\form-elements-component.aspx.designer.cs">
-      <DependentUpon>form-elements-component.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Tasarim\hakkimizda.aspx.cs">
       <DependentUpon>hakkimizda.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Tasarim\hakkimizda.aspx.designer.cs">
       <DependentUpon>hakkimizda.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\icon-themify.aspx.cs">
-      <DependentUpon>icon-themify.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\icon-themify.aspx.designer.cs">
-      <DependentUpon>icon-themify.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\markamodelbakim.aspx.cs">
       <DependentUpon>markamodelbakim.aspx</DependentUpon>
@@ -421,33 +294,12 @@
     <Compile Include="Tasarim\kullaniciyonetimdeneme.aspx.designer.cs">
       <DependentUpon>kullaniciyonetimdeneme.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tasarim\label-badge.aspx.cs">
-      <DependentUpon>label-badge.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\label-badge.aspx.designer.cs">
-      <DependentUpon>label-badge.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\map-google.aspx.cs">
-      <DependentUpon>map-google.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\map-google.aspx.designer.cs">
-      <DependentUpon>map-google.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Tasarim\musteribakim.aspx.cs">
       <DependentUpon>musteribakim.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Tasarim\musteribakim.aspx.designer.cs">
       <DependentUpon>musteribakim.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\notification.aspx.cs">
-      <DependentUpon>notification.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\notification.aspx.designer.cs">
-      <DependentUpon>notification.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\parcabakim.aspx.cs">
       <DependentUpon>parcabakim.aspx</DependentUpon>
@@ -462,20 +314,6 @@
     </Compile>
     <Compile Include="Tasarim\parcabakimdeneme.aspx.designer.cs">
       <DependentUpon>parcabakimdeneme.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\progress-bar.aspx.cs">
-      <DependentUpon>progress-bar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\progress-bar.aspx.designer.cs">
-      <DependentUpon>progress-bar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\sample-page.aspx.cs">
-      <DependentUpon>sample-page.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\sample-page.aspx.designer.cs">
-      <DependentUpon>sample-page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\servis.aspx.cs">
       <DependentUpon>servis.aspx</DependentUpon>
@@ -547,27 +385,6 @@
     <Compile Include="Tasarim\signindeneme.aspx.designer.cs">
       <DependentUpon>signindeneme.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tasarim\tabs.aspx.cs">
-      <DependentUpon>tabs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\tabs.aspx.designer.cs">
-      <DependentUpon>tabs.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\tooltip.aspx.cs">
-      <DependentUpon>tooltip.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\tooltip.aspx.designer.cs">
-      <DependentUpon>tooltip.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\typography.aspx.cs">
-      <DependentUpon>typography.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\typography.aspx.designer.cs">
-      <DependentUpon>typography.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Tasarim\user-settings.aspx.cs">
       <DependentUpon>user-settings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -596,7 +413,6 @@
     <Content Include="Tasarim\assets\icon\themify-icons\fonts\themify.woff" />
     <None Include="packages.config" />
     <Content Include="Sablon.Master" />
-    <Content Include="sabloncopy.Master" />
     <Content Include="unauthorized.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
