@@ -77,10 +77,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MarkaModelBakimDeneme.aspx" />
-    <Content Include="musteribakim1.aspx" />
     <Content Include="Tasarim\aracbakim.aspx" />
-    <Content Include="Tasarim\aracbakimdeneme.aspx" />
     <Content Include="Tasarim\assets\css\animate.css\css\animate.css" />
     <Content Include="Tasarim\assets\css\bootstrap\css\bootstrap.min.css" />
     <Content Include="Tasarim\assets\css\jquery.mCustomScrollbar.css" />
@@ -203,40 +200,20 @@
     <Content Include="Tasarim\hakkimizda.aspx" />
     <Content Include="Tasarim\markamodelbakim.aspx" />
     <Content Include="Tasarim\kullaniciyonetim.aspx" />
-    <Content Include="Tasarim\kullaniciyonetimdeneme.aspx" />
     <Content Include="Tasarim\musteribakim.aspx" />
     <Content Include="Tasarim\parcabakim.aspx" />
-    <Content Include="Tasarim\parcabakimdeneme.aspx" />
     <Content Include="Tasarim\servis.aspx" />
     <Content Include="Tasarim\servisdeneme.aspx" />
     <Content Include="Tasarim\servisdurum.aspx" />
-    <Content Include="Tasarim\servisdurumdeneme.aspx" />
     <Content Include="Tasarim\servisgiris.aspx" />
-    <Content Include="Tasarim\servisislemdeneme.aspx" />
-    <Content Include="Tasarim\settingsdeneme.aspx" />
     <Content Include="Tasarim\sign-in.aspx" />
     <Content Include="Tasarim\sign-up.aspx" />
-    <Content Include="Tasarim\signindeneme.aspx" />
     <Content Include="Tasarim\slider.xml" />
     <Content Include="Tasarim\user-settings.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebServiceParca.asmx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MarkaModelBakimDeneme.aspx.cs">
-      <DependentUpon>MarkaModelBakimDeneme.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MarkaModelBakimDeneme.aspx.designer.cs">
-      <DependentUpon>MarkaModelBakimDeneme.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="musteribakim1.aspx.cs">
-      <DependentUpon>musteribakim1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="musteribakim1.aspx.designer.cs">
-      <DependentUpon>musteribakim1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sablon.Master.cs">
       <DependentUpon>Sablon.Master</DependentUpon>
@@ -251,13 +228,6 @@
     </Compile>
     <Compile Include="Tasarim\aracbakim.aspx.designer.cs">
       <DependentUpon>aracbakim.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\aracbakimdeneme.aspx.cs">
-      <DependentUpon>aracbakimdeneme.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\aracbakimdeneme.aspx.designer.cs">
-      <DependentUpon>aracbakimdeneme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
@@ -287,13 +257,6 @@
     <Compile Include="Tasarim\kullaniciyonetim.aspx.designer.cs">
       <DependentUpon>kullaniciyonetim.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tasarim\kullaniciyonetimdeneme.aspx.cs">
-      <DependentUpon>kullaniciyonetimdeneme.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\kullaniciyonetimdeneme.aspx.designer.cs">
-      <DependentUpon>kullaniciyonetimdeneme.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Tasarim\musteribakim.aspx.cs">
       <DependentUpon>musteribakim.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -307,13 +270,6 @@
     </Compile>
     <Compile Include="Tasarim\parcabakim.aspx.designer.cs">
       <DependentUpon>parcabakim.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\parcabakimdeneme.aspx.cs">
-      <DependentUpon>parcabakimdeneme.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\parcabakimdeneme.aspx.designer.cs">
-      <DependentUpon>parcabakimdeneme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\servis.aspx.cs">
       <DependentUpon>servis.aspx</DependentUpon>
@@ -336,33 +292,12 @@
     <Compile Include="Tasarim\servisdurum.aspx.designer.cs">
       <DependentUpon>servisdurum.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tasarim\servisdurumdeneme.aspx.cs">
-      <DependentUpon>servisdurumdeneme.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\servisdurumdeneme.aspx.designer.cs">
-      <DependentUpon>servisdurumdeneme.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Tasarim\servisgiris.aspx.cs">
       <DependentUpon>servisgiris.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Tasarim\servisgiris.aspx.designer.cs">
       <DependentUpon>servisgiris.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\servisislemdeneme.aspx.cs">
-      <DependentUpon>servisislemdeneme.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\servisislemdeneme.aspx.designer.cs">
-      <DependentUpon>servisislemdeneme.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\settingsdeneme.aspx.cs">
-      <DependentUpon>settingsdeneme.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\settingsdeneme.aspx.designer.cs">
-      <DependentUpon>settingsdeneme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\sign-in.aspx.cs">
       <DependentUpon>sign-in.aspx</DependentUpon>
@@ -377,13 +312,6 @@
     </Compile>
     <Compile Include="Tasarim\sign-up.aspx.designer.cs">
       <DependentUpon>sign-up.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Tasarim\signindeneme.aspx.cs">
-      <DependentUpon>signindeneme.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Tasarim\signindeneme.aspx.designer.cs">
-      <DependentUpon>signindeneme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tasarim\user-settings.aspx.cs">
       <DependentUpon>user-settings.aspx</DependentUpon>

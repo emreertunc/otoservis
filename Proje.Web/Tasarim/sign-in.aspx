@@ -78,20 +78,6 @@
                                     <asp:TextBox ID="textboxPassword"  CssClass="form-control" TextMode="Password" PlaceHolder="Parolanız" runat="server"></asp:TextBox>
                                     <span class="md-line"></span>
                                 </div>
-                                <div class="row m-t-25 text-left">
-                                    <div class="col-sm-7 col-xs-12">
-                                        <div class="checkbox-fade fade-in-primary">
-                                            <label>
-                                                <input type="checkbox" value="">
-                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                <span class="text-inverse">Remember me</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-5 col-xs-12 forgot-phone text-right">
-                                        <a href="auth-reset-password.aspx" class="text-right f-w-600 text-inverse"> Forgot Your Password?</a>
-                                    </div>
-                                </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
                                         <asp:Button ID="btnSignIn" CssClass="btn btn-primary btn-md btn-block waves-effect text-center m-b-20" runat="server" Text="Oturum Aç" OnClick="btnSignIn_Click" />
