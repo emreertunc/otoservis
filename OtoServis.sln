@@ -11,14 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proje.Business", "Proje.Bus
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proje.API", "Proje.API\Proje.API.csproj", "{44D8AC24-88F4-462A-8AC6-0EC85CCAC6A4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SMSauth", "SMSauth", "{3C915294-3C33-42B2-9EA2-4E6B399F1116}"
-	ProjectSection(SolutionItems) = preProject
-		..\smsdeneme\smsdeneme\Default.aspx = ..\smsdeneme\smsdeneme\Default.aspx
-		..\smsdeneme\smsdeneme\Default.aspx.cs = ..\smsdeneme\smsdeneme\Default.aspx.cs
-		..\smsdeneme\smsdeneme\Default.aspx.designer.cs = ..\smsdeneme\smsdeneme\Default.aspx.designer.cs
-		..\smsdeneme\smsdeneme\smsverify.cs = ..\smsdeneme\smsdeneme\smsverify.cs
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
