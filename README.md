@@ -34,7 +34,7 @@ Servisteki süreçler gerçekleşirken, müşterilerin web sitesine kaydolarak k
 
 Muhasebe ve ödeme modüllerinin de gelecekte sisteme eklenmesi, bazı 3. parti yazılımlarla entegrasyonlar yapılması planlanmaktadır. 
 
-Geri bildirim veya önerilere açığım.
+Her türlü geri bildirim veya öneriye açığım.
 
 Tüm hakları saklıdır.
 Tamamen ya da kısmen izinsiz kullanılamaz.
